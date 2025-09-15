@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@fontsource/roboto": "^5.2.7",
     "react-scripts": "^5.0.1",
     "yarn": "^1.22.22"
   }
