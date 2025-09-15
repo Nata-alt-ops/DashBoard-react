@@ -11,7 +11,7 @@
 @import '@fontsource/urbanist/600.css'; // SemiBold
 @import '@fontsource/urbanist/700.css'; // Bold
 .site_con{
-  background-color:#5d89df ;
+  background-color:#ecf2fe ;
   width: 100%;
   height: 100%;
   padding-left: 251px;
@@ -27,7 +27,6 @@
     .card_group1{
       width: 100%;
       height: 158.500px;
-      background-color: #d343bb;
       margin-top: 24px;
       display: flex;
       gap: 20px;
@@ -71,8 +70,53 @@
 
     }
       
-
-     
     }
+    .card_group2{
+      width: 1191px;
+      height: 406px;
+      background-color: rgb(255, 255, 255);
+      margin-top: 24px;
+      border-radius: 12px;
+
+      .card-body{
+        .h1_text_buttons{
+          
+          
+          h1{
+            color: #0f141f;
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Urbanist', sans-serif;
+            margin-top: 5px;
+             
+          }
+          .circle_text{
+            display: flex;
+            gap:5px;
+
+            .circle{
+              width: 8px;
+              height: 8px;
+              border-radius: 100px;
+              margin-top: 9px;
+              margin-left: 10px;
+            }
+          }
+          .p{
+            display: flex;
+            gap: 15px ;
+          }
+
+        }
+      }
+    }
+
+
+
+
+
+
+
+
   }
 }
