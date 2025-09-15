@@ -1,0 +1,1185 @@
+@use '@fontsource/inter';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+$font_main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+$color_main:#ffffff;
+$color_main2:#282828;
+$color_main3:#818181;
+$color_main4:#FA434B;
+$color_main5:#EFEFEF;
+$color_main6:#1E201F;
+$color_main7:#C7C7C7;
+$color_main8:#86837F;
+$color_main9:#C4C4C4;
+$color_main10:#FBFBFB;
+$color_main11:#fafafa;
+
+
+@mixin heading_1 {
+  font-family:'Inter';
+  font-weight: 700;
+  font-size: min(72px, calc(100vw - 100px)) !important;
+  line-height:1.2;
+  letter-spacing:0.2px;
+  color: #ffffff;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
+  width: 722px;
+  word-wrap: break-word;
+
+
+};
+
+@mixin description_history{
+  font-family:$font_main;
+  font-weight: 700;
+  font-size: clamp(6px, 4.5vw, 12px) !important;
+  //font-size: 12px;
+  letter-spacing: 0.2px;
+  color: $color_main3;
+  margin-bottom: 0px;
+
+}
+@mixin description_history2{
+  font-family:$font_main;
+  font-weight: 700;
+  font-size: clamp(10px, 2.5vw, 24px) !important;
+  //font-size: 24px;
+  letter-spacing: 0.2px;
+  color: $color_main2;
+
+}
+
+@mixin button_with_without_underline{
+  font-family: $font_main;
+  font-weight: 600;
+  font-size: clamp(12px, 4vw, 18px) !important;
+  //font-size: 18px;
+
+}
+
+@mixin title_premiere_news_datenews{
+  font-family: $font_main;
+  font-weight: 500;
+  font-size: clamp(15px, 5vw,20px);
+  line-height: 30px;
+
+}
+
+@mixin dedcription_card_date_age{
+  font-family: $font_main;
+  font-weight: 600;
+  font-size: clamp(10px, 5vw,12px);
+}
+
+@mixin flex_con{
+  display: flex;
+  height: auto ;
+  overflow: hidden;
+}
+
+@mixin title_premiere_news_h1{
+  font-family: $font_main;
+  font-weight: 700;
+  font-size: clamp(30px, 5vw,36px);
+  letter-spacing: 0.2px;
+  color: $color_main2;
+}
+@mixin description_card_news{
+  font-family: $font_main;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+@mixin button_vid{
+  font-family: $font_main;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  color: $color_main;
+  line-height: 100%;
+  
+
+}
+@mixin main_photo{
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  object-fit: fill;
+}
+
+@mixin title_mobile{
+  font-family: $font_main;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color:$color_main;
+}
+
+body, html {
+  overflow-x: hidden;
+   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.main_con{
+  @include flex_con();
+  width:100%;
+  margin: 0 auto;
+  height: 700px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+
+  .main_photo{
+    @include main_photo();
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+      
+
+   
+
+    &::before {
+      content: '';
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      min-height: 700px;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7) 0%,  
+        rgba(0, 0, 0, 0.3) 50% 
+      );
+      z-index: 1;
+    }
+    .photo_theatre {
+       position: absolute;
+       top:0;
+       left:0;
+       width: 100%;
+       height: 100%;
+       min-width: 1520px;
+       object-fit: fill;
+       object-position:top center;
+       z-index: 0; 
+       transform: scale(1.2);
+      transform-origin: bottom;
+
+
+     }
+     .text{
+      position: absolute;
+      top: 60%;
+      left:46px;
+      z-index: 3;
+      display: flex;
+      max-width: calc(100% - 100px);
+      width: auto;
+     
+
+       .text_h1 {
+        @include heading_1();
+        color: white;
+
+
+      }
+
+     }
+    
+  }
+}
+
+
+
+.main_con2{
+  @include flex_con();
+  height: auto;
+  min-height: 120px ;
+  width: 100%;
+  background-color: $color_main11;
+  justify-content: center;
+
+  .description_con{
+    @include flex_con();
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color_main11;
+    width: 100%;
+    max-width: calc(100% - 100px);
+    height: 120px;
+  
+    box-sizing: border-box;
+    gap: 0px; 
+    min-width: 0;
+
+    .description {
+      @include flex_con();
+      justify-content: space-between; 
+      align-items: flex-start;
+      gap: clamp(12px, 4vw, 100px);
+      width: auto;
+      max-width: 600px;
+      height: 120px;
+      min-width: 0;
+    
+    .column {
+      @include flex_con();
+      flex-direction: column;
+      gap: 0; 
+      margin-top: 30px;
+      min-width: 0;
+    
+      .q, .e {
+        margin: 1px; 
+        padding: 0;
+        line-height: 1.2; 
+      }
+    
+      .q {
+        color: $color_main3;
+        @include description_history();
+      }
+    
+      .e {
+        color: $color_main2;
+         @include description_history2();
+      }
+    }
+    }
+    .description_button{
+      @include button_with_without_underline();
+      letter-spacing: 0.2px;
+      color:$color_main2;
+      margin-top: 0;
+      width: auto;
+      max-width: 197px;
+      min-height: 21px;
+      text-decoration: underline; // Подчёркивание
+      text-underline-offset: 4px; // Отступ подчёркивания от текста
+      cursor: pointer;
+      white-space: nowrap;
+      padding: 0 10px;
+    
+      &:hover{
+        color: #FA434B;
+      }
+    }
+    .description_button_mobile{
+      display: none;
+    }
+}
+
+
+
+   
+    
+  }
+
+.description_con_mobile {
+display: none; /* Скрыто по умолчанию */
+}
+
+
+.main_con3{
+  @include flex_con();
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height:670px;
+  background-color: $color_main;
+  justify-content: center;
+
+  .main_card{
+    width: calc(100% - clamp(20px, 5vw, 100px));
+    height: 670px;
+    background-color: $color_main;
+
+    .Premier_h1{
+      @include title_premiere_news_h1();
+      margin: 50px 0 30px;
+    }
+    .premier_con_wrapper {
+      overflow: hidden;
+      width: 100%;
+    
+
+      .premier_con {
+        display: flex;
+        gap: 20px;
+        overflow: hidden;
+        min-width: max-content; 
+        transition: transform 0.5s ease;
+      
+        
+      }
+      .premiere-card{
+        display: flex ;
+        justify-content: center;
+        width: clamp(335px, 10vw, 374px);
+        flex: 0 0 335px;
+        height: clamp(450px, 10vw, 503px);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: relative;
+        
+      
+        &::before {
+          content: '';
+          position: absolute;
+          top:0 ;
+          left:0;
+          width: 100%;
+          max-width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.7) 30%,  
+            rgba(0, 0, 0, 0.1) 50% 
+          );
+        z-index: 1;
+        pointer-events: none; /* Чтобы не мешал кликам */
+        }
+        .card_img{
+          z-index: 0;
+          position: absolute;
+         
+        }
+        .premier_date{
+          @include flex_con();
+          width: calc(100% - 56px);
+          height: calc(100% - 64px);
+          flex-direction: column;
+          z-index: 2;
+          position: relative;
+          //gap: 68%;
+          margin-top: 30px;
+          .w{
+            display: flex;
+            flex-direction: row;
+            gap:20px;
+            width: calc(100% - 56px);
+            height: auto;
+
+            .card_date{
+              @include dedcription_card_date_age();
+              background-color: #FA434B;
+              width: clamp(118px, 4vw, 131.74px);
+              height: 29px;
+              text-align: center;
+              border-radius: 14px;
+              color: $color_main;
+          
+              .c{
+                margin-top: 4px;
+              }
+          
+            }
+            .card_age{
+              @include dedcription_card_date_age();
+              width: 58px;
+              height: 29px;
+              border-radius: 14px;
+              background-color:$color_main5;
+              color: $color_main6;
+              text-align: center;
+              font-size: 14px;
+          
+              .d{
+                margin-top: 5px;
+              }
+          
+          
+            }
+          }
+        
+          .r{
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap:10px;
+            width: calc(100% - 56px);
+            height: auto;
+
+            .card_title{
+              @include title_premiere_news_datenews();
+              z-index: 2;
+         
+              color: $color_main;
+              word-wrap: break-word;
+              cursor: pointer;
+            
+              &:hover{
+                color: #FA434B;
+              }
+              
+            }
+            .card_description{
+              @include dedcription_card_date_age();
+              z-index: 2;
+              width: 302px;
+              color: $color_main7;
+              display: -webkit-box;
+              -webkit-line-clamp: 3; 
+               line-clamp: 3;       
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: break-word;
+
+              
+            }
+          }
+        }
+      }
+}
+    
+    
+    .back_front{
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end !important;
+      position: relative;
+    
+     
+
+      .u{
+        display: flex;
+        width: 100%;
+        position: absolute;
+        left: calc(100% - 100px);
+        
+        .button{
+          width: 45px;
+          height: 45px;
+          border-radius: 12px;
+  
+           &:hover{
+            background-color:$color_main4 ;
+            border-radius: 12px;
+          }
+          .button_back,
+            .button_tofront {
+              width: 45px; 
+              height: 45px;
+              transition: opacity 0.3s;
+  
+              &:hover {
+                opacity: 0.8;
+              }
+        }
+      }
+
+      }
+
+  }
+    }
+    .button_more {
+      display: none !important;
+      margin: 30px auto;
+      padding: 12px 30px;
+      border-radius: 50px;
+      border: 2px solid $color_main4;
+      background-color: transparent;
+      color: $color_main4;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: block;
+      width: fit-content;
+
+      &:hover {
+        background-color: $color_main4;
+        color: white;
+      }
+}
+}
+
+.main_con4{
+  @include flex_con();
+  width: 100%;
+  min-height:105px;
+  height: auto;
+  background-color: $color_main4;
+  justify-content: center;
+  align-items: center;
+
+  .buttons_4_con{
+    @include flex_con();
+    width: calc(100% - 470px);
+    min-height: 105px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+
+    .buttons_4{
+      @include flex_con();
+      width: 100%;
+      height:auto;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap:10px;
+      padding: 20px 0px;
+
+       [class^='buttons_vid'] {
+        @include button_vid();
+        padding: 0 24px;
+        min-width: auto;
+        max-width: 100%;
+        height: 45px;
+        border-radius: 20px;
+        border: 2px solid $color_main ;
+        cursor: pointer;
+        background-color:$color_main4;
+
+        &:hover{
+          color: $color_main4;
+          background-color: $color_main;
+        }
+
+      }
+    }
+  }
+   
+}
+
+.main_con5{
+  @include flex_con();
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: $color_main;
+
+  .news_con{
+    @include flex_con();
+    background-color: $color_main;
+    height: auto;
+    width: calc(100% - 100px);
+    flex-direction: column;
+
+    .text_more_news{
+      display: flex;
+      width: 100%;
+      white-space: nowrap;
+      
+      .news_text{
+        @include title_premiere_news_h1();
+        margin-top: 50px;
+        margin-bottom: 50px;
+        flex-wrap: nowrap
+      }
+    }
+    
+
+    .more_news{
+      @include button_with_without_underline();
+      color:$color_main2;
+      cursor: pointer;
+      margin-top: 60px;
+      margin-left: auto;
+
+      &:hover{
+        color: $color_main4;
+      }
+    }
+
+    .news_news{
+      @include flex_con();
+      width: 100%;
+      flex-wrap: wrap;
+      gap:20px;
+      //background-color: #1E201F;
+
+      .card_news{
+        flex: 1 1 calc(50% - 10px);
+        max-width:none;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .picture_news{
+          background-color: #c94747;
+          width: 100% ;
+          height: 200px;
+          position: relative;
+          overflow: hidden;
+         
+          z-index: 0;
+
+          .news_img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25% ;
+            transform: scale(1.0);
+           
+          }
+        }
+
+        .date_overlay{
+          display: none;
+        }
+        .title_date{
+          display: flex;
+          margin-top: 20px;
+          width: 100%;
+          height: auto;
+
+          .title_news{
+            @include title_premiere_news_datenews();
+            color:#1E201F;
+            white-space: normal;
+            cursor: pointer;
+            
+            &:hover{
+              color: $color_main4;
+            }
+          }
+          .date_news{
+            @include title_premiere_news_datenews();
+            color:#C4C4C4;
+            margin-left: auto;
+          }
+        }
+        .description_news{
+          @include description_card_news();
+          color: #86837F;
+          margin-top: 10px;
+        }
+      }
+
+     
+    }
+  }
+
+  
+
+}
+/*Адаптивность для экранов менее 673 пикселя*/
+
+@media (max-width: 673px) {
+.site_con{
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  .main_con {
+    @include flex_con();
+    width: 100%;
+    min-height: 718px;
+    overflow: hidden;
+    justify-content: center;
+    height: 718px !important;
+    object-fit: cover;
+    object-position: center;
+
+    
+    .main_photo {
+      @include flex_con();
+      min-height: 718px !important;
+      height: auto !important;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      justify-content: center;
+      overflow: hidden;
+      
+      .photo_theatre {
+        width: 100%;
+        min-height: 718px !important;
+        height: auto !important;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 700px !important;
+        z-index: 0;
+        position: absolute;
+        
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top:0;
+      left:0;
+      width: 1390px;
+      height: 718px;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7) 0%,  
+        rgba(0, 0, 0, 0.3) 50% 
+        );
+      z-index: 1;
+    }
+    
+    .text {
+      position: absolute;
+      top: auto !important;
+      max-width: none !important;
+      width: 100% !important;
+      z-index: 2;
+      display: flex !important;
+      //padding-left: 20px;
+      left:20px;
+      bottom: 30px !important;
+      transform: none !important;
+      text-align: center !important;
+      margin-bottom: 20px !important;
+  
+      
+      
+      .text_h1 {
+          @include title_mobile();
+          width: calc(100% - 40px) !important;
+          max-width: 100%;
+          color: white;
+          z-index: 2;
+          text-align: left;
+          line-height: 100%;
+          white-space: wrap !important;
+          font-size: clamp(43px, 8vw, 51px) !important; 
+          margin-bottom: 20px;
+
+        }
+      }
+      
+      
+      
+      .description_con_mobile{
+        display: block;
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        right: 20px;
+        z-index: 2;
+        color: $color_main;
+        
+        .description{
+          @include flex_con();
+          gap: 70px;
+          flex-direction: column;
+          
+          .column{
+            @include flex_con();
+            flex-direction: column;
+            
+            .q{
+              @include description_history();
+              color: $color_main9;
+              font-size: 18px !important;
+              margin-bottom: 0px;
+            }
+            .e{
+              @include description_history2();
+              color: $color_main;
+              font-size: 36px !important;
+              margin-top: 0px;
+            }
+          }
+
+
+        }
+    
+
+      }
+    }
+  }
+
+  .main_con2 {
+    @include flex_con();
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 107px;
+    margin-top: 0px;
+    padding: 0px 0;
+    background-color: $color_main10;
+    
+    .description_con{
+          width: calc(100% - 100px) !important;
+          display: flex; 
+          justify-content: center !important;
+          text-align: center !important;
+        .description_all{
+          display: none;
+        }
+        .description_button {
+          display: none;
+        }
+        .description_button_mobile {
+            display: flex; 
+            @include button_with_without_underline();
+            letter-spacing: 0.2px;
+            color:$color_main2;
+            margin-top: 0;
+            text-decoration: underline; // Подчёркивание
+            text-underline-offset: 4px; // Отступ подчёркивания от текста
+            cursor: pointer;
+            white-space: nowrap;
+            &:hover{
+              color: #FA434B;
+            }
+            }
+      }
+      
+    }
+    
+    
+   .main_con3 {
+    height: auto !important;
+    .main_card {
+      height: auto !important;
+      .Premier_h1 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 50px;
+      }
+
+      .premier_con {
+        flex-direction: column !important;
+        gap: 30px !important; 
+        align-items: center !important;
+        justify-content: center;
+        height: auto !important;
+        transform: none !important;
+        transition: none;
+
+        .premier_con_wrapper {
+          overflow: hidden;
+          width: 100%;
+          background-color: #ffffff;}
+
+        
+    
+
+
+      }
+      .button_more {
+          margin: 30px auto;
+          padding: 12px 30px;
+          border-radius: 50px;
+          border: 2px solid $color_main2;
+          background-color: transparent;
+          color: $color_main2;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s;
+          display: block;
+          width: 90%;
+
+          &:hover {
+            background-color: $color_main;
+            color: $color_main4;
+            border: 2px solid $color_main4;
+          }
+    }
+
+      .premiere-card {
+        width: calc(100% - 10px) !important;
+        min-height: 503px !important;
+        margin: 0 auto !important; // Центрируем карточку
+        position: relative !important;
+        transform: none;
+        transition: none;
+        
+
+          
+
+        &::before {
+        content: '';
+        top:0 ;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7) 30%,  
+          rgba(0, 0, 0, 0.1) 50% 
+        );
+      z-index: 1;
+      pointer-events: none; 
+      }
+
+         .card_img {
+            width: 100% !important;
+            height: 100% !important;
+            
+          }
+
+        .premier_date {
+          display: flex;
+          gap: 10px;
+          z-index: 2;
+          max-width: calc(100% - 56px) !important;
+          height: calc(100% - 64px) !important;
+
+          .card_date,
+          .card_age {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+          }
+
+          .card_date {
+            background-color: #FA434B;
+            color: white;
+          }
+
+          .card_age {
+            background-color: #EFEFEF;
+            color: #1E201F;
+          }
+        }
+
+        .card_title {
+          font-size: 18px;
+          color: $color_main;
+          z-index: 2;
+          font-family: 'Inter';
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        .card_description {
+          font-size: 12px;
+          color: #C7C7C7;
+          line-height: 16px;
+          z-index: 2;
+          font-family: "Inter";
+          font-weight: 400;
+          color: $color_main9;
+          width: 323px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; 
+            line-clamp: 3;       
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          
+          
+
+        }
+      }
+    }
+    .back_front {
+        display: none !important; // Скрываем кнопки навигации на мобильных
+      }
+      
+      .button_more {
+        display: block !important; // Показываем кнопку "Еще"
+        margin: 30px auto !important;
+      }
+  }
+
+  
+  
+  .main_con4 {
+  height: auto;
+  padding: 20px 0; // Добавляем отступы сверху и снизу
+  
+  .buttons_4_con {
+    background-color: $color_main4;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; // Меняем фиксированную высоту на auto
+    padding: 10px 0; // Добавляем внутренние отступы
+
+    .buttons_4 {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 239px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      min-height: 300px;
+    
+      
+      [class^='buttons_vid'] {
+        padding: 6px 20px; // Увеличиваем отступы внутри кнопок
+        min-width: auto; // Убираем минимальную ширину
+        border-radius: 30px;
+        border: 2px solid $color_main;
+        background-color: $color_main4;
+        color: $color_main;
+        font-size: 18px;
+        text-align: center; // Центрируем текст
+        transition: all 0.3s;
+        
+        &:hover {
+          background-color: $color_main;
+          color: $color_main4;
+        }
+
+      
+      }
+    }
+  }
+}
+.main_con5 {
+  @include flex_con();
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  .news_con {
+    @include flex_con();
+    background-color: $color_main;
+    height: auto;
+    width: calc(100% - 20px);
+    flex-direction: column;
+    padding: 0 10px;
+
+    .text_more_news {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 30px;
+
+      .news_text {
+        @include title_premiere_news_h1();
+        font-size: 28px;
+        text-align: center;
+        margin: 50px 0 20px;
+      }
+    }
+
+    .more_news {
+      display: none !important;
+    }
+
+    .news_news {
+      @include flex_con();
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .card_news {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 280px;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .picture_news {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+          min-width: 280px;
+
+          .news_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+          }
+
+          .date_overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #C4C4C4; 
+            font-family: $font_main;
+            font-weight: 600;
+            font-size: clamp(14px, 5vw, 16px);
+            padding: 6px 10px;
+            z-index: 3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 60px;
+            max-width: 70%;
+          }
+        }
+
+        .title_date {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 4px;
+          margin-top: 8px;
+
+          .title_news {
+            @include title_premiere_news_datenews();
+            color: $color_main2;
+            font-size: clamp(16px, 5vw, 18px);
+            line-height: 1.3;
+            word-wrap: break-word;
+            white-space: normal;
+            cursor: pointer;
+            margin: 0;
+
+            &:hover {
+              color: $color_main4;
+            }
+          }
+
+          .date_news {
+            display: none; // ❌ Убираем дубль — оставляем только .date_overlay
+          }
+        }
+
+        .description_news {
+          @include description_card_news();
+          color: $color_main8;
+          font-size: 12px;
+          line-height: 1.4;
+          margin-top: 4px;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}}}
