@@ -13,7 +13,13 @@ export const Main = () => {
   
   return (
     <div className='site_con'>
-      
+      <div className='conatainer'>
+        <div className=' d-flex cards_group1 '>
+          <div className='card 1'>
+
+          </div>
+        </div>
+      </div>
     </div>
  
   )
