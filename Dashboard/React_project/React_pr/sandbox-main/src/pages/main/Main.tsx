@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Main.scss';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Area } from 'recharts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fontsource/roboto/300.css';
@@ -46,29 +46,34 @@ export const Main = () => {
                 <img src='/book-open-fill.svg' alt=' ' className='flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl'></img>
                 </div>
                  <div style={{ width: '80px', height: '42px', marginTop: '10px' }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={trendData}>
-                       {/* Добавляем градиент */}
-                      <defs>
-                        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#5cc3bd" stopOpacity={0.8}/>
-                          <stop offset="100%" stopColor="#5cc3bd" stopOpacity={0.1}/>
-                        </linearGradient>
-                      </defs>
-                      <Line 
-                        type="monotone" 
-                        dataKey="courses" 
-                        stroke="#5cc3bd" 
-                        strokeWidth={2}
-                        dot={false}
-                        fill="url(#gradient)"
-                      />
-                      {/* Скрываем оси но оставляем для масштабирования */}
-                      <XAxis dataKey="day" hide={true} />
-                      <YAxis hide={true} domain={['dataMin - 10', 'dataMax + 10']} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
+  <ResponsiveContainer width="100%" height="100%">
+    <LineChart data={trendData}>
+      <defs>
+        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="100%" stopColor="#5cc3bd" stopOpacity={0.8}/>
+          <stop offset="0%" stopColor="#5cc3bd" stopOpacity={0.1}/>
+        </linearGradient>
+      </defs>
+      {/* Area для градиентной заливки */}
+      <Area 
+        type="monotone" 
+        dataKey="courses" 
+        fill="url(#gradient)"
+        stroke="none"
+      />
+      {/* Line для самой линии графика */}
+      <Line 
+        type="monotone" 
+        dataKey="courses" 
+        stroke="#5cc3bd" 
+        strokeWidth={2}
+        dot={false}
+      />
+      <XAxis dataKey="day" hide={true} />
+      <YAxis hide={true} domain={['dataMin - 10', 'dataMax + 10']} />
+    </LineChart>
+  </ResponsiveContainer>
+</div>
             </div>
           </div>
         </div>
