@@ -80,6 +80,7 @@
 
       .card-body{
         .h1_text_buttons{
+          background-color: coral;
           
           
           h1{
@@ -90,26 +91,58 @@
             margin-top: 5px;
              
           }
-          .circle_text{
-            display: flex;
-            gap:5px;
-
-            .circle{
-              width: 8px;
-              height: 8px;
-              border-radius: 100px;
-              margin-top: 9px;
-              margin-left: 10px;
+            .circle_text{
+              display: flex;
+              gap:5px;
+              flex-direction: row;
+              margin-right: 12px;
+              color: #0c1018;
+              font-family: 'Roboto', sans-serif;
+              font-size: 13px;
+              font-family: 400;
+              margin-top: 10px;
+  
+              .circle{
+                width: 8px;
+                height: 8px;
+                border-radius: 100px;
+                margin-top: 5px;
+                margin-left: 5px;
+              }
             }
-          }
-          .p{
-            display: flex;
-            gap: 15px ;
+            .e{
+              width: 81px;
+              height: 31px;
+              margin-top: 5px;
+              border: 1px solid #d5dbe7;
+              color: #667797;
+              font-size: 13px;
+              border-radius: 8px;
+              margin-right: 5px;
+            }
+
+            .dropdown{
+              width: 81px;
+              height: 31px;
+
+              button{
+                width: 81px;
+                height: 31px;
+                margin-top: 7px;
+
+                p{
+                  font-size: 13px;
+                  font-weight: 400;
+                  font-family: 'Roboto', sans-serif;
+                  margin-right: 30px;
+                }
+              }
+            }
           }
 
         }
       }
-    }
+    
 
 
 

@@ -176,7 +176,6 @@ export const Main = () => {
             <div className='card-body'>
               <div className='h1_text_buttons d-flex bd-highlight'>
                 <h1 className='flex-grow-1 bd-highlight'>Study Statistics</h1>
-                <div className='p'>
                 <div className='circle_text '>
                   <div className='circle' style={{backgroundColor: '#3e80f9'}}></div>
                   <p>Study</p>
@@ -185,25 +184,36 @@ export const Main = () => {
                   <div className='circle' style={{backgroundColor: '#27cea7'}}></div>
                   <p>Test</p>
                 </div>
-                <div className='change_button bd-highlight'>
-                  <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Yearly
-                    </button>
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a className="dropdown-item">Yearly</a></li>
-                      <li><a className="dropdown-item">Monthly</a></li>
-                      <li><a className="dropdown-item">Weekly</a></li>
-                      <li><a className="dropdown-item">Today</a></li>
-                    </ul>
-                  </div>
-                </div>
-                </div>
+               
+                {/*<button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                 <p className='e'>Yearly</p>
+                </button>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item active" href="#">Yearly</a></li>
+                  <li><a className="dropdown-item" href="#">Monthly</a></li>
+                  <li><a className="dropdown-item" href="#">Weekly</a></li>
+                  <li><a className="dropdown-item" href="#">Today</a></li>
+                
+                </ul>*/}
 
-              </div>
+                <div className="dropdown">
+  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    <p>Yearly</p>
+  </button>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><button className="dropdown-item active " type="button">Yearly</button></li>
+    <li><button className="dropdown-item" type="button">Monthly</button></li>
+    <li><button className="dropdown-item" type="button">Weekly</button></li>
+    <li><button className="dropdown-item" type="button">Today</button></li>
+  </ul>
+</div>
+            
+                
+              
             </div>
         </div>
       </div>
     </div>
+     </div>
   )
 };
