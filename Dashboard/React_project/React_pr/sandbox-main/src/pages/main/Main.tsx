@@ -197,8 +197,8 @@ export const Main = () => {
                 </ul>*/}
 
                 <div className="dropdown">
-  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-    <p>Yearly</p>
+  <button className="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    Yearly
   </button>
   <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
     <li><button className="dropdown-item active " type="button">Yearly</button></li>
