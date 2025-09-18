@@ -3,7 +3,7 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
-@import "bootstrap/scss/transitions";
+
 
 
 @import '@fontsource/urbanist/400.css'; // Regular
@@ -265,38 +265,40 @@
 
           .days{
             width: 100%;
-            height: auto;
-            background-color: #3e80f9;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: end;
-            gap:0px;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            margin: auto;
+            justify-content: space-between;
+            text-align: center;
 
-            /*.j{
-              background-color: #a8a8a8;
-              width: calc(100% - 40px);
-              height: auto;
-              margin-left: 20px;*/
-              
-              
+            div{
+              width: 42px;
+              height: 42px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+              font-family: 'Roboto', sans-serif;
+              border-radius: 100px;
+              cursor: pointer;
+              transition: all 0.2s ease; 
 
-              div{
-                width: 42px;
-                height: 42px;
-                background-color: #667797;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 14px;
-                font-family: 'Roboto', sans-serif;
-                margin-left: 5px;
-                
-                
 
+              &:hover{
+                background-color: #ebf1fd;
+                color:#3e80f9;
+  
                 
               }
-            
+            }
+            .current-date{
+              background-color: #3e80f9;
+              color: #ffffff;
+            }
 
+
+           
           }
 
         
@@ -304,6 +306,109 @@
 
 
       
+    }
+
+    .h{
+       width: 381.250px;
+       border-radius: 18px;
+       border:none;
+       margin-top: 24px;
+       margin-left: 24px;
+       
+       .card-body{
+         width: calc(100% - 40px);
+         height: auto;
+         margin-top: 20px;
+         margin-bottom: 20px;
+         padding: 0;
+         flex-direction: column;
+         
+         .k{
+           width: 100%;
+           height: 30px;
+           margin-bottom: 20px;
+         
+  
+           h1{
+             color: #0f141f;
+             font-family: 'Urbanist', sans-serif;
+             font-size: 22px;
+             font-weight: 700;
+  
+           }
+  
+           p{
+             color: #3e80f9;
+             font-family: Roboto, sans-serif;
+             font-size: 13px;
+             font-weight: 500;
+             cursor: pointer;
+             margin-top: 4px;
+            
+  
+             &:hover{
+               text-decoration: underline 
+             }
+  
+           }
+         }
+
+         button{
+          border-radius: 8px;
+          margin-bottom: 10px;
+          border: 1px solid #e2e3e5;
+          background-color: #ffffff;
+          width: 100%;
+          height: 78px;
+
+
+
+          .l{
+            width: 44px;
+            height: 44px;
+            background-color: #ebf1fd;
+            border-radius: 100px;
+            margin-left: 5px;
+          }
+
+          &:hover{
+            border: 1px solid #606060;
+          }
+
+          .z{
+            flex-direction: column;
+            margin-left: 7px;
+            margin-top: 10px;
+        
+
+            .text_button1{
+              color: #0f141f;
+              font-family: 'Urbanist', sans-serif;
+              font-size: 15px;
+              font-weight: 700;
+              margin-bottom: 2px;
+            }
+            .text_button2{
+              color: #3b465e;
+              font-family: 'Roboto', sans-serif;
+              font-size: 13px;
+              font-weight: 400;
+          
+              
+              
+              
+              
+            }
+            
+            
+          }
+
+          
+         }
+
+       
+
+       }
     }
     
   }

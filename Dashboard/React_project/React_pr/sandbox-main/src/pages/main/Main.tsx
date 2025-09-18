@@ -391,8 +391,7 @@ export const Main = () => {
                                 <p>Sa</p>
                               </div>
                             </div>
-                            {/*<div className='days'>
-                            <div className='j d-flex justify-content-end align-items-center '>
+                            <div className="days">
                               <div></div>
                               <div>1</div>
                               <div>2</div>
@@ -400,77 +399,79 @@ export const Main = () => {
                               <div>4</div>
                               <div>5</div>
                               <div>6</div>
-                            </div>
-
-                            <div className='j d-flex justify-content-end align-items-center '>
                               <div>7</div>
                               <div>8</div>
-                              <div>9</div>
-                              <div>10</div>
-                              <div>11</div>
-                              <div>12</div>
-                              <div>13</div>
-                            </div>
-                            <div className='j d-flex justify-content-end align-items-center '>
-                              <div>14</div>
-                              <div>15</div>
-                              <div>16</div>
-                              <div>17</div>
-                              <div>18</div>
-                              <div>19</div>
-                              <div>20</div>
-                            </div>
-                            <div className='j d-flex justify-content-end align-items-center '>
-                              <div>21</div>
-                              <div>22</div>
-                              <div>23</div>
+                              <div >9</div>
+                              <div >10</div>
+                              <div >11</div>
+                              <div >12</div>
+                              <div >13</div>
+                              <div >14</div>
+                              <div >15</div>
+                              <div >16</div>
+                              <div >17</div>
+                              <div className="current-date">18</div>
+                              <div >19</div>
+                              <div >20</div>
+                              <div >21</div>
+                              <div >22</div>
+                              <div >23</div>
                               <div>24</div>
-                              <div>25</div>
-                              <div>26</div>
-                              <div>27</div>
+                              <div >25</div>
+                              <div >26</div>
+                              <div >27</div>
+                              <div >28</div>
+                              <div >29</div>
+                              <div >30</div>
                             </div>
-                            <div className='j d-flex justify-content-end align-items-center '>
-                              <div>28</div>
-                              <div>29</div>
-                              <div>30</div>
-                            </div>
-                            </div>*/}
-
-                            <div className="days">
-                              <div></div>
-                              <div data-date="Mon Sep 01 2025">1</div>
-                              <div data-date="Tue Sep 02 2025">2</div>
-                              <div data-date="Wed Sep 03 2025">3</div>
-                              <div data-date="Thu Sep 04 2025">4</div>
-                              <div data-date="Fri Sep 05 2025">5</div>
-                              <div data-date="Sat Sep 06 2025">6</div>
-                              <div data-date="Sun Sep 07 2025">7</div>
-                              <div data-date="Mon Sep 08 2025">8</div>
-                              <div data-date="Tue Sep 09 2025">9</div>
-                              <div data-date="Wed Sep 10 2025">10</div>
-                              <div data-date="Thu Sep 11 2025">11</div>
-                              <div data-date="Fri Sep 12 2025">12</div>
-                              <div data-date="Sat Sep 13 2025">13</div>
-                              <div data-date="Sun Sep 14 2025">14</div>
-                              <div data-date="Mon Sep 15 2025">15</div>
-                              <div data-date="Tue Sep 16 2025">16</div>
-                              <div data-date="Wed Sep 17 2025">17</div>
-                              <div data-date="Thu Sep 18 2025" className="current-date">18</div>
-                              <div data-date="Fri Sep 19 2025">19</div>
-                              <div data-date="Sat Sep 20 2025">20</div>
-                              <div data-date="Sun Sep 21 2025">21</div>
-                              <div data-date="Mon Sep 22 2025">22</div>
-                              <div data-date="Tue Sep 23 2025">23</div>
-                              <div data-date="Wed Sep 24 2025">24</div>
-                              <div data-date="Thu Sep 25 2025">25</div>
-                              <div data-date="Fri Sep 26 2025">26</div>
-                              <div data-date="Sat Sep 27 2025">27</div>
-                              <div data-date="Sun Sep 28 2025">28</div>
-                              <div data-date="Mon Sep 29 2025">29</div>
-                              <div data-date="Tue Sep 30 2025">30</div>
-                              </div>
                         </div>
                       </div>
+
+                  <div className='card mt-24 h d-flex justify-content-center align-items-center '>
+                    <div className='card-body d-flex justify-content-center '>
+                      <div className='k d-flex justify-content-between '>
+                      <h1>Assignments</h1>
+                      <p>See All</p>
+                      </div>
+                      <button className='d-flex justify-content-start align-items-center '>
+                        <div className='l d-flex justify-content-center align-items-center'>
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#3e80f9" viewBox="0 0 256 256">
+                        <path  className='l' d="M176,207.24a119,119,0,0,0,16-7.73V240a8,8,0,0,1-16,0Zm11.76-88.43-56-29.87a8,8,0,0,0-7.52,14.12L171,128l17-9.06Zm64-29.87-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V130.67L171,128l-43,22.93L43.83,106l0,0L25,96,128,41.07,231,96l-18.78,10-.06,0L188,118.94a8,8,0,0,1,4,6.93v73.64a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12Z"></path>
+                        </svg>
+                        </div>
+                       
+                        <div className='d-flex z justify-content-start align-items-start '>
+                          <p className='text_button1'>Do The Research</p>
+                          <p className='text_button2'>Due in 9 days</p>
+                        </div>
+
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64645 1.64645C4.84171 1.45118 5.15829 1.45118 5.35355 1.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L5.35355 14.3536C5.15829 14.5488 4.84171 14.5488 4.64645 14.3536C4.45118 14.1583 4.45118 13.8417 4.64645 13.6464L10.2929 8L4.64645 2.35355C4.45118 2.15829 4.45118 1.84171 4.64645 1.64645Z" />
+                        </svg>
+                      </button>
+
+                       <button className='d-flex justify-content-start align-items-center '>
+                        <div className='l d-flex justify-content-center align-items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#3e80f9" viewBox="0 0 256 256"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path></svg>
+                        </div>
+                       
+                        <div className='d-flex z justify-content-start align-items-start '>
+                          <p className='text_button1'>PHP Dvelopment</p>
+                          <p className='text_button2'>Due in 2 days</p>
+                        </div>
+                      </button>
+                      <button className='d-flex justify-content-start align-items-center '>
+                        <div className='l d-flex justify-content-center align-items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#3e80f9" viewBox="0 0 256 256"><path d="M221.07,144.41A96.68,96.68,0,0,0,181,88h59a8,8,0,0,0,0-16H159a32,32,0,0,0-62,0H16a8,8,0,0,0,0,16H75a96.68,96.68,0,0,0-40.07,56.41A32,32,0,1,0,51.08,146,80.6,80.6,0,0,1,99,93.44a32,32,0,0,0,58.06,0A80.6,80.6,0,0,1,204.92,146a32,32,0,1,0,16.15-1.57ZM56,176a16,16,0,1,1-16-16A16,16,0,0,1,56,176Zm72-80a16,16,0,1,1,16-16A16,16,0,0,1,128,96Zm88,96a16,16,0,1,1,16-16A16,16,0,0,1,216,192Z"></path></svg>
+                        </div>
+                       
+                        <div className='d-flex z justify-content-start align-items-start '>
+                          <p className='text_button1'>Graphic Design</p>
+                          <p className='text_button2'>Due in 5 days</p>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
 
                   </div>
                   </div>
