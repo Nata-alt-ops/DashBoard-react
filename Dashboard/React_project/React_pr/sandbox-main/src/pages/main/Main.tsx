@@ -391,7 +391,84 @@ export const Main = () => {
                                 <p>Sa</p>
                               </div>
                             </div>
-                            <div className='days'></div>
+                            {/*<div className='days'>
+                            <div className='j d-flex justify-content-end align-items-center '>
+                              <div></div>
+                              <div>1</div>
+                              <div>2</div>
+                              <div>3</div>
+                              <div>4</div>
+                              <div>5</div>
+                              <div>6</div>
+                            </div>
+
+                            <div className='j d-flex justify-content-end align-items-center '>
+                              <div>7</div>
+                              <div>8</div>
+                              <div>9</div>
+                              <div>10</div>
+                              <div>11</div>
+                              <div>12</div>
+                              <div>13</div>
+                            </div>
+                            <div className='j d-flex justify-content-end align-items-center '>
+                              <div>14</div>
+                              <div>15</div>
+                              <div>16</div>
+                              <div>17</div>
+                              <div>18</div>
+                              <div>19</div>
+                              <div>20</div>
+                            </div>
+                            <div className='j d-flex justify-content-end align-items-center '>
+                              <div>21</div>
+                              <div>22</div>
+                              <div>23</div>
+                              <div>24</div>
+                              <div>25</div>
+                              <div>26</div>
+                              <div>27</div>
+                            </div>
+                            <div className='j d-flex justify-content-end align-items-center '>
+                              <div>28</div>
+                              <div>29</div>
+                              <div>30</div>
+                            </div>
+                            </div>*/}
+
+                            <div className="days">
+                              <div></div>
+                              <div data-date="Mon Sep 01 2025">1</div>
+                              <div data-date="Tue Sep 02 2025">2</div>
+                              <div data-date="Wed Sep 03 2025">3</div>
+                              <div data-date="Thu Sep 04 2025">4</div>
+                              <div data-date="Fri Sep 05 2025">5</div>
+                              <div data-date="Sat Sep 06 2025">6</div>
+                              <div data-date="Sun Sep 07 2025">7</div>
+                              <div data-date="Mon Sep 08 2025">8</div>
+                              <div data-date="Tue Sep 09 2025">9</div>
+                              <div data-date="Wed Sep 10 2025">10</div>
+                              <div data-date="Thu Sep 11 2025">11</div>
+                              <div data-date="Fri Sep 12 2025">12</div>
+                              <div data-date="Sat Sep 13 2025">13</div>
+                              <div data-date="Sun Sep 14 2025">14</div>
+                              <div data-date="Mon Sep 15 2025">15</div>
+                              <div data-date="Tue Sep 16 2025">16</div>
+                              <div data-date="Wed Sep 17 2025">17</div>
+                              <div data-date="Thu Sep 18 2025" className="current-date">18</div>
+                              <div data-date="Fri Sep 19 2025">19</div>
+                              <div data-date="Sat Sep 20 2025">20</div>
+                              <div data-date="Sun Sep 21 2025">21</div>
+                              <div data-date="Mon Sep 22 2025">22</div>
+                              <div data-date="Tue Sep 23 2025">23</div>
+                              <div data-date="Wed Sep 24 2025">24</div>
+                              <div data-date="Thu Sep 25 2025">25</div>
+                              <div data-date="Fri Sep 26 2025">26</div>
+                              <div data-date="Sat Sep 27 2025">27</div>
+                              <div data-date="Sun Sep 28 2025">28</div>
+                              <div data-date="Mon Sep 29 2025">29</div>
+                              <div data-date="Tue Sep 30 2025">30</div>
+                              </div>
                         </div>
                       </div>
 
