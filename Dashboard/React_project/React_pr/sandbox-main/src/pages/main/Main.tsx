@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
   AreaChart,
   Area,
   XAxis,
   YAxis,
   ResponsiveContainer,
-  LineChart,
-  Line,
-  Legend,
   Tooltip,
   CartesianGrid,
 } from 'recharts';
@@ -21,7 +17,7 @@ import '@fontsource/roboto/700.css';
 import './Main.scss';
 
 export const Main = () => {
-  const navigate = useNavigate();
+  
 
   const trendData = [
     { day: 'Mon', courses: 18 },
