@@ -1824,10 +1824,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/urbanist@npm:^5.2.6":
-  version: 5.2.6
-  resolution: "@fontsource/urbanist@npm:5.2.6"
-  checksum: 10c0/c499eddc2d8c727c0ba7b1c92907205117b6b3ca8953a96237dc60f24f8f979cafd08034960ad5814825342be16ba9fc1884ba4bbe896822617fe7bcbbcf6e4c
+"@fontsource/urbanist@npm:^5.2.7":
+  version: 5.2.7
+  resolution: "@fontsource/urbanist@npm:5.2.7"
+  checksum: 10c0/82996a84907069fc8356e505d422f4d113076259b4c68d42d974443e396702763254ed3e7fb20c2e8f5ee57330df0defa16e9fb9ba5e0e407a06d28efaa4decc
   languageName: node
   linkType: hard
 
@@ -11269,7 +11269,7 @@ __metadata:
     "@fontsource/inter": "npm:^5.2.6"
     "@fontsource/noto-sans": "npm:^5.2.7"
     "@fontsource/roboto": "npm:^5.2.7"
-    "@fontsource/urbanist": "npm:^5.2.6"
+    "@fontsource/urbanist": "npm:^5.2.7"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.6.4"
     "@testing-library/react": "npm:^16.3.0"

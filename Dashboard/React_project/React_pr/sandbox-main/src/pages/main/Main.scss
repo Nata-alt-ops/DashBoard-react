@@ -355,7 +355,7 @@
 
          button{
           border-radius: 8px;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
           border: 1px solid #e2e3e5;
           background-color: #ffffff;
           width: 100%;
@@ -402,6 +402,26 @@
             
             
           }
+          .c{
+            margin-left: 140px;
+            fill: #06080c;
+            cursor: pointer;
+
+            
+
+            &:hover{
+              fill:#3e80f9
+            }
+          }
+           .c1{
+            margin-left: 150px;
+            fill: #06080c;
+            cursor: pointer;
+
+            &:hover{
+              fill:#3e80f9
+            }
+          }
 
           
          }
@@ -409,8 +429,53 @@
        
 
        }
+      }
+      
     }
-    
-  }
+    .card_grah{
+      margin-top: 24px;
+      margin-left: 24px;
+
+      .card{
+        border-radius: 12px;
+        border:none;
+
+        .card-header{
+          background-color: #ffffff;
+          border-radius: 12px 12px 0 0 ;
+          box-sizing: border-box;
+          
+          h5{
+            font-family: 'Urbanist', sans-serif !important;
+          font-size: 18px !important;
+          font-weight: 700 !important;
+          margin: 10px;
+          }
+        }
+      }
+       .card-body {
+      padding: 16px;
+      background-color: #ffffff;
+      border-radius: 0 0 12px 12px;
+
+      .progress-chart-container {
+        position: relative;
+      }
+
+      .total-time {
+        margin: 10px 0;
+      }
+
+      .course-status {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 16px;
+      }
+    }
+
+
+    }
+
   
 }}

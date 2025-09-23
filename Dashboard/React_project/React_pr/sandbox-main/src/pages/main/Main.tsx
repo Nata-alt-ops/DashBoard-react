@@ -7,6 +7,9 @@ import {
   ResponsiveContainer,
   Tooltip,
   CartesianGrid,
+  PieChart,
+  Pie,
+  Cell 
 } from 'recharts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -14,9 +17,11 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import '@fontsource/urbanist/700.css'; 
 import './Main.scss';
 
 export const Main = () => {
+  const [hovered, setHovered] = useState<number | null>(null);
   
 
   const trendData = [
@@ -441,7 +446,7 @@ export const Main = () => {
                           <p className='text_button2'>Due in 9 days</p>
                         </div>
 
-                        <svg width="15" height="15" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                        <svg className='c' width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64645 1.64645C4.84171 1.45118 5.15829 1.45118 5.35355 1.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L5.35355 14.3536C5.15829 14.5488 4.84171 14.5488 4.64645 14.3536C4.45118 14.1583 4.45118 13.8417 4.64645 13.6464L10.2929 8L4.64645 2.35355C4.45118 2.15829 4.45118 1.84171 4.64645 1.64645Z" />
                         </svg>
                       </button>
@@ -455,6 +460,9 @@ export const Main = () => {
                           <p className='text_button1'>PHP Dvelopment</p>
                           <p className='text_button2'>Due in 2 days</p>
                         </div>
+                        <svg className='c' width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64645 1.64645C4.84171 1.45118 5.15829 1.45118 5.35355 1.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L5.35355 14.3536C5.15829 14.5488 4.84171 14.5488 4.64645 14.3536C4.45118 14.1583 4.45118 13.8417 4.64645 13.6464L10.2929 8L4.64645 2.35355C4.45118 2.15829 4.45118 1.84171 4.64645 1.64645Z" />
+                        </svg>
                       </button>
                       <button className='d-flex justify-content-start align-items-center '>
                         <div className='l d-flex justify-content-center align-items-center'>
@@ -465,9 +473,123 @@ export const Main = () => {
                           <p className='text_button1'>Graphic Design</p>
                           <p className='text_button2'>Due in 5 days</p>
                         </div>
+                        <svg className='c1' width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64645 1.64645C4.84171 1.45118 5.15829 1.45118 5.35355 1.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L5.35355 14.3536C5.15829 14.5488 4.84171 14.5488 4.64645 14.3536C4.45118 14.1583 4.45118 13.8417 4.64645 13.6464L10.2929 8L4.64645 2.35355C4.45118 2.15829 4.45118 1.84171 4.64645 1.64645Z" />
+                        </svg>
                       </button>
                     </div>
                   </div>
+
+                  <div className='card_grah'>
+  <div className='card'>
+    <div className='card-header'>
+      <h5>My Progress</h5>
+    </div>
+    <div className="card-body">
+      {/* Круговая диаграмма */}
+      <div className="progress-chart-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '180px' }}>
+        <ResponsiveContainer width={160} height={160}>
+          <PieChart>
+            {/* Внешнее кольцо: общее время */}
+            <Pie
+              data={[{ name: 'Total', value: 100 }]}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={70}
+              fill="#e0e0e0"
+              stroke="none"
+              isAnimationActive={false}
+            />
+            {/* Внутреннее кольцо: текущее время */}
+            <Pie
+              data={[{ name: 'Completed', value: 82 }]}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={70}
+              fill="#3e80f9"
+              stroke="none"
+              isAnimationActive={false}
+              onMouseEnter={() => setHovered(0)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <Cell fill={hovered === 0 ? '#2a6dc9' : '#3e80f9'} />
+            </Pie>
+
+            <Tooltip
+              isAnimationActive={false}
+              content={({ active, payload }) => {
+                if (active && payload && payload.length) {
+                  return (
+                    <div style={{
+                      backgroundColor: 'white',
+                      border: '1px solid #d5dbe7',
+                      borderRadius: '8px',
+                      padding: '8px',
+                      fontSize: '12px',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+                    }}>
+                      <p style={{ margin: '0', fontWeight: 'bold' }}>Progress</p>
+                      <p style={{ margin: '0', color: '#3e80f9' }}>{payload[0].value}%</p>
+                    </div>
+                  );
+                }
+                return null;
+              }}
+            />
+
+            {/* Центральный текст */}
+            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="bold" fill="#0f141f">
+              82%
+            </text>
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Общее время */}
+      <div className="total-time" style={{ textAlign: 'center', margin: '10px 0' }}>
+        <p style={{ color: '#0c1018', fontSize: '14px', fontWeight: 500 }}>Total hour: 6h 32 min</p>
+      </div>
+
+      {/* Статусы курсов */}
+      <div className="course-status" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '16px' }}>
+        {[
+          { label: 'Completed', value: 60, total: 60, color: '#3e80f9' },
+          { label: 'Completed', value: 60, total: 60, color: '#27cea7' },
+          { label: 'Completed', value: 60, total: 60, color: '#ff9f43' },
+        ].map((item, index) => (
+          <div key={index} style={{ textAlign: 'center' }}>
+            <div
+              style={{
+                width: '100%',
+                height: '8px',
+                backgroundColor: '#e0e0e0',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                marginBottom: '4px',
+              }}
+            >
+              <div
+                style={{
+                  width: `${(item.value / item.total) * 100}%`,
+                  height: '100%',
+                  backgroundColor: item.color,
+                  transition: 'width 0.3s ease',
+                }}
+              ></div>
+            </div>
+            <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.value}/{item.total}</p>
+            <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>   
+
+
+
 
                   </div>
                   </div>
