@@ -322,15 +322,52 @@ header {
   
   
   .top-navbar {
-    background-color: #ff3a3a;
+    background-color: #ffffff;
     z-index: 999;
     height: 75px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    border-bottom: 1px solid #a8a8a8;
 
-    .g{
+    button{
+      width: 350px;
+      height: 40px;
+      margin-left: 276px;
+      border-radius: 100px;
+      border:none;
+      background-color: #ecf2fe;
+
+      button{
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+
+        i{
+          color: #dfdfe7;
+        }
+      }
+      input{
+        border: none;
+        background: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        color: #0f141f;
+        padding-left: 10px;
+        padding-top: 10px;
+
+        &:focus{
+          border: none;
+          background: none;
+          box-shadow: none;
+        }
+      }
+      
+    }
+
+   /* .g{
       margin-left: 275px;
       background-color: #ecf2fe;
       width: 350px;
@@ -339,32 +376,36 @@ header {
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
       border: none;
 
-      .search{
-       width: 350px;
-       height: calc(100% - 10px);
-       border: none;
-       background: none;
-       font-family: 'Roboto', sans-serif;
-       font-size: 15px;
-       color: #5c6066;
-       
-      }
       button{
-        border: none;
-        background: none;
-        padding-right: 5px;
-        padding-left: 15px;
-      
-  
+        width: calc(100% - 30px);
+        height: 100%;
      
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+
+        .search{
+          width: 330px;
+          height: calc(100% - 10px);
+          border: none;
+          background: none;
+          font-family: 'Roboto', sans-serif;
+          font-size: 15px;
+          color: #5c6066;
+          
+         }
+      
       }
-    }
+
+    }*/
 
     .user{
-      width: auto;
-      height: auto;
+      width: 182px;
+      height: 42px;
       background-color: #5c6066;
 
       .shaking-animation {
@@ -399,66 +440,62 @@ header {
     }
 
   }
-  
-
-
-.normal_button {
-  background-color: #ffffff;
-  fill: #667797;
-
-  .button_svg1 {
-    fill: #667797;
-  }
-
-  .color_down {
-    fill: #667797;
-  }
-
-  &:hover {
-    background-color: #9bcbfc;
-    color: #1d72f2;
-
-    .text_button1{
-      color: #1d72f2 !important;
-    }
+.button_couses_container,
+.button_authetication_container {
+  .normal_button {
+    background-color: #ffffff !important;
+    color: #667797 !important;
+    border: 1px solid transparent !important;
 
     .button_svg1 {
-      fill: #1d72f2;
+      fill: #667797 !important;
     }
 
     .color_down {
-      fill: #1d72f2;
+      fill: #667797 !important;
+    }
+
+    .text_button1 {
+      color: #667797 !important;
+    }
+
+    &:hover {
+      background-color: #9bcbfc !important;
+      color: #1d72f2 !important;
+
+      .text_button1 {
+        color: #1d72f2 !important;
+      }
+
+      .button_svg1,
+      .color_down {
+        fill: #1d72f2 !important;
+      }
     }
   }
-}
 
-.active_button {
-  background-color: #1d72f2;
-  color: #ffffff;
+  .active_button {
+    background-color: #1d72f2 !important;
+    color: #ffffff !important;
+    border: 1px solid #1d72f2 !important;
 
-  .button_svg1 {
-    fill: #ffffff;
-  }
+    .button_svg1,
+    .color_down {
+      fill: #ffffff !important;
+    }
 
-  .color_down {
-    fill: #ffffff;
-  }
-  .text_button1{
+    .text_button1 {
       color: #ffffff !important;
     }
 
-  &:hover {
-    background-color: #155bc8; // чуть темнее, но всё ещё яркий
-    color: #ffffff;
+    &:hover {
+      background-color: #155bc8 !important;
+      color: #ffffff !important;
 
-    
-
-    .button_svg1 {
-      fill: #ffffff;
-    }
-
-    .color_down {
-      fill: #ffffff;
+      .button_svg1,
+      .color_down {
+        fill: #ffffff !important;
+      }
     }
   }
 }
