@@ -9,7 +9,7 @@ import {
   CartesianGrid,
   PieChart,
   Pie,
-  Cell 
+  Cell
 } from 'recharts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -22,6 +22,24 @@ import './Main.scss';
 
 export const Main = () => {
   const [hovered, setHovered] = useState<number | null>(null);
+
+  const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
+
+  const data1 = [
+    { name: 'Blue', value: 82, color: '#45a9e1' },
+    { name: 'Green', value: 75, color: '#2ecc71' },
+    { name: 'Black', value: 90, color: '#000000' },
+  ];
+
+  // Обработчики событий
+  const handleMouseEnter = (entry: any) => {
+    setHoveredPercent(entry.percent * 100);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredPercent(null);
+  };
+
   
 
   const trendData = [
@@ -51,6 +69,27 @@ export const Main = () => {
     { month: 'Nov', study: 10, test: 20 },
     { month: 'Dec', study: 15, test: 28 },
   ];
+
+  const data_1 = [
+    {
+    name: '18-24',
+    uv: 31.47,
+    pv: 2400,
+    fill: '#8884d8',
+  },
+  {
+    name: '25-29',
+    uv: 26.69,
+    pv: 4567,
+    fill: '#83a6ed',
+  },
+  {
+    name: '30-34',
+    uv: 15.69,
+    pv: 1398,
+    fill: '#8dd1e1',
+  }
+  ]
 
   // Функция для форматирования оси Y
   const formatYAxis = (value: number) => `${value}Hr`;
@@ -486,66 +525,63 @@ export const Main = () => {
       <h5>My Progress</h5>
     </div>
     <div className="card-body">
-      {/* Круговая диаграмма */}
-      <div className="progress-chart-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '180px' }}>
-        <ResponsiveContainer width={160} height={160}>
-          <PieChart>
-            {/* Внешнее кольцо: общее время */}
-            <Pie
-              data={[{ name: 'Total', value: 100 }]}
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={70}
-              fill="#e0e0e0"
-              stroke="none"
-              isAnimationActive={false}
-            />
-            {/* Внутреннее кольцо: текущее время */}
-            <Pie
-              data={[{ name: 'Completed', value: 82 }]}
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={70}
-              fill="#3e80f9"
-              stroke="none"
-              isAnimationActive={false}
-              onMouseEnter={() => setHovered(0)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              <Cell fill={hovered === 0 ? '#2a6dc9' : '#3e80f9'} />
-            </Pie>
+      <ResponsiveContainer width="100%" height={160}>
+        <PieChart>
+          {/* Внешнее синее кольцо */}
+          <Pie
+            data={[{ name: 'Blue', value: 82 }]}
+            cx="50%"
+            cy="50%"
+            innerRadius={65}
+            outerRadius={75}
+            fill="#fff"
+            dataKey="value"
+            stroke="none"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Cell fill="#45a9e1" />
+          </Pie>
 
-            <Tooltip
-              isAnimationActive={false}
-              content={({ active, payload }) => {
-                if (active && payload && payload.length) {
-                  return (
-                    <div style={{
-                      backgroundColor: 'white',
-                      border: '1px solid #d5dbe7',
-                      borderRadius: '8px',
-                      padding: '8px',
-                      fontSize: '12px',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
-                    }}>
-                      <p style={{ margin: '0', fontWeight: 'bold' }}>Progress</p>
-                      <p style={{ margin: '0', color: '#3e80f9' }}>{payload[0].value}%</p>
-                    </div>
-                  );
-                }
-                return null;
-              }}
-            />
+          {/* Среднее зелёное кольцо */}
+          <Pie
+            data={[{ name: 'Green', value: 75 }]}
+            cx="50%"
+            cy="50%"
+            innerRadius={50}
+            outerRadius={65}
+            fill="#fff"
+            dataKey="value"
+            stroke="none"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Cell fill="#2ecc71" />
+          </Pie>
 
-            {/* Центральный текст */}
-            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="bold" fill="#0f141f">
-              82%
-            </text>
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
+          {/* Внутреннее чёрное кольцо */}
+          <Pie
+            data={[{ name: 'Black', value: 90 }]}
+            cx="50%"
+            cy="50%"
+            innerRadius={35}
+            outerRadius={50}
+            fill="#fff"
+            dataKey="value"
+            stroke="none"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Cell fill="#000000" />
+          </Pie>
+
+          {/* Текст в центре */}
+          <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="bold">
+            {hoveredPercent !== null ? `${hoveredPercent}%` : '82%'}
+          </text>
+        </PieChart>
+      </ResponsiveContainer>
+        
 
       {/* Общее время */}
       <div className="total-time" style={{ textAlign: 'center', margin: '10px 0' }}>
