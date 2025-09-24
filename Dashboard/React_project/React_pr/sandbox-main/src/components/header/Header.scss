@@ -329,43 +329,49 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid #a8a8a8;
+    border-bottom: 1px solid #d5dbe7;
 
-    button{
-      width: 350px;
-      height: 40px;
-      margin-left: 276px;
-      border-radius: 100px;
-      border:none;
-      background-color: #ecf2fe;
+   .search {
+  width: 350px;
+  height: 40px;
+  margin-left: 276px;
+  border-radius: 100px;
+  border: none;
+  background-color: #ecf2fe;
+  transition: border 0.2s;
 
-      button{
-        margin-left: 5px;
-        width: 20px;
-        height: 20px;
-        margin-top: 10px;
+  button {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: none;
+    background: none;
 
-        i{
-          color: #dfdfe7;
-        }
-      }
-      input{
-        border: none;
-        background: none;
-        font-family: 'Roboto', sans-serif;
-        font-size: 15px;
-        color: #0f141f;
-        padding-left: 10px;
-        padding-top: 10px;
-
-        &:focus{
-          border: none;
-          background: none;
-          box-shadow: none;
-        }
-      }
-      
+    svg {
+      fill: #dfdfe7;
     }
+  }
+
+  input {
+    border: none;
+    background: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #7b869e;
+    padding-left: 10px;
+    padding-top: 10px;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &.search-focused {
+    border: 1px solid #0d6efd; // Синяя обводка
+  }
+}
 
    /* .g{
       margin-left: 275px;
@@ -404,42 +410,107 @@ header {
     }*/
 
     .user{
-      width: 182px;
+      width: auto;
       height: 42px;
       background-color: #4e76b3;
+      margin-right: 24px;
+      gap:10px;
+
+      
+
+      .dropdown {
+        border-radius: 100px;
+        background-color: #155bc8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: #ecf2fe;
+            display: flex;
+        align-items: center;
+        justify-content: center;   
+      }
+    }
+}
+
+      
 
       .shaking-animation {
+        animation: shake-cycle 5s infinite;
   &:hover {
     animation: shake 0.5s ease-in-out;
   }
   
-  @keyframes shake {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-  }
+  @keyframes shake-cycle {
+        0%, 90% { transform: rotate(0deg); }      
+        91% { transform: rotate(-20deg); }        // начало тряски
+        93% { transform: rotate(10deg); }
+        95% { transform: rotate(-5deg); }
+        97% { transform: rotate(20deg); }          // конец тряски
+        100% { transform: rotate(0deg); }         // конец цикла
+    }
 }
 
 .alarm-notify {
-  width: 8px;
-  height: 8px;
-  background-color: #ff4757;
-  border-radius: 50%;
-  top: -2px;
-  right: -2px;
-  animation: pulse 2s infinite;
-  
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.7; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-}
-    }
+    width: 8px;
+    height: 8px;
+    background-color: #ff4757;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;     // поднимает кружок выше
+    right: 0px;   // сдвигает вправо
+    animation: pulse 2s infinite;
 
-  }
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+}
+      .dropdown-menu{
+        width: 328px;
+        height: 367px;
+        border-radius: 12px;
+        padding-top: 0px;
+        
+        .card-header{
+          background-color: #3e80f9;
+          color: #ffffff;
+          width: 100%;
+          height: 46px;
+          padding-top: 5px;
+          border-radius: 12px 12px 0 0;
+
+          .element{
+            padding: 0px 15px;
+            h5{
+              font-family: 'Urbanist', sans-serif;
+              font-weight: 600px;
+              
+            }
+            button{
+              border-radius: 5px;
+              width: 43px;
+              height: 25px;
+              font-size: 14px;
+              font-family: 'Roboto', sans-serif;
+              
+            }
+
+            
+            
+          }
+
+          }
+        }
+      }
+    
+
+  
 .button_couses_container,
 .button_authetication_container {
   .normal_button {
