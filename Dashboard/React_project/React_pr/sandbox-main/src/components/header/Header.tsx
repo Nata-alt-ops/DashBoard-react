@@ -7,7 +7,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-
+import { Bell, Globe } from '@phosphor-icons/react';
 export const Header = () => {
     // Отдельные состояния для каждого выпадающего меню
     const [isDashboardOpen, setIsDashboardOpen] = useState(false);
@@ -310,10 +310,10 @@ export const Header = () => {
                 </button>
 
                 <div className="user ">
-                    <div className="flex-align gap-8 d-flex">
+                    <div className="d-flex">
                         <div className="dropdown">
                             <button className="dropdown-btn shaking-animation text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span className="position-relative">
+                    <span className="position">
                         <i className="ph ph-bell"></i>
                         <span className="alarm-notify position-absolute end-0"></span>
                     </span>
