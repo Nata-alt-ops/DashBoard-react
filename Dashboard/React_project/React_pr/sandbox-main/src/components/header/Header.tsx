@@ -7,6 +7,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+
 export const Header = () => {
     // Отдельные состояния для каждого выпадающего меню
     const [isDashboardOpen, setIsDashboardOpen] = useState(false);
@@ -318,163 +319,106 @@ export const Header = () => {
                 </div>
             </div>
 
-            <div className="top-navbar d-flex justify-content-between gap-16 align-items-center">
-                  <button
-                    className={`d-flex justify-content-start search ${isFocused ? 'search-focused' : ''}`}
-                    style={{ outline: 'none' }}
-                >
-                    <button type="submit" className="input-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 256 256">
-                            <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-                        </svg>
-                    </button>
-                    <input
-                        type="text"
-                        className="form-control ps-40 h-40 border-none rounded-pill placeholder-15"
-                        value={searchValue}
-                        onChange={(e) => setSearchValue(e.target.value)}
-                        onFocus={handleFocus}
-                        onBlur={handleBlur}
-                    />
-                </button>
+        <div className="top-navbar d-flex justify-content-between gap-16 align-items-center">
+    {/* Search input - исправленный */}
+    <div className={`d-flex justify-content-start search ${isFocused ? 'search-focused' : ''}`}>
+        <button type="submit" className="input-icon border-0 bg-transparent">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+            </svg>
+        </button>
+        <input
+            type="text"
+            className="form-control ps-40 h-40 border-none rounded-pill placeholder-15 border-0 bg-transparent"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+        />
+    </div>
 
-                <div className="user d-flex justify-content-center align-items-center ">
-                    <div className="dropdown">
-                    <button className="dropdown-btn shaking-animation text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-                        <span className="position-relative d-flex align-items-center justify-content-center" style={{ width: '20px', height: '20px' }}>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.3281 13.7453C16.8945 12.9984 16.25 10.8852 16.25 8.125C16.25 6.4674 15.5915 4.87769 14.4194 3.70558C13.2473 2.53348 11.6576 1.875 9.99999 1.875C8.34239 1.875 6.75268 2.53348 5.58058 3.70558C4.40848 4.87769 3.74999 6.4674 3.74999 8.125C3.74999 10.8859 3.10468 12.9984 2.67109 13.7453C2.56036 13.9352 2.50166 14.1509 2.50091 14.3707C2.50015 14.5905 2.55737 14.8066 2.66679 14.9973C2.77621 15.1879 2.93396 15.3463 3.12414 15.4565C3.31432 15.5667 3.53019 15.6248 3.74999 15.625H6.93828C7.08247 16.3306 7.46595 16.9647 8.02385 17.4201C8.58175 17.8756 9.27982 18.1243 9.99999 18.1243C10.7202 18.1243 11.4182 17.8756 11.9761 17.4201C12.534 16.9647 12.9175 16.3306 13.0617 15.625H16.25C16.4697 15.6247 16.6855 15.5665 16.8756 15.4562C17.0656 15.346 17.2233 15.1875 17.3326 14.9969C17.4419 14.8063 17.4991 14.5903 17.4983 14.3705C17.4975 14.1508 17.4388 13.9351 17.3281 13.7453ZM9.99999 16.875C9.61235 16.8749 9.23428 16.7546 8.91781 16.5308C8.60133 16.3069 8.36202 15.9905 8.23281 15.625H11.7672C11.638 15.9905 11.3987 16.3069 11.0822 16.5308C10.7657 16.7546 10.3876 16.8749 9.99999 16.875ZM3.74999 14.375C4.35156 13.3406 4.99999 10.9438 4.99999 8.125C4.99999 6.79892 5.52678 5.52715 6.46446 4.58947C7.40214 3.65178 8.67391 3.125 9.99999 3.125C11.3261 3.125 12.5978 3.65178 13.5355 4.58947C14.4732 5.52715 15 6.79892 15 8.125C15 10.9414 15.6469 13.3383 16.25 14.375H3.74999Z" fill="black"/>
+    <div className="user d-flex justify-content-center align-items-center gap-2">
+        {/* Уведомления */}
+        <div className="dropdown">
+            <button 
+                className="dropdown-btn shaking-animation text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center border-0" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+            >
+                <span className="position-relative d-flex align-items-center justify-content-center" style={{ width: '20px', height: '20px' }}>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.3281 13.7453C16.8945 12.9984 16.25 10.8852 16.25 8.125C16.25 6.4674 15.5915 4.87769 14.4194 3.70558C13.2473 2.53348 11.6576 1.875 9.99999 1.875C8.34239 1.875 6.75268 2.53348 5.58058 3.70558C4.40848 4.87769 3.74999 6.4674 3.74999 8.125C3.74999 10.8859 3.10468 12.9984 2.67109 13.7453C2.56036 13.9352 2.50166 14.1509 2.50091 14.3707C2.50015 14.5905 2.55737 14.8066 2.66679 14.9973C2.77621 15.1879 2.93396 15.346 3.12414 15.4565C3.31432 15.5667 3.53019 15.6248 3.74999 15.625H6.93828C7.08247 16.3306 7.46595 16.9647 8.02385 17.4201C8.58175 17.8756 9.27982 18.1243 9.99999 18.1243C10.7202 18.1243 11.4182 17.8756 11.9761 17.4201C12.534 16.9647 12.9175 16.3306 13.0617 15.625H16.25C16.4697 15.6247 16.6855 15.5665 16.8756 15.4562C17.0656 15.346 17.2233 15.1875 17.3326 14.9969C17.4419 14.8063 17.4991 14.5903 17.4983 14.3705C17.4975 14.1508 17.4388 13.9351 17.3281 13.7453ZM9.99999 16.875C9.61235 16.8749 9.23428 16.7546 8.91781 16.5308C8.60133 16.3069 8.36202 15.9905 8.23281 15.625H11.7672C11.638 15.9905 11.3987 16.3069 11.0822 16.5308C10.7657 16.7546 10.3876 16.8749 9.99999 16.875ZM3.74999 14.375C4.35156 13.3406 4.99999 10.9438 4.99999 8.125C4.99999 6.79892 5.52678 5.52715 6.46446 4.58947C7.40214 3.65178 8.67391 3.125 9.99999 3.125C11.3261 3.125 12.5978 3.65178 13.5355 4.58947C14.4732 5.52715 15 6.79892 15 8.125C15 10.9414 15.6469 13.3383 16.25 14.375H3.74999Z" fill="black"/>
+                    </svg>
+                    <span className="alarm-notify position-absolute"></span>
+                </span>
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <div className="card-header ">
+                    <div className="element d-flex bd-highlight mb-3">
+                        <h5 className="p-2 flex-grow-1 bd-highlight text-xl fw-semibold text-white mb-0">Notifications</h5>
+                        <button className="bg-white v border-0">New</button>
+                        <button type="button" className="close-dropdown border-0 bg-transparent">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 256 256">
+                                <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
                             </svg>
-                            <span className="alarm-notify position-absolute"></span>
-                        </span>
-                    </button>
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <div className="card-header ">
-                            <div className="element d-flex bd-highlight ">
-                                <h5 className="p-2 flex-grow-1 bd-highlight text-xl fw-semibold text-white mb-0">Notifications</h5>
-                                <div className="p-2 bd-highlight">
-                                    <button className="bg-white">New</button>
-                                    </div>
-                                <div className="p-2 bd-highlight">
-                                    <button type="button" className="close-dropdown"><i className="ph ph-x"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </ul>
-                </div>
-                    <div className="dropdown">
-                        <button className="text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i className="ph ph-globe"></i>
-                </button>
-                <div className="dropdown-menu dropdown-menu--md border-0 bg-transparent p-0">
-                    <div className="card border border-gray-100 rounded-12 box-shadow-custom">
-                        <div className="card-body">
-                            <div className="max-h-270 overflow-y-auto scroll-sm pe-8">
-                                <div className="form-check form-radio d-flex align-items-center justify-content-between ps-0 mb-16">
-                                  <label className="ps-0 form-check-label line-height-1 fw-medium text-secondary-light" htmlFor="arabic"> 
-                                    <span className="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-8"> 
-                                      <img src="assets/images/thumbs/flag1.png" alt="" className="w-32-px h-32-px border borde border-gray-100 rounded-circle flex-shrink-0" />
-                                      <span className="text-15 fw-semibold mb-0">Arabic</span>
-                                    </span>
-                                  </label>
-                                  <input className="form-check-input" type="radio" name="language" id="arabic" />
-                                </div>
-                                <div className="form-check form-radio d-flex align-items-center justify-content-between ps-0 mb-16">
-                                  <label className="ps-0 form-check-label line-height-1 fw-medium text-secondary-light" htmlFor="germany"> 
-                                    <span className="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-8"> 
-                                      <img src="assets/images/thumbs/flag2.png" alt="" className="w-32-px h-32-px border borde border-gray-100 rounded-circle flex-shrink-0" />
-                                      <span className="text-15 fw-semibold mb-0">Germany</span>
-                                    </span>
-                                  </label>
-                                  <input className="form-check-input" type="radio" name="language" id="germany" />
-                                </div>
-                                <div className="form-check form-radio d-flex align-items-center justify-content-between ps-0 mb-16">
-                                  <label className="ps-0 form-check-label line-height-1 fw-medium text-secondary-light" htmlFor="english"> 
-                                    <span className="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-8"> 
-                                      <img src="assets/images/thumbs/flag3.png" alt="" className="w-32-px h-32-px border borde border-gray-100 rounded-circle flex-shrink-0" />
-                                      <span className="text-15 fw-semibold mb-0">English</span>
-                                    </span>
-                                  </label>
-                                  <input className="form-check-input" type="radio" name="language" id="english" />
-                                </div>
-                                <div className="form-check form-radio d-flex align-items-center justify-content-between ps-0">
-                                  <label className="ps-0 form-check-label line-height-1 fw-medium text-secondary-light" htmlFor="spanish"> 
-                                    <span className="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-8"> 
-                                      <img src="assets/images/thumbs/flag4.png" alt="" className="w-32-px h-32-px border borde border-gray-100 rounded-circle flex-shrink-0" />
-                                      <span className="text-15 fw-semibold mb-0">Spanish</span>
-                                    </span>
-                                  </label>
-                                  <input className="form-check-input" type="radio" name="language" id="spanish" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                     <div className="dropdown">
-                        <button className="users arrow-down-icon border border-gray-200 rounded-pill p-4 d-inline-block pe-40 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:'72px', height:'42px'}}>
-                            <span className="position-relative">
-                                <img src="assets/images/thumbs/user-img.png" alt="Image" className="h-32 w-32 rounded-circle" />
-                                <span className="activation-badge w-8 h-8 position-absolute inset-block-end-0 inset-inline-end-0"></span>
-                            </span>
                         </button>
-                        <div className="dropdown-menu dropdown-menu--lg border-0 bg-transparent p-0">
-                <div className="card border border-gray-100 rounded-12 box-shadow-custom">
-                    <div className="card-body">
-                        <div className="flex-align gap-8 mb-20 pb-20 border-bottom border-gray-100">
-                            <img src="assets/images/thumbs/user-img.png" alt="" className="w-54 h-54 rounded-circle"/>
-                            <div className="">
-                                <h4 className="mb-0">Michel John</h4>
-                                <p className="fw-medium text-13 text-gray-200">examplemail@mail.com</p>
-                            </div>
-                        </div>
-                        <ul className="max-h-270 overflow-y-auto scroll-sm pe-4">
-                            <li className="mb-4">
-                                <a href="setting.html" className="py-12 text-15 px-20 hover-bg-gray-50 text-gray-300 rounded-8 flex-align gap-8 fw-medium text-15">
-                                    <span className="text-2xl text-primary-600 d-flex"><i className="ph ph-gear"></i></span>
-                                    <span className="text">Account Settings</span>
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="pricing-plan.html" className="py-12 text-15 px-20 hover-bg-gray-50 text-gray-300 rounded-8 flex-align gap-8 fw-medium text-15">
-                                    <span className="text-2xl text-primary-600 d-flex"><i className="ph ph-chart-bar"></i></span>
-                                    <span className="text">Upgrade Plan</span>
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="analytics.html" className="py-12 text-15 px-20 hover-bg-gray-50 text-gray-300 rounded-8 flex-align gap-8 fw-medium text-15">
-                                    <span className="text-2xl text-primary-600 d-flex"><i className="ph ph-chart-line-up"></i></span>
-                                    <span className="text">Daily Activity</span>
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="message.html" className="py-12 text-15 px-20 hover-bg-gray-50 text-gray-300 rounded-8 flex-align gap-8 fw-medium text-15">
-                                    <span className="text-2xl text-primary-600 d-flex"><i className="ph ph-chats-teardrop"></i></span>
-                                    <span className="text">Inbox</span>
-                                </a>
-                            </li>
-                            <li className="mb-4">
-                                <a href="email.html" className="py-12 text-15 px-20 hover-bg-gray-50 text-gray-300 rounded-8 flex-align gap-8 fw-medium text-15">
-                                    <span className="text-2xl text-primary-600 d-flex"><i className="ph ph-envelope-simple"></i></span>
-                                    <span className="text">Email</span>
-                                </a>
-                            </li>
-                            <li className="pt-8 border-top border-gray-100">
-                                <a href="sign-in.html" className="py-12 text-15 px-20 hover-bg-danger-50 text-gray-300 hover-text-danger-600 rounded-8 flex-align gap-8 fw-medium text-15">
-                                    <span className="text-2xl text-danger-600 d-flex"><i className="ph ph-sign-out"></i></span>
-                                    <span className="text">Log Out</span>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-                     </div>
-                    
 
+                <div className="card-body">
+                    <div className="max-h-270 overflow-y-auto scroll-sm b">
+                        <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-16">
+                            <div 
+                                className="photo_profile rounded-circle"  
+                                style={{ 
+                                    backgroundImage: `url('/notification-img1.png')`,
+                                    width: '48px',
+                                    height: '48px',
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}
+                            ></div>
+                            <div className="d-flex justify-content-between align-items-center info_profile flex-grow-1  ">
+                                <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2 ">
+                                    Ashwin Bose is requesting access to Design File - Final Project.
+                                </p>
+                         
+                                <div className="dropdown flex-shrink-0">
+                                    <button 
+                                        className="text-gray-200 rounded-4 border-0 bg-transparent" 
+                                        type="button" 
+                                        data-bs-toggle="dropdown" 
+                                        aria-expanded="false"
+                                        style={{ padding: '5px' }}
+                                    >
+                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                        </svg>
+                                    </button>
+                                    <ul className="dropdown-menu">
+                                        <li><div  className="dropdown-item">Mark as read</div></li>
+                                        <li><div className="dropdown-item">Delete Notification</div></li>
+                                        <li><div className="dropdown-item">Report</div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center info_profile flex-grow-1 ">
+                               
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
                 </div>
-            </div>
+            </ul>
+
+
+        </div>
+    </div>
+</div>
 
         </header>
     );

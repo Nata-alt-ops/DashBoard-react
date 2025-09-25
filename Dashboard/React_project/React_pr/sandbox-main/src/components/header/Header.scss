@@ -339,6 +339,7 @@ header {
   border: none;
   background-color: #ecf2fe;
   transition: border 0.2s;
+  
 
   button {
     margin-left: 5px;
@@ -373,41 +374,7 @@ header {
   }
 }
 
-   /* .g{
-      margin-left: 275px;
-      background-color: #ecf2fe;
-      width: 350px;
-      height: calc(100% - 36px);
-      overflow: hidden;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      border: none;
-
-      button{
-        width: calc(100% - 30px);
-        height: 100%;
-     
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-
-
-        .search{
-          width: 330px;
-          height: calc(100% - 10px);
-          border: none;
-          background: none;
-          font-family: 'Roboto', sans-serif;
-          font-size: 15px;
-          color: #5c6066;
-          
-         }
-      
-      }
-
-    }*/
+  
 
     .user{
       width: auto;
@@ -492,19 +459,62 @@ header {
               font-weight: 600px;
               
             }
+
+          
             button{
               border-radius: 5px;
               width: 43px;
               height: 25px;
               font-size: 14px;
               font-family: 'Roboto', sans-serif;
+              margin-top: 5px;
+
+              &:hover{
+                color: #3e80f9;
+              }
               
             }
+            .close-dropdown{
+              background: none;
+              padding: 0px;
 
-            
-            
+              svg{
+                fill:#ffffff;
+               
+              }
+            }
           }
+          }
+          .card-body{
+            .b{
+              padding: 24px 24px;
+             
+              .info_profile{
+                margin-left:10px;
+                width: 214px;
+                height: 45px;
 
+                p{
+                  color: #667797;
+                  cursor: pointer;
+                  font-size: 15px;
+                  font-family: 'Roboto', sans-serif;
+                  font-weight: 500;
+                  line-height:22.5px;
+                  width: auto;
+                  height: 45px;
+                  white-space: wrap;      
+                  overflow: hidden; 
+                  -webkit-line-clamp: 2;        
+                  -webkit-box-orient: vertical;
+                  text-overflow: ellipsis;
+
+                }
+                .dropdown{
+                  background: none;
+                }
+              }
+            }
           }
         }
       }
