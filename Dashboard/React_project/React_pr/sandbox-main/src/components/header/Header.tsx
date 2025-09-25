@@ -367,7 +367,7 @@ export const Header = () => {
                 </div>
 
                 <div className="card-body">
-                    <div className="max-h-270 overflow-y-auto scroll-sm b">
+                    <div className="max-h-270 overflow-y-auto scroll-sm b bg-green">
                         <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-16">
                            
                             <div 
@@ -403,10 +403,9 @@ export const Header = () => {
                                         <li><div className="dropdown-item">Report</div></li>
                                     </ul>
                                 </div>
+                    
                             </div>
-                            <div className="d-flex justify-content-between align-items-center info_profile flex-grow-1 ">
-                               
-                            </div>
+                            <div className="rfgri"></div>
 
 
                         </div>
