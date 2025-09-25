@@ -369,6 +369,7 @@ export const Header = () => {
                 <div className="card-body">
                     <div className="max-h-270 overflow-y-auto scroll-sm b">
                         <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-16">
+                           
                             <div 
                                 className="photo_profile rounded-circle"  
                                 style={{ 
