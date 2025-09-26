@@ -370,18 +370,11 @@ export const Header = () => {
                     <div className="max-h-270 overflow-y-auto scroll-sm b bg-green">
                         <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
                            
-                            <div 
-                                className="photo_profile rounded-circle"  
-                                style={{ 
-                                    backgroundImage: `url('/notification-img1.png')`,
-                                    width: '58px',
-                                    height: '48px',
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center'
-                                }}
-                            ></div>
+                            <div className="photo_profile rounded-circle"  style={{ width: '48px', height: '48px'}}>
+                                <img src="/notification-img1.png" alt=""></img>
+                            </div>
                             <div className="info_profile d-flex flex-column ">
-                            <div className="d-flex   flex-grow-1 flex-row  justify-content-end ">
+                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  ">
                                 <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2 ">
                                     Ashwin Bose is requesting access to Design File - Final Project.
                                 </p>
@@ -394,7 +387,7 @@ export const Header = () => {
                                         aria-expanded="false"
                                         
                                     >
-                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
                                             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
                                         </svg>
                                     </button>
@@ -407,10 +400,12 @@ export const Header = () => {
                     
                             </div>
                             <div className="d-flex info_app flex-row ">
-                                <div className="d-flex bd-highlight mb-3">
-                                    <img src="./google-drive.png" alt="" className="p-2 bd-highlight img_drive"></img>
-                                    <p className="text-gray-900 text-sm text-line-1 p-2 bd-highlight ">Design brief and ideas.txt</p>
-                                    <span className="text-xs text-gray-200 flex-shrink-0 ms-auto p-2 bd-highlight">2.2 MB</span>
+                                <div className="d-flex  mb-3 flex-aligin">
+                                    <img src="/google-drive.png" alt="" className=""></img>
+                                    <div className="d-flex justify-content-between aligin-items-center m">
+                                    <p className="text-gray-900 text-sm text-line-1  ">Design brief and ideas.txt</p>
+                                    <span className="">2.2 MB</span>
+                                    </div>
                                 </div>
                             </div>
                             </div>
