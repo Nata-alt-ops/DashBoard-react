@@ -399,14 +399,18 @@ export const Header = () => {
                                 </div>
                     
                             </div>
-                            <div className="d-flex info_app flex-row ">
-                                <div className="d-flex  mb-3 flex-aligin">
+                            <div className="d-flex info_app flex-row justify-content-center align-items-center">
+                                <div className="d-flex  mb-3 justify-content-start a ">
                                     <img src="/google-drive.png" alt="" className=""></img>
-                                    <div className="d-flex justify-content-between aligin-items-center m">
+                                    <div className="d-flex justify-content-between m">
                                     <p className="text-gray-900 text-sm text-line-1  ">Design brief and ideas.txt</p>
                                     <span className="">2.2 MB</span>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="d-flex info_button flex-row justify-content-start align-items-center">
+                                <button type="button" className="btn btn-primary" aria-expanded="false">Accept</button>
+                                <button type="button" className="btn btn-outline-gray">Decline</button>
                             </div>
                             </div>
 
