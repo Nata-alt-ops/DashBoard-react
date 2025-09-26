@@ -490,9 +490,10 @@ header {
               padding: 24px 24px;
              
               .info_profile{
-                margin-left:10px;
-                width: 214px;
-                height: 45px;
+                width: 100%;
+                height: auto;
+
+              
 
                 p{
                   color: #667797;
@@ -501,7 +502,7 @@ header {
                   font-family: 'Roboto', sans-serif;
                   font-weight: 500;
                   line-height:22.5px;
-                  width: auto;
+                  width: 194px;
                   height: 45px;
                   white-space: wrap;      
                   overflow: hidden; 
@@ -513,6 +514,37 @@ header {
                 .dropdown{
                   background: none;
                 }
+                .info_app{
+                  margin-top: 10px;
+
+                  img{
+                    width: 14px;
+                    height: 14px;
+                  }
+
+                  p{
+                    white-space: nowrap;      
+                    overflow: hidden; 
+                    -webkit-line-clamp: 1;        
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    color: #06080c;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                  }
+                }
+
+
+
+
+
+
+
+
+
+
+
               }
             }
           }
