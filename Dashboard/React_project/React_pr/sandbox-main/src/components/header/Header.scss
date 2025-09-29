@@ -529,7 +529,6 @@ header {
                   height: 22px;
 
                   .a{
-                    background-color: #4c49ee;
                     width: 100%;
                     height: auto;
                     margin-top: 30px;
@@ -571,23 +570,53 @@ header {
 
                 }
                 .info_button{
-                  width: 214px;
-                  height: 33px;
-                  background-color: azure;
                   margin-top: 20px;
-                  gap: 10px;
 
-                  button{
-                    width: 80px;
+
+                  .button-1{
+                    width: 83px;
                     height: 33px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    border-radius: 5px;
+                    cursor: pointer;
 
-                    .btn-primary{
-                      background-color: #3e80f9;
+                     &:hover{
+                      background-color: #155bc8 !important;
                     }
                   }
+
+                  .button-2{
+                    width: 83px;
+                    height: 33px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    border: 1px solid #d5dbe7;
+                    background-color: #ffffff;
+                    color: #7585a5;
+                     &:hover{
+                      background-color: #7585a5 !important;
+                      color: #ffffff;
+                      border: #7585a5;
+                    }
+                  }
+                 
+                }
+                .info_time{
+                  margin-top: 10px;
+                  font-family: 'Roboto', sans-serif;
+                  font-size: 13px;
+                  font-weight: 400;
+                  color: #7585a5;
+                }
+                .info_line{
+                  width: 214px;
+                  height: 1px;
+                  background-color: #d5dbe7;
+                  margin-top: 30px;
                 }
 
 

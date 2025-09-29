@@ -353,6 +353,7 @@ export const Header = () => {
                     <span className="alarm-notify position-absolute"></span>
                 </span>
             </button>
+            {/*всплывающее окно*/}
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <div className="card-header ">
                     <div className="element d-flex bd-highlight mb-3">
@@ -367,12 +368,13 @@ export const Header = () => {
                 </div>
 
                 <div className="card-body">
-                    <div className="max-h-270 overflow-y-auto scroll-sm b bg-green">
+                    <div className="max-h-270 overflow-y-auto scroll-sm b bg-green ">
                         <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
                            
                             <div className="photo_profile rounded-circle"  style={{ width: '48px', height: '48px'}}>
                                 <img src="/notification-img1.png" alt=""></img>
                             </div>
+                            {/*инфо о первом пользователе*/}
                             <div className="info_profile d-flex flex-column ">
                             <div className="d-flex   flex-grow-1 flex-row  justify-content-start  ">
                                 <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2 ">
@@ -409,17 +411,84 @@ export const Header = () => {
                                 </div>
                             </div>
                             <div className="d-flex info_button flex-row justify-content-start align-items-center">
-                                <button type="button" className="btn btn-primary">Accept</button>
-                                <button type="button" className="btn btn-outline-gray">Decline</button>
+                                <button className="d-flex justify-content-center align-items-center me-2 button-1"
+                                style={{backgroundColor: '#3e80f9', color:'#ffffff'}}
+                                >Accept</button>
+                                <button className="d-flex justify-content-center align-items-center button-2">Decline</button>
                             </div>
+                            <div className="d-flex info_time flex-row justify-content-start align-items-center">
+                                <span>2 mins ago</span>
                             </div>
+                            <div className="d-flex info_line flex-row justify-content-start align-items-center"></div>
 
+                            
+                            </div>
+                            <div className="info_profile d-flex flex-column ">
+                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  "></div>
+                        </div>
+                        </div>
+                        <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
+                           
+                            <div className="photo_profile rounded-circle"  style={{ width: '48px', height: '48px'}}>
+                                <img src="/notification-img1.png" alt=""></img>
+                            </div>
+                            {/*инфо о первом пользователе*/}
+                            <div className="info_profile d-flex flex-column ">
+                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  ">
+                                <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2 ">
+                                    Ashwin Bose is requesting access to Design File - Final Project.
+                                </p>
+                                
+                                <div className="dropdown flex-shrink-0">
+                                    <button 
+                                        className="text-gray-200 rounded-4 border-0 bg-transparent" 
+                                        type="button" 
+                                        data-bs-toggle="dropdown" 
+                                        aria-expanded="false"
+                                        
+                                    >
+                                        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                        </svg>
+                                    </button>
+                                    <ul className="dropdown-menu">
+                                        <li><div  className="dropdown-item">Mark as read</div></li>
+                                        <li><div className="dropdown-item">Delete Notification</div></li>
+                                        <li><div className="dropdown-item">Report</div></li>
+                                    </ul>
+                                </div>
+                    
+                            </div>
+                            <div className="d-flex info_app flex-row justify-content-center align-items-center">
+                                <div className="d-flex  mb-3 justify-content-start a ">
+                                    <img src="/google-drive.png" alt="" className=""></img>
+                                    <div className="d-flex justify-content-between m">
+                                    <p className="text-gray-900 text-sm text-line-1  ">Design brief and ideas.txt</p>
+                                    <span className="">2.2 MB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="d-flex info_button flex-row justify-content-start align-items-center">
+                                <button className="d-flex justify-content-center align-items-center me-2 button-1"
+                                style={{backgroundColor: '#3e80f9', color:'#ffffff'}}
+                                >Accept</button>
+                                <button className="d-flex justify-content-center align-items-center button-2">Decline</button>
+                            </div>
+                            <div className="d-flex info_time flex-row justify-content-start align-items-center">
+                                <span>2 mins ago</span>
+                            </div>
+                            <div className="d-flex info_line flex-row justify-content-start align-items-center"></div>
 
-
+                            
+                            </div>
+                            <div className="info_profile d-flex flex-column ">
+                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  "></div>
+                        </div>
                         </div>
 
-
                     </div>
+
+
                 </div>
             </ul>
 
