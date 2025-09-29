@@ -340,12 +340,10 @@ export const Header = () => {
     <div className="user d-flex justify-content-center align-items-center gap-2">
         {/* Уведомления */}
         <div className="dropdown">
-            <button 
-                className="dropdown-btn shaking-animation text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center border-0" 
+            <button className="dropdown-btn shaking-animation text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center border-0" 
                 type="button" 
                 data-bs-toggle="dropdown" 
-                aria-expanded="false"
-            >
+                aria-expanded="false">
                 <span className="position-relative d-flex align-items-center justify-content-center" style={{ width: '20px', height: '20px' }}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.3281 13.7453C16.8945 12.9984 16.25 10.8852 16.25 8.125C16.25 6.4674 15.5915 4.87769 14.4194 3.70558C13.2473 2.53348 11.6576 1.875 9.99999 1.875C8.34239 1.875 6.75268 2.53348 5.58058 3.70558C4.40848 4.87769 3.74999 6.4674 3.74999 8.125C3.74999 10.8859 3.10468 12.9984 2.67109 13.7453C2.56036 13.9352 2.50166 14.1509 2.50091 14.3707C2.50015 14.5905 2.55737 14.8066 2.66679 14.9973C2.77621 15.1879 2.93396 15.346 3.12414 15.4565C3.31432 15.5667 3.53019 15.6248 3.74999 15.625H6.93828C7.08247 16.3306 7.46595 16.9647 8.02385 17.4201C8.58175 17.8756 9.27982 18.1243 9.99999 18.1243C10.7202 18.1243 11.4182 17.8756 11.9761 17.4201C12.534 16.9647 12.9175 16.3306 13.0617 15.625H16.25C16.4697 15.6247 16.6855 15.5665 16.8756 15.4562C17.0656 15.346 17.2233 15.1875 17.3326 14.9969C17.4419 14.8063 17.4991 14.5903 17.4983 14.3705C17.4975 14.1508 17.4388 13.9351 17.3281 13.7453ZM9.99999 16.875C9.61235 16.8749 9.23428 16.7546 8.91781 16.5308C8.60133 16.3069 8.36202 15.9905 8.23281 15.625H11.7672C11.638 15.9905 11.3987 16.3069 11.0822 16.5308C10.7657 16.7546 10.3876 16.8749 9.99999 16.875ZM3.74999 14.375C4.35156 13.3406 4.99999 10.9438 4.99999 8.125C4.99999 6.79892 5.52678 5.52715 6.46446 4.58947C7.40214 3.65178 8.67391 3.125 9.99999 3.125C11.3261 3.125 12.5978 3.65178 13.5355 4.58947C14.4732 5.52715 15 6.79892 15 8.125C15 10.9414 15.6469 13.3383 16.25 14.375H3.74999Z" fill="black"/>
@@ -355,142 +353,94 @@ export const Header = () => {
             </button>
             {/*всплывающее окно*/}
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <div className="card-header ">
-                    <div className="element d-flex bd-highlight mb-3">
-                        <h5 className="p-2 flex-grow-1 bd-highlight text-xl fw-semibold text-white mb-0">Notifications</h5>
-                        <button className="bg-white v border-0">New</button>
-                        <button type="button" className="close-dropdown border-0 bg-transparent">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 256 256">
-                                <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+  <div className="card-header">
+    <div className="element d-flex bd-highlight mb-3">
+      <h5 className="p-2 flex-grow-1 bd-highlight text-xl fw-semibold text-white mb-0">Notifications</h5>
+      <button className="bg-white v border-0">New</button>
+      <button type="button" className="close-dropdown border-0 bg-transparent">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 256 256">
+          <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 
-                <div className="card-body">
-                    <div className="max-h-270 overflow-y-auto scroll-sm b bg-green ">
-                        <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
-                           
-                            <div className="photo_profile rounded-circle"  style={{ width: '48px', height: '48px'}}>
-                                <img src="/notification-img1.png" alt=""></img>
-                            </div>
-                            {/*инфо о первом пользователе*/}
-                            <div className="info_profile d-flex flex-column ">
-                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  ">
-                                <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2 ">
-                                    Ashwin Bose is requesting access to Design File - Final Project.
-                                </p>
-                                
-                                <div className="dropdown flex-shrink-0">
-                                    <button 
-                                        className="text-gray-200 rounded-4 border-0 bg-transparent" 
-                                        type="button" 
-                                        data-bs-toggle="dropdown" 
-                                        aria-expanded="false"
-                                        
-                                    >
-                                        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                                        </svg>
-                                    </button>
-                                    <ul className="dropdown-menu">
-                                        <li><div  className="dropdown-item">Mark as read</div></li>
-                                        <li><div className="dropdown-item">Delete Notification</div></li>
-                                        <li><div className="dropdown-item">Report</div></li>
-                                    </ul>
-                                </div>
-                    
-                            </div>
-                            <div className="d-flex info_app flex-row justify-content-center align-items-center">
-                                <div className="d-flex  mb-3 justify-content-start a ">
-                                    <img src="/google-drive.png" alt="" className=""></img>
-                                    <div className="d-flex justify-content-between m">
-                                    <p className="text-gray-900 text-sm text-line-1  ">Design brief and ideas.txt</p>
-                                    <span className="">2.2 MB</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex info_button flex-row justify-content-start align-items-center">
-                                <button className="d-flex justify-content-center align-items-center me-2 button-1"
-                                style={{backgroundColor: '#3e80f9', color:'#ffffff'}}
-                                >Accept</button>
-                                <button className="d-flex justify-content-center align-items-center button-2">Decline</button>
-                            </div>
-                            <div className="d-flex info_time flex-row justify-content-start align-items-center">
-                                <span>2 mins ago</span>
-                            </div>
-                            <div className="d-flex info_line flex-row justify-content-start align-items-center"></div>
+  <div className="card-body">
+    <div className="b">
+      {/* Первое уведомление */}
+      <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
+        <div className="photo_profile rounded-circle" style={{ width: '48px', height: '48px' }}>
+          <img src="/notification-img1.png" alt=""></img>
+        </div>
+        <div className="info_profile d-flex flex-column">
+          <div className="d-flex flex-grow-1 flex-row justify-content-start">
+            <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2">
+              Ashwin Bose is requesting access to Design File - Final Project.
+            </p>
+            <div className="dropdown flex-shrink-0">
+              <button 
+                className="text-gray-200 rounded-4 border-0 bg-transparent" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                </svg>
+              </button>
+              <ul className="dropdown-menu">
+                <li><div className="dropdown-item">Mark as read</div></li>
+                <li><div className="dropdown-item">Delete Notification</div></li>
+                <li><div className="dropdown-item">Report</div></li>
+              </ul>
+            </div>
+          </div>
+          <div className="d-flex info_app flex-row justify-content-center align-items-center">
+            <div className="d-flex mb-3 justify-content-start a">
+              <img src="/google-drive.png" alt="" className=""></img>
+              <div className="d-flex justify-content-between m">
+                <p className="text-gray-900 text-sm text-line-1">Design brief and ideas.txt</p>
+                <span className="">2.2 MB</span>
+              </div>
+            </div>
+          </div>
+          <div className="d-flex info_button flex-row justify-content-start align-items-center">
+            <button className="d-flex justify-content-center align-items-center me-2 button-1"
+              style={{backgroundColor: '#3e80f9', color:'#ffffff'}}>Accept</button>
+            <button className="d-flex justify-content-center align-items-center button-2">Decline</button>
+          </div>
+          <div className="d-flex info_time flex-row justify-content-start align-items-center">
+            <span>2 mins ago</span>
+          </div>
+          <div className="d-flex info_line flex-row justify-content-start align-items-center"></div>
+        </div>  
+      </div>
 
-                            
-                            </div>
-                            <div className="info_profile d-flex flex-column ">
-                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  "></div>
-                        </div>
-                        </div>
-                        <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
-                           
-                            <div className="photo_profile rounded-circle"  style={{ width: '48px', height: '48px'}}>
-                                <img src="/notification-img1.png" alt=""></img>
-                            </div>
-                            {/*инфо о первом пользователе*/}
-                            <div className="info_profile d-flex flex-column ">
-                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  ">
-                                <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2 ">
-                                    Ashwin Bose is requesting access to Design File - Final Project.
-                                </p>
-                                
-                                <div className="dropdown flex-shrink-0">
-                                    <button 
-                                        className="text-gray-200 rounded-4 border-0 bg-transparent" 
-                                        type="button" 
-                                        data-bs-toggle="dropdown" 
-                                        aria-expanded="false"
-                                        
-                                    >
-                                        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                                        </svg>
-                                    </button>
-                                    <ul className="dropdown-menu">
-                                        <li><div  className="dropdown-item">Mark as read</div></li>
-                                        <li><div className="dropdown-item">Delete Notification</div></li>
-                                        <li><div className="dropdown-item">Report</div></li>
-                                    </ul>
-                                </div>
-                    
-                            </div>
-                            <div className="d-flex info_app flex-row justify-content-center align-items-center">
-                                <div className="d-flex  mb-3 justify-content-start a ">
-                                    <img src="/google-drive.png" alt="" className=""></img>
-                                    <div className="d-flex justify-content-between m">
-                                    <p className="text-gray-900 text-sm text-line-1  ">Design brief and ideas.txt</p>
-                                    <span className="">2.2 MB</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex info_button flex-row justify-content-start align-items-center">
-                                <button className="d-flex justify-content-center align-items-center me-2 button-1"
-                                style={{backgroundColor: '#3e80f9', color:'#ffffff'}}
-                                >Accept</button>
-                                <button className="d-flex justify-content-center align-items-center button-2">Decline</button>
-                            </div>
-                            <div className="d-flex info_time flex-row justify-content-start align-items-center">
-                                <span>2 mins ago</span>
-                            </div>
-                            <div className="d-flex info_line flex-row justify-content-start align-items-center"></div>
+      {/* Второе уведомление */}
+      <div className="d-flex justify-content-between align-items-start mb-3 flex-row gap-12">
+        <div className="photo_profile rounded-circle" style={{ width: '48px', height: '48px' }}>
+          <img src="/notification-img2.png" alt=""></img>
+        </div>
+        <div className="info_profile d-flex flex-column">
+          <div className="d-flex flex-grow-1 flex-row justify-content-start">
+            <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2">
+              Patrick added a comment on Design Assets - Smart Tags file:
+            </p>
+          </div>
+          <div className="d-flex info_time flex-row justify-content-start align-items-center">
+            <span>2 mins ago</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Добавьте больше уведомлений по необходимости */}
+    </div>
+  </div>
 
-                            
-                            </div>
-                            <div className="info_profile d-flex flex-column ">
-                            <div className="d-flex   flex-grow-1 flex-row  justify-content-start  "></div>
-                        </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </ul>
+  {/* Фиксированная кнопка View All */}
+  <div className="card-down-button">
+    <button>View All</button>
+  </div>
+</ul>
 
 
         </div>

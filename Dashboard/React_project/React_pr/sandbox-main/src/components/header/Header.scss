@@ -440,7 +440,7 @@ header {
 }
       .dropdown-menu{
         width: 328px;
-        height: 367px;
+        max-height: 367px;
         border-radius: 12px;
         padding-top: 0px;
         
@@ -486,8 +486,31 @@ header {
           }
           }
           .card-body{
+              max-height: 320px; // Ограничиваем высоту body
+              overflow-y: auto; // Включаем скролл
+               // Стили для скроллбара
+                &::-webkit-scrollbar {
+                  width: 6px;
+                }
+                
+                &::-webkit-scrollbar-track {
+                  background: none;
+                  border-radius: 10px;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                  background: none;
+                  border-radius: 10px;
+                }
+                
+                &::-webkit-scrollbar-thumb:hover {
+                  background: #a8a8a8;
+                }
+              }
             .b{
               padding: 24px 24px;
+             
+             
              
               .info_profile{
                 width: 100%;
@@ -620,20 +643,14 @@ header {
                 }
 
 
-
-
-
-
-
-
-
-
-
+              }
+              .card-down-button{
+                position: fixed;
               }
             }
-          }
+           
         }
-      }
+      
     
 
   
@@ -692,6 +709,65 @@ header {
       .button_svg1,
       .color_down {
         fill: #ffffff !important;
+      }
+    }
+  }
+}}
+
+// Стили для фиксированной кнопки внизу dropdown
+.dropdown-menu {
+  position: relative;
+  padding-bottom: 60px; // Место для фиксированной кнопки
+  
+  .card-body {
+    position: relative;
+    max-height: 320px;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: none;
+      border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+  }
+  
+  .card-down-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #d5dbe7;
+    border-radius: 0 0 12px 12px;
+    padding: 12px 24px;
+    z-index: 10;
+    
+    button {
+      width: 100%;
+      height: 40px;
+      background-color: #3e80f9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      
+      &:hover {
+        background-color: #155bc8;
       }
     }
   }
