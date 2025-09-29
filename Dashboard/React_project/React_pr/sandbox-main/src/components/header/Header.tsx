@@ -409,7 +409,7 @@ export const Header = () => {
                                 </div>
                             </div>
                             <div className="d-flex info_button flex-row justify-content-start align-items-center">
-                                <button type="button" className="btn btn-primary" aria-expanded="false">Accept</button>
+                                <button type="button" className="btn btn-primary">Accept</button>
                                 <button type="button" className="btn btn-outline-gray">Decline</button>
                             </div>
                             </div>
