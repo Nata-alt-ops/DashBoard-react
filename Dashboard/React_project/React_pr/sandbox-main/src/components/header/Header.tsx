@@ -566,7 +566,7 @@ export const Header = () => {
     </button>
         
     {/*всплывающее окно*/}
-    <ul className="dropdown-menu size-window" aria-labelledby="dropdownMenuButton2" style={{padding:'20px 20px' }}>
+    <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2" style={{padding:'20px 20px' }}>
         <div className="profile_header">
             <div className="d-flex justify-content-start align-items-start flex-row  ">
                 <img src="/user-img.png" alt=""></img>
