@@ -852,10 +852,9 @@ header {
     
   }
   .size-window {
-  width: 328px !important;
-  min-height: 407px !important;
-  max-height: 407px !important;
-  padding: 20px !important;
+    width: 330px !important;
+    height: 407px !important;
+ 
   
   // Убедитесь, что контент правильно распределен
   display: flex !important;
@@ -957,6 +956,45 @@ header {
               background-color:#d5dbe7 ;
               margin-bottom: 20px;
             }
+
+            .log-out-button {
+  width: 100% !important;
+  height: 48px !important;
+  background-color: #ffffff !important;
+  margin-bottom: 3px;
+  
+  .scroll_button_logo {
+    padding: 20px 12px;
+    
+    p {
+      color: #667797;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 0px;
+      margin-left: 8px;
+      margin-top: 2px;
+    }
+  }
+
+  // Стили при наведении для Log Out
+  &:hover {
+    background-color: #feecec !important; // Красноватый фон при наведении
+    border-radius: 8px;
+    
+    .scroll_button_logo {
+      p {
+        color: #ea5455 !important; // Красный текст при наведении
+      }
+      
+      svg {
+        fill: #ea5455 !important; // Красная иконка при наведении
+      }
+    }
+  }
+}
+
                 
 
 
