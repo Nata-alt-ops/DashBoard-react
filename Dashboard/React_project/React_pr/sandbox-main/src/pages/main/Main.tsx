@@ -402,9 +402,11 @@ export const Main = () => {
                     </div>
                   
                   </div>
+                  {/*боковая панель*/}
                   <div className='col-lg-3'>
                       <div className='card r' style={{marginTop: '24px', marginLeft: '24px', borderRadius: '18px', border:'none'}}>
                         <div className='card-body'>
+                          {/*Календарь*/}
                             <div className='calendar_header'>
                             <div className='a d-flex justify-content-between align-items-center'>
                               <div className='circle_svg rounded-circle d-flex justify-content-center align-items-center '>
