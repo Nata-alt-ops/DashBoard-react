@@ -21,15 +21,11 @@ import '@fontsource/urbanist/700.css';
 import './Main.scss';
 
 export const Main = () => {
-  const [hovered, setHovered] = useState<number | null>(null);
+  
 
   const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
 
-  const data1 = [
-    { name: 'Blue', value: 82, color: '#45a9e1' },
-    { name: 'Green', value: 75, color: '#2ecc71' },
-    { name: 'Black', value: 90, color: '#000000' },
-  ];
+  
 
   // Обработчики событий
   const handleMouseEnter = (entry: any) => {
@@ -70,26 +66,7 @@ export const Main = () => {
     { month: 'Dec', study: 15, test: 28 },
   ];
 
-  const data_1 = [
-    {
-    name: '18-24',
-    uv: 31.47,
-    pv: 2400,
-    fill: '#8884d8',
-  },
-  {
-    name: '25-29',
-    uv: 26.69,
-    pv: 4567,
-    fill: '#83a6ed',
-  },
-  {
-    name: '30-34',
-    uv: 15.69,
-    pv: 1398,
-    fill: '#8dd1e1',
-  }
-  ]
+  
 
   // Функция для форматирования оси Y
   const formatYAxis = (value: number) => `${value}Hr`;
@@ -105,7 +82,7 @@ export const Main = () => {
   return (
     <div className="site_con ">
        <div className="scrollable-container">
-      <div className='o'>
+      <div className='o row gy-4'>
       <div className="conatainer col-lg-9">
         <div className="card_group1">
           {/* Карточка 1 */}
@@ -422,7 +399,7 @@ export const Main = () => {
                                 <h5>Full Stack Web Development</h5>
 
                                 <div className="d-flex justify-content-start align-items-center  flex-wrap prof-people ">
-                                      <img src="/user-img1.png" className="rounded-circle object-fit-cover" alt="User Image"/>
+                                      <img src="/user-img1.png" className="rounded-circle object-fit-cover" alt=""/>
                                       <div>
                                           <span className="text-gray-600 text-13">Created by <a href="profile.html" className="fw-semibold text-gray-700 hover-text-main-600 ">Albert James</a> </span>
                                       </div>
@@ -474,7 +451,7 @@ export const Main = () => {
                                 <h5>Design System</h5>
 
                                 <div className="d-flex justify-content-start align-items-center  flex-wrap prof-people ">
-                                      <img src="/user-img5.png" className="rounded-circle object-fit-cover" alt="User Image"/>
+                                      <img src="/user-img5.png" className="rounded-circle object-fit-cover" alt=""/>
                                       <div>
                                           <span className="text-gray-600 text-13">Created by <a href="profile.html" className="fw-semibold text-gray-700 hover-text-main-600 ">Albert James</a> </span>
                                       </div>
@@ -526,7 +503,7 @@ export const Main = () => {
                                 <h5>React Native Courese</h5>
 
                                 <div className="d-flex justify-content-start align-items-center  flex-wrap prof-people ">
-                                      <img src="/user-img6.png" className="rounded-circle object-fit-cover" alt="User Image"/>
+                                      <img src="/user-img6.png" className="rounded-circle object-fit-cover" alt=""/>
                                       <div>
                                           <span className="text-gray-600 text-13">Created by <a href="profile.html" className="fw-semibold text-gray-700 hover-text-main-600 ">Albert James</a> </span>
                                       </div>
