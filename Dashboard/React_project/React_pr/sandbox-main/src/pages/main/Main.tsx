@@ -400,6 +400,24 @@ export const Main = () => {
                         </div>
                       </div>
                     </div>
+                    
+                  <div className='card mt-4'>
+                    <div className="card-body d-flex  flex-colum ">
+
+
+                      <div className='d-flex justify-content-between align-items-center mb-20'
+                      style={{width:'100%', }}
+                      
+                      >
+                        <h1>Top Courses Pick for You</h1>
+                        <p>See All</p>
+                      </div>
+                     
+
+
+                    </div>
+                  </div>
+
                   
                   </div>
                   {/*боковая панель*/}
