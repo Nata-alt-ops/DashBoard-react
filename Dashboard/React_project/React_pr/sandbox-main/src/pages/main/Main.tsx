@@ -9,8 +9,14 @@ import {
   CartesianGrid,
   PieChart,
   Pie,
-  Cell
+  Cell,
+  Label,
+  RadialBar,
+  RadialBarChart,
+  Legend
 } from 'recharts';
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fontsource/roboto/300.css';
@@ -20,16 +26,74 @@ import '@fontsource/roboto/700.css';
 import '@fontsource/urbanist/700.css'; 
 import './Main.scss';
 
-export const Main = () => {
+interface ThreeLayerProgressProps {
+  bluePercent: number;   // внешний синий (например, 82)
+  greenPercent: number;  // средний зелёный (например, 75)
+  blackPercent: number;  // внутренний чёрный (например, 90)
+  totalTime: string;
+}
+
+export const Main = ({  bluePercent,
+  greenPercent,
+  blackPercent,
+  totalTime}:any) => {
+    const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
+   const [hovered, setHovered] = useState(false);
+    // Данные для трёхслойной круговой диаграммы
+  const progressData = [
+    // Внешний круг (синий)
+    { name: 'blue-completed', value: bluePercent, color: '#45a9e1' },
+    { name: 'blue-remaining', value: 100 - bluePercent, color: '#f0f0f0' },
+    
+    // Средний круг (зелёный)
+    { name: 'green-completed', value: greenPercent, color: '#2ecc71' },
+    { name: 'green-remaining', value: 100 - greenPercent, color: '#f0f0f0' },
+    
+    // Внутренний круг (чёрный)
+    { name: 'black-completed', value: blackPercent, color: '#000000' },
+    { name: 'black-remaining', value: 100 - blackPercent, color: '#f0f0f0' }
+  ];
+
+
+
+  const data_1 = [
+  {
+    name: '18-24',
+    uv: 31.47,
+    pv: 2400,
+    fill: '#8884d8',
+  },
+  {
+    name: '25-29',
+    uv: 26.69,
+    pv: 4567,
+    fill: '#83a6ed',
+  },
+  {
+    name: '30-34',
+    uv: 15.69,
+    pv: 1398,
+    fill: '#8dd1e1',
+  }
+];
+
+const style = {
+  top: '50%',
+  right: 0,
+  transform: 'translate(0, -50%)',
+  lineHeight: '24px',
+};
+
+   
+
   
 
-  const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
-
   
-
-  // Обработчики событий
-  const handleMouseEnter = (entry: any) => {
-    setHoveredPercent(entry.percent * 100);
+   // Исправленные обработчики событий
+  const handleMouseEnter = (data: any) => {
+    if (data && data.name && data.name.includes('completed')) {
+      setHoveredPercent(data.value);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -66,6 +130,16 @@ export const Main = () => {
     { month: 'Dec', study: 15, test: 28 },
   ];
 
+  const data3 = [
+  { name: 'Категория 1', value: 300 },
+  { name: 'Категория 2', value: 200 },
+  { name: 'Категория 3', value: 150 },
+  { name: 'Категория 4', value: 100 }
+];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+
+
   
 
   // Функция для форматирования оси Y
@@ -82,7 +156,7 @@ export const Main = () => {
   return (
     <div className="site_con ">
        <div className="scrollable-container">
-      <div className='o row gy-4'>
+      <div className='o '>
       <div className="conatainer col-lg-9">
         <div className="card_group1">
           {/* Карточка 1 */}
@@ -243,8 +317,8 @@ export const Main = () => {
         </div>
 
         {/* ➡️ Большой график */}
-        <div className="card mt-4">
-          <div className="card-body">
+        <div className="card mt-4" style={{border:'none'}}>
+          <div className="card-body" >
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h3 className="mb-0">Study Statistics</h3>
               <div className="d-flex align-items-center gap-3">
@@ -378,15 +452,15 @@ export const Main = () => {
                       </div>
                     </div>
                     
-                  <div className='card mt-4'>
-                    <div className="card-body d-flex flex-row flex-wrap ">
+                  <div className='card mt-4' style={{border:'none'}}>
+                    <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center gap-10">
                       <div className='d-flex justify-content-between align-items-center mb-20' style={{width:'100%', }}>
                         <h4 className='h1_text_card2'>Top Courses Pick for You</h4>
                         <p className='p_text'>See All</p>
                       </div>
-                      <div className='d-flex flex-row justify-content-center align-items-center row g-20 cards_3 mt-2'>
+                      <div className='d-flex flex-row justify-content-center align-items-center  cards_3 mt-2'>
                         {/*1 карта*/}
-                        <div className='col-lg-4 col-sm-6'>
+                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
                             <div className='card_img d-flex justify-content-center align-items-center' >
@@ -438,7 +512,7 @@ export const Main = () => {
                         </div>
 
                         {/*2 карта*/}
-                        <div className='col-lg-4 col-sm-6'>
+                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
                             <div className='card_img d-flex justify-content-center align-items-center' >
@@ -490,7 +564,7 @@ export const Main = () => {
                         </div>
 
                           {/*3 карта*/}
-                        <div className='col-lg-4 col-sm-6'>
+                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
                             <div className='card_img d-flex justify-content-center align-items-center' >
@@ -672,109 +746,210 @@ export const Main = () => {
                   </div>
 
                   <div className='card_grah'>
-  <div className='card'>
-    <div className='card-header'>
-      <h5>My Progress</h5>
-    </div>
-    <div className="card-body">
-      <ResponsiveContainer width="100%" height={160}>
-        <PieChart>
-          {/* Внешнее синее кольцо */}
-          <Pie
-            data={[{ name: 'Blue', value: 82 }]}
-            cx="50%"
-            cy="50%"
-            innerRadius={65}
-            outerRadius={75}
-            fill="#fff"
-            dataKey="value"
-            stroke="none"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Cell fill="#45a9e1" />
-          </Pie>
+                    <div className='card '>
+                      <div className='card-header'>
+                        <h5 >My Progress</h5>
+                      </div>
+                      <div className="card-body" >
+                         
+                       
+                  <ResponsiveContainer width="100%" height={150}>
+                    <PieChart>
+                   
+                      <Pie
+                        data={[
+                          { name: 'blue-completed', value: bluePercent },
+                          { name: 'blue-remaining', value: 100 - bluePercent }
+                        ]}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={65}
+                        outerRadius={75}
+                        dataKey="value"
+                        stroke="none"
+                        startAngle={90}
+                        endAngle={450}
+                        onMouseEnter={(entry) => handleMouseEnter(entry)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <Cell fill="#45a9e1" />
+                        <Cell fill="#f0f0f0" />
+                      </Pie>
 
-          {/* Среднее зелёное кольцо */}
-          <Pie
-            data={[{ name: 'Green', value: 75 }]}
-            cx="50%"
-            cy="50%"
-            innerRadius={50}
-            outerRadius={65}
-            fill="#fff"
-            dataKey="value"
-            stroke="none"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Cell fill="#2ecc71" />
-          </Pie>
+                     
+                      <Pie
+                        data={[
+                          { name: 'green-completed', value: greenPercent },
+                          { name: 'green-remaining', value: 100 - greenPercent }
+                        ]}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={50}
+                        outerRadius={65}
+                        dataKey="value"
+                        stroke="none"
+                        startAngle={90}
+                        endAngle={450}
+                        onMouseEnter={(entry) => handleMouseEnter(entry)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <Cell fill="#2ecc71" />
+                        <Cell fill="#f0f0f0" />
+                      </Pie>
 
-          {/* Внутреннее чёрное кольцо */}
-          <Pie
-            data={[{ name: 'Black', value: 90 }]}
-            cx="50%"
-            cy="50%"
-            innerRadius={35}
-            outerRadius={50}
-            fill="#fff"
-            dataKey="value"
-            stroke="none"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Cell fill="#000000" />
-          </Pie>
+                    
+                      <Pie
+                        data={[
+                          { name: 'black-completed', value: blackPercent },
+                          { name: 'black-remaining', value: 100 - blackPercent }
+                        ]}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={35}
+                        outerRadius={50}
+                        dataKey="value"
+                        stroke="none"
+                        startAngle={90}
+                        endAngle={450}
+                        onMouseEnter={(entry) => handleMouseEnter(entry)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <Cell fill="#000000" />
+                        <Cell fill="#f0f0f0" />
+                      </Pie>
 
-          {/* Текст в центре */}
-          <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="bold">
-            {hoveredPercent !== null ? `${hoveredPercent}%` : '82%'}
-          </text>
-        </PieChart>
-      </ResponsiveContainer>
-        
+                      <text 
+                        x="50%" 
+                        y="50%" 
+                        textAnchor="middle" 
+                        dominantBaseline="central" 
+                        fontSize="16" 
+                        fontWeight="bold"
+                        fill="#333"
+                      >
+                        {hoveredPercent !== null ? `${hoveredPercent}%` : `${bluePercent}%`}
+                      </text>
+                    </PieChart>
+                  </ResponsiveContainer>
 
-      {/* Общее время */}
-      <div className="total-time" style={{ textAlign: 'center', margin: '10px 0' }}>
-        <p style={{ color: '#0c1018', fontSize: '14px', fontWeight: 500 }}>Total hour: 6h 32 min</p>
-      </div>
 
-      {/* Статусы курсов */}
-      <div className="course-status" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '16px' }}>
-        {[
-          { label: 'Completed', value: 60, total: 60, color: '#3e80f9' },
-          { label: 'Completed', value: 60, total: 60, color: '#27cea7' },
-          { label: 'Completed', value: 60, total: 60, color: '#ff9f43' },
-        ].map((item, index) => (
-          <div key={index} style={{ textAlign: 'center' }}>
-            <div
-              style={{
-                width: '100%',
-                height: '8px',
-                backgroundColor: '#e0e0e0',
-                borderRadius: '4px',
-                overflow: 'hidden',
-                marginBottom: '4px',
-              }}
-            >
-              <div
-                style={{
-                  width: `${(item.value / item.total) * 100}%`,
-                  height: '100%',
-                  backgroundColor: item.color,
-                  transition: 'width 0.3s ease',
-                }}
-              ></div>
-            </div>
-            <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.value}/{item.total}</p>
-            <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      {/*  <ResponsiveContainer width="100%" height={150}>
+                          <PieChart>
+                           
+                            <Pie
+                              data={[{ name: 'Blue', value: 82 }]}
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={65}
+                              outerRadius={75}
+                              fill="#fff"
+                              dataKey="value"
+                              stroke="none"
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              <Cell fill="#45a9e1" />
+                            </Pie>
+
+                           
+                            <Pie
+                              data={[{ name: 'Green', value: 75 }]}
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={50}
+                              outerRadius={65}
+                              fill="#fff"
+                              dataKey="value"
+                              stroke="none"
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              <Cell fill="#2ecc71" />
+                            </Pie>
+
+                           
+                            <Pie
+                              data={[{ name: 'Black', value: 90 }]}
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={35}
+                              outerRadius={50}
+                              fill="#fff"
+                              dataKey="value"
+                              stroke="none"
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              <Cell fill="#000000" />
+                            </Pie>
+
+                           
+                            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="bold">
+                              {hoveredPercent !== null ? `${hoveredPercent}%` : '82%'}
+                            </text>
+                          </PieChart>
+                        </ResponsiveContainer>*/}
+                          
+
+                        {/* Общее время */}
+                        <div className="total-time" style={{ textAlign: 'center', margin: '10px 0' }}>
+                          <p style={{ color: '#0c1018', fontSize: '14px', fontWeight: 500 }}>Total hour: 6h 32 min</p>
+                        </div>
+
+                        {/* Статусы курсов */}
+                        <div className="course-status" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '16px' }}>
+                          {[
+                            { label: 'Completed', value: 60, total: 60, color: '#3e80f9' },
+                            { label: 'Completed', value: 60, total: 60, color: '#27cea7' },
+                            { label: 'Completed', value: 60, total: 60, color: '#ff9f43' },
+                          ].map((item, index) => (
+                            <div key={index} style={{ textAlign: 'center' }}>
+                              <div
+                                style={{
+                                  width: '100%',
+                                  height: '8px',
+                                  backgroundColor: '#e0e0e0',
+                                  borderRadius: '4px',
+                                  overflow: 'hidden',
+                                  marginBottom: '4px',
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    width: `${(item.value / item.total) * 100}%`,
+                                    height: '100%',
+                                    backgroundColor: item.color,
+                                    transition: 'width 0.3s ease',
+                                  }}
+                                ></div>
+                              </div>
+                              <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.value}/{item.total}</p>
+                              <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.label}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>   
 
 
 
@@ -782,19 +957,50 @@ export const Main = () => {
                   </div>
                   </div>
 
+                 <div className='card down-board mt-4 ms-4 '>
+                    <div className='card-body d-flex justify-content-between align-items-center px-20 py-20'>
+                      <p>© Copyright Edmate 2024, All Right Reserverd</p>
+                      <div className='link'>
+                        <button>License</button>
+                        <button>More Themes</button>
+                        <button>Documentation</button>
+                        <button>Support</button>
+                      </div>
+                    </div>
+                 </div>
 
-        <div className="dashboard-footer">
-    <div className="flex-between flex-wrap gap-16">
-        <p className="text-gray-300 text-13 fw-normal"> © Copyright Edmate 2024, All Right Reserverd</p>
-        <div className="flex-align flex-wrap gap-16">
-            <div className="text-gray-300 text-13 fw-normal hover-text-main-600 hover-text-decoration-underline">License</div>
-            <div className="text-gray-300 text-13 fw-normal hover-text-main-600 hover-text-decoration-underline">More Themes</div>
-            <div className="text-gray-300 text-13 fw-normal hover-text-main-600 hover-text-decoration-underline">Documentation</div>
-            <div className="text-gray-300 text-13 fw-normal hover-text-main-600 hover-text-decoration-underline">Support</div>
-        </div>
-    </div>
-</div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+      
+    
     </div>
   );
 };
