@@ -62,71 +62,133 @@ header {
         }
     
         .dropdown_con, .button_couses_container, .button_authetication_container {
-          width: auto;
-          height: auto;
-         
-          margin-bottom: 10px;
-          margin-top: 10px;
-          position: relative; 
-          
-          
-          .btn {
-            border-radius: 8px !important;
-            height: 40px;
-            width: 205px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            
-            .element_button, .element_button_courses {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 8px;
-            
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative; 
+  
+  .btn {
+    border-radius: 8px !important;
+    height: 40px;
+    width: 205px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease !important;
+  }
+    
+  .element_button, .element_button_courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 
-              
-              .button_svg {
-                width: 24px;
-                height: 25px;
-              }
+    .button_svg {
+      width: 24px;
+      height: 25px;
+    }
+    
+    .text_button {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      color: #ffffff;
+    }
+    
+    .text_button1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      color: #667797;
+    }
+    
+    .u {
+      display: flex;
+      margin-left: 23px;
+      
+      .number_button {
+        color: #3e80f9;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      
+      .rounded-circle {
+        width: 22px;
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+.button_couses_container,
+.button_authetication_container {
+  .btn {
+    &.normal_button {
+      background-color: #ffffff !important;
+      color: #667797 !important;
+      border: 1px solid transparent !important;
 
-           
-              
-              .text_button {
-                font-family: 'Roboto', sans-serif;
-                font-size: 15px;
-                color: #ffffff;
-              }
-              
-              .text_button1 {
-                font-family: 'Roboto', sans-serif;
-                font-size: 15px;
-                color: #667797;
-              }
-              
-              .u {
-                display: flex;
-                margin-left: 23px;
-                
-                .number_button {
-                  color: #3e80f9;
-                  font-family: 'Roboto', sans-serif;
-                  font-size: 13px;
-                  font-weight: 400;
-                }
-                
-                .rounded-circle {
-                  width: 22px;
-                  height: 22px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                }
-              }
-            }
-          }
+      .button_svg1 {
+        fill: #667797 !important;
+      }
+
+      .color_down {
+        fill: #667797 !important;
+      }
+
+      .text_button1 {
+        color: #667797 !important;
+      }
+
+      &:hover {
+        background-color: #9bcbfc !important;
+        color: #1d72f2 !important;
+        border: 1px solid transparent !important;
+
+        .text_button1 {
+          color: #1d72f2 !important;
         }
+
+        .button_svg1,
+        .color_down {
+          fill: #1d72f2 !important;
+        }
+      }
+    }
+
+    &.active_button {
+      background-color: #1d72f2 !important;
+      color: #ffffff !important;
+      border: 1px solid #1d72f2 !important;
+
+      .button_svg1,
+      .color_down {
+        fill: #ffffff !important;
+      }
+
+      .text_button1 {
+        color: #ffffff !important;
+      }
+
+      &:hover {
+        background-color: #155bc8 !important;
+        color: #ffffff !important;
+        border: 1px solid #155bc8 !important;
+
+        .text_button1 {
+          color: #ffffff !important;
+        }
+
+        .button_svg1,
+        .color_down {
+          fill: #ffffff !important;
+        }
+      }
+    }
+  }
+}
         
         .dropdown-menu-in-flow {
           position: relative; 
@@ -370,7 +432,7 @@ header {
   }
 
   &.search-focused {
-    border: 1px solid #0d6efd; // Синяя обводка
+    border: 1px solid #0d6efd; 
   }
 }
 
@@ -413,11 +475,11 @@ header {
   
   @keyframes shake-cycle {
         0%, 90% { transform: rotate(0deg); }      
-        91% { transform: rotate(-20deg); }        // начало тряски
+        91% { transform: rotate(-20deg); }        
         93% { transform: rotate(10deg); }
         95% { transform: rotate(-5deg); }
-        97% { transform: rotate(20deg); }          // конец тряски
-        100% { transform: rotate(0deg); }         // конец цикла
+        97% { transform: rotate(20deg); }          
+        100% { transform: rotate(0deg); }         
     }
 }
 
@@ -427,8 +489,8 @@ header {
     background-color: #ff4757;
     border-radius: 50%;
     position: absolute;
-    top: -2px;     // поднимает кружок выше
-    right: 0px;   // сдвигает вправо
+    top: -2px;    
+    right: 0px;  
     animation: pulse 2s infinite;
 
     @keyframes pulse {
@@ -652,71 +714,11 @@ header {
       
     
 
-  
-.button_couses_container,
-.button_authetication_container {
-  .normal_button {
-    background-color: #ffffff !important;
-    color: #667797 !important;
-    border: 1px solid transparent !important;
 
-    .button_svg1 {
-      fill: #667797 !important;
-    }
 
-    .color_down {
-      fill: #667797 !important;
-    }
-
-    .text_button1 {
-      color: #667797 !important;
-    }
-
-    &:hover {
-      background-color: #9bcbfc !important;
-      color: #1d72f2 !important;
-
-      .text_button1 {
-        color: #1d72f2 !important;
-      }
-
-      .button_svg1,
-      .color_down {
-        fill: #1d72f2 !important;
-      }
-    }
-  }
-
-  .active_button {
-    background-color: #1d72f2 !important;
-    color: #ffffff !important;
-    border: 1px solid #1d72f2 !important;
-
-    .button_svg1,
-    .color_down {
-      fill: #ffffff !important;
-    }
-
-    .text_button1 {
-      color: #ffffff !important;
-    }
-
-    &:hover {
-      background-color: #155bc8 !important;
-      color: #ffffff !important;
-
-      .button_svg1,
-      .color_down {
-        fill: #ffffff !important;
-      }
-    }
-  }
-}
-
-// Стили для фиксированной кнопки внизу dropdown
 .dropdown-menu {
   position: relative;
-  padding-bottom: 60px; // Место для фиксированной кнопки
+  padding-bottom: 60px; 
   
   .card-body {
     position: relative;
@@ -856,7 +858,7 @@ header {
     height: 407px !important;
  
   
-  // Убедитесь, что контент правильно распределен
+  
   display: flex !important;
   flex-direction: column !important;
 }
@@ -898,7 +900,7 @@ header {
   }
 
   .sroll-button{
-     // Убираем фиксированную высоту и делаем адаптивной
+     
     max-height: 250px;
     margin-top: 20px;
     
@@ -978,18 +980,18 @@ header {
     }
   }
 
-  // Стили при наведении для Log Out
+ 
   &:hover {
-    background-color: #feecec !important; // Красноватый фон при наведении
+    background-color: #feecec !important; 
     border-radius: 8px;
     
     .scroll_button_logo {
       p {
-        color: #ea5455 !important; // Красный текст при наведении
+        color: #ea5455 !important; 
       }
       
       svg {
-        fill: #ea5455 !important; // Красная иконка при наведении
+        fill: #ea5455 !important; 
       }
     }
   }
