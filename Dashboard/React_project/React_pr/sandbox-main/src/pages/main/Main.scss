@@ -463,9 +463,9 @@
       width: 100%;
       flex-direction: column;
       align-items: center;
-      background-color: #3e80f9;
       justify-content: center;
       padding-top: 20px;
+      border-radius: 18px;
     }
   }
   
@@ -477,59 +477,66 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: aquamarine;
+    
     
   }
 
   .total-time {
-    padding-top: 40px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 36px;
     
-    p {
-      color: #0c1018;
-      font-size: 14px;
-      font-weight: 500;
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
+    p{
+      font-size: 18px;
+      font-weight: 700;
+      font-family: 'Urbanist', sans-serif;
+      margin-top: 0px;
     }
   }
 
   .course-status {
     display: flex;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: start;
+    gap: 73px;
     width: 100%;
+    margin-top: 0px;
     
     .status-item {
       text-align: center;
       flex: 1;
       
       .progress-bar {
-        width: 100%;
-        height: 8px;
-        background-color: #e0e0e0;
+        height: 3px;
+        width: 30px;
         border-radius: 4px;
         overflow: hidden;
         margin-bottom: 6px;
+        margin-top: 5px;
+        margin-left: 17px;
         
         .progress-fill {
-          height: 100%;
+          height: 3px;
+          width: 30px;
           transition: width 0.3s ease;
         }
       }
       
       .progress-numbers {
-        font-size: 12px;
-        color: #6c757d;
-        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        color: #0f141f;
+        font-family: 'Urbanist', sans-serif;
         margin: 2px 0;
+        font-weight: 700;
       }
       
       .progress-label {
-        font-size: 12px;
-        color: #6c757d;
+        font-size: 13px;
+        color: #0c1018;
         font-family: 'Roboto', sans-serif;
         margin: 0;
+        font-weight: 400;
       }
     }
   }

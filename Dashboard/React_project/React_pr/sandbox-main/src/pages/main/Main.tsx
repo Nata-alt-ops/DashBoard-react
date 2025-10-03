@@ -745,15 +745,15 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
                     </div>
                   </div>
 
-                  <div className='card_grah'>
+                 <div className='card_grah'>
   <div className='card '>
     <div className='card-header'>
       <h5>My Progress</h5>
     </div>
     <div className="card-body">
-      <div className="progress-chart-container  ">
+      <div className="progress-chart-container">
         {/* Круговой график прогресса */}
-        <ResponsiveContainer width={102} height={102}>
+        <ResponsiveContainer width={150} height={150}>
           <PieChart>
             {/* Внешний круг (синий) */}
             <Pie
@@ -763,119 +763,132 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
               ]}
               cx="50%"
               cy="50%"
-              innerRadius={50}
+              innerRadius={53}
               outerRadius={60}
               dataKey="value"
               stroke="none"
-              startAngle={90}
-              endAngle={450}
+              startAngle={180}  
+              endAngle={-180}  
+              cornerRadius={8}
             >
               <Cell fill="#3e80f9" />
               <Cell fill="#f0f0f0" />
             </Pie>
+            
             {/* Средний круг (зеленый) */}
             <Pie
               data={[
-                { name: 'green-completed', value: 75 },
-                { name: 'green-remaining', value: 25 }
+                { name: 'green-completed', value: 60 },
+                { name: 'green-remaining', value: 40 }
               ]}
               cx="50%"
               cy="50%"
-              innerRadius={30}
-              outerRadius={40}
+              innerRadius={40}   
+              outerRadius={48}   
               dataKey="value"
               stroke="none"
-              startAngle={90}
-              endAngle={450}
+              startAngle={100}  
+              endAngle={-260} 
+              cornerRadius={8}   
             >
               <Cell fill="#27cea7" />
               <Cell fill="#f0f0f0" />
             </Pie>
+            
             {/* Внутренний круг (оранжевый) */}
             <Pie
               data={[
-                { name: 'orange-completed', value: 60 },
-                { name: 'orange-remaining', value: 40 }
+                { name: 'orange-completed', value: 25 },
+                { name: 'orange-remaining', value: 75 }
               ]}
               cx="50%"
               cy="50%"
-              innerRadius={15}
-              outerRadius={30}
+              innerRadius={25}   
+              outerRadius={35}   
               dataKey="value"
               stroke="none"
-              startAngle={90}
-              endAngle={450}
+              startAngle={100}   
+              endAngle={-260} 
+              cornerRadius={8}
             >
-              <Cell fill="#ff9f43" />
+              <Cell fill="#000000ff" />
               <Cell fill="#f0f0f0" />
             </Pie>
+            
             {/* Центральный текст */}
             <text 
               x="50%" 
               y="50%" 
               textAnchor="middle" 
               dominantBaseline="central" 
-              fontSize="16" 
-              fontWeight="bold"
+              fontSize="15" 
+              fontWeight="400"
               fill="#0f141f"
-              fontFamily="Urbanist, sans-serif"
+              fontFamily="Roboto, sans-serif"
             >
               82%
             </text>
           </PieChart>
         </ResponsiveContainer>
-         </div>
-        {/* Общее время */}
-        <div className="total-time">
-          <p>Total hour: 6h 32 min</p>
+      </div>
+      
+      {/* Общее время */}
+      <div className="total-time">
+        <p style={{color:'#3b465e'}}>Total hour:</p>
+        <p style={{color:'#0f141f'}}>6h 32 min</p>
+      </div>
+      
+      {/* Статусы курсов */}
+      <div className="course-status">
+        <div className="status-item">
+          <p className="progress-numbers">60/60</p>
+          <div className="progress-bar">
+            <div 
+              className="progress-fill" 
+              style={{ 
+                width: '30px', 
+                backgroundColor: '#3e80f9' 
+              }}
+            ></div>
+          </div>
+          <p className="progress-label">Completed</p>
         </div>
-        {/* Статусы курсов */}
-        <div className="course-status">
-          <div className="status-item">
-            <p className="progress-numbers">60/60</p>
-            <div className="progress-bar">
-              <div 
-                className="progress-fill" 
-                style={{ 
-                  width: '100%', 
-                  backgroundColor: '#3e80f9' 
-                }}
-              ></div>
-            </div>
-            <p className="progress-label">Completed</p>
+        
+        <div className="status-item">
+          <p className="progress-numbers">60/60</p>
+          <div className="progress-bar">
+            <div 
+              className="progress-fill" 
+              style={{ 
+                width: '100%', 
+                backgroundColor: '#27cea7' 
+              }}
+            ></div>
           </div>
-          <div className="status-item">
-            <p className="progress-numbers">60/60</p>
-            <div className="progress-bar">
-              <div 
-                className="progress-fill" 
-                style={{ 
-                  width: '100%', 
-                  backgroundColor: '#27cea7' 
-                }}
-              ></div>
-            </div>
-            <p className="progress-label">Completed</p>
-          </div>
-          <div className="status-item">
-            <p className="progress-numbers">60/60</p>
-            <div className="progress-bar">
-              <div 
-                className="progress-fill" 
-                style={{ 
-                  width: '100%', 
-                  backgroundColor: '#ff9f43' 
-                }}
-              ></div>
-            </div>
-            <p className="progress-label">Completed</p>
-          </div>
+          <p className="progress-label">Completed</p>
         </div>
-     
+        
+        <div className="status-item">
+          <p className="progress-numbers">60/60</p>
+          <div className="progress-bar">
+            <div 
+              className="progress-fill" 
+              style={{ 
+                width: '100%', 
+                backgroundColor: '#000000ff' 
+              }}
+            ></div>
+          </div>
+          <p className="progress-label">Completed</p>
+        </div>
+      </div>
+
+
+
+
     </div>
   </div>
 </div>
-
 
 
 
