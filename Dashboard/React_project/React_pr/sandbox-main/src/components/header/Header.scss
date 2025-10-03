@@ -3,7 +3,6 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
-@import "bootstrap/scss/transitions";
 
 header {
   display: flex;
@@ -143,7 +142,7 @@ header {
       }
 
       &:hover {
-        background-color: #9bcbfc !important;
+        background-color: #ebf1fd !important;
         color: #1d72f2 !important;
         border: 1px solid transparent !important;
 
@@ -265,7 +264,7 @@ header {
 
           &:hover{
             button{
-              background-color: #9bcbfc;
+              background-color: #ebf1fd;
               border-radius: 8px;
             }
 

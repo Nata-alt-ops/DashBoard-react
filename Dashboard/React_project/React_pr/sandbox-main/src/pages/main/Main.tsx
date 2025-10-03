@@ -746,210 +746,135 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
                   </div>
 
                   <div className='card_grah'>
-                    <div className='card '>
-                      <div className='card-header'>
-                        <h5 >My Progress</h5>
-                      </div>
-                      <div className="card-body" >
-                         
-                       
-                  <ResponsiveContainer width="100%" height={150}>
-                    <PieChart>
-                   
-                      <Pie
-                        data={[
-                          { name: 'blue-completed', value: bluePercent },
-                          { name: 'blue-remaining', value: 100 - bluePercent }
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={65}
-                        outerRadius={75}
-                        dataKey="value"
-                        stroke="none"
-                        startAngle={90}
-                        endAngle={450}
-                        onMouseEnter={(entry) => handleMouseEnter(entry)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <Cell fill="#45a9e1" />
-                        <Cell fill="#f0f0f0" />
-                      </Pie>
-
-                     
-                      <Pie
-                        data={[
-                          { name: 'green-completed', value: greenPercent },
-                          { name: 'green-remaining', value: 100 - greenPercent }
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={50}
-                        outerRadius={65}
-                        dataKey="value"
-                        stroke="none"
-                        startAngle={90}
-                        endAngle={450}
-                        onMouseEnter={(entry) => handleMouseEnter(entry)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <Cell fill="#2ecc71" />
-                        <Cell fill="#f0f0f0" />
-                      </Pie>
-
-                    
-                      <Pie
-                        data={[
-                          { name: 'black-completed', value: blackPercent },
-                          { name: 'black-remaining', value: 100 - blackPercent }
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={35}
-                        outerRadius={50}
-                        dataKey="value"
-                        stroke="none"
-                        startAngle={90}
-                        endAngle={450}
-                        onMouseEnter={(entry) => handleMouseEnter(entry)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <Cell fill="#000000" />
-                        <Cell fill="#f0f0f0" />
-                      </Pie>
-
-                      <text 
-                        x="50%" 
-                        y="50%" 
-                        textAnchor="middle" 
-                        dominantBaseline="central" 
-                        fontSize="16" 
-                        fontWeight="bold"
-                        fill="#333"
-                      >
-                        {hoveredPercent !== null ? `${hoveredPercent}%` : `${bluePercent}%`}
-                      </text>
-                    </PieChart>
-                  </ResponsiveContainer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      {/*  <ResponsiveContainer width="100%" height={150}>
-                          <PieChart>
-                           
-                            <Pie
-                              data={[{ name: 'Blue', value: 82 }]}
-                              cx="50%"
-                              cy="50%"
-                              innerRadius={65}
-                              outerRadius={75}
-                              fill="#fff"
-                              dataKey="value"
-                              stroke="none"
-                              onMouseEnter={handleMouseEnter}
-                              onMouseLeave={handleMouseLeave}
-                            >
-                              <Cell fill="#45a9e1" />
-                            </Pie>
-
-                           
-                            <Pie
-                              data={[{ name: 'Green', value: 75 }]}
-                              cx="50%"
-                              cy="50%"
-                              innerRadius={50}
-                              outerRadius={65}
-                              fill="#fff"
-                              dataKey="value"
-                              stroke="none"
-                              onMouseEnter={handleMouseEnter}
-                              onMouseLeave={handleMouseLeave}
-                            >
-                              <Cell fill="#2ecc71" />
-                            </Pie>
-
-                           
-                            <Pie
-                              data={[{ name: 'Black', value: 90 }]}
-                              cx="50%"
-                              cy="50%"
-                              innerRadius={35}
-                              outerRadius={50}
-                              fill="#fff"
-                              dataKey="value"
-                              stroke="none"
-                              onMouseEnter={handleMouseEnter}
-                              onMouseLeave={handleMouseLeave}
-                            >
-                              <Cell fill="#000000" />
-                            </Pie>
-
-                           
-                            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="bold">
-                              {hoveredPercent !== null ? `${hoveredPercent}%` : '82%'}
-                            </text>
-                          </PieChart>
-                        </ResponsiveContainer>*/}
-                          
-
-                        {/* Общее время */}
-                        <div className="total-time" style={{ textAlign: 'center', margin: '10px 0' }}>
-                          <p style={{ color: '#0c1018', fontSize: '14px', fontWeight: 500 }}>Total hour: 6h 32 min</p>
-                        </div>
-
-                        {/* Статусы курсов */}
-                        <div className="course-status" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '16px' }}>
-                          {[
-                            { label: 'Completed', value: 60, total: 60, color: '#3e80f9' },
-                            { label: 'Completed', value: 60, total: 60, color: '#27cea7' },
-                            { label: 'Completed', value: 60, total: 60, color: '#ff9f43' },
-                          ].map((item, index) => (
-                            <div key={index} style={{ textAlign: 'center' }}>
-                              <div
-                                style={{
-                                  width: '100%',
-                                  height: '8px',
-                                  backgroundColor: '#e0e0e0',
-                                  borderRadius: '4px',
-                                  overflow: 'hidden',
-                                  marginBottom: '4px',
-                                }}
-                              >
-                                <div
-                                  style={{
-                                    width: `${(item.value / item.total) * 100}%`,
-                                    height: '100%',
-                                    backgroundColor: item.color,
-                                    transition: 'width 0.3s ease',
-                                  }}
-                                ></div>
-                              </div>
-                              <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.value}/{item.total}</p>
-                              <p style={{ fontSize: '12px', color: '#6c757d', margin: '0' }}>{item.label}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>   
+  <div className='card '>
+    <div className='card-header'>
+      <h5>My Progress</h5>
+    </div>
+    <div className="card-body">
+      <div className="progress-chart-container  ">
+        {/* Круговой график прогресса */}
+        <ResponsiveContainer width={102} height={102}>
+          <PieChart>
+            {/* Внешний круг (синий) */}
+            <Pie
+              data={[
+                { name: 'blue-completed', value: 100 },
+                { name: 'blue-remaining', value: 0 }
+              ]}
+              cx="50%"
+              cy="50%"
+              innerRadius={50}
+              outerRadius={60}
+              dataKey="value"
+              stroke="none"
+              startAngle={90}
+              endAngle={450}
+            >
+              <Cell fill="#3e80f9" />
+              <Cell fill="#f0f0f0" />
+            </Pie>
+            {/* Средний круг (зеленый) */}
+            <Pie
+              data={[
+                { name: 'green-completed', value: 75 },
+                { name: 'green-remaining', value: 25 }
+              ]}
+              cx="50%"
+              cy="50%"
+              innerRadius={30}
+              outerRadius={40}
+              dataKey="value"
+              stroke="none"
+              startAngle={90}
+              endAngle={450}
+            >
+              <Cell fill="#27cea7" />
+              <Cell fill="#f0f0f0" />
+            </Pie>
+            {/* Внутренний круг (оранжевый) */}
+            <Pie
+              data={[
+                { name: 'orange-completed', value: 60 },
+                { name: 'orange-remaining', value: 40 }
+              ]}
+              cx="50%"
+              cy="50%"
+              innerRadius={15}
+              outerRadius={30}
+              dataKey="value"
+              stroke="none"
+              startAngle={90}
+              endAngle={450}
+            >
+              <Cell fill="#ff9f43" />
+              <Cell fill="#f0f0f0" />
+            </Pie>
+            {/* Центральный текст */}
+            <text 
+              x="50%" 
+              y="50%" 
+              textAnchor="middle" 
+              dominantBaseline="central" 
+              fontSize="16" 
+              fontWeight="bold"
+              fill="#0f141f"
+              fontFamily="Urbanist, sans-serif"
+            >
+              82%
+            </text>
+          </PieChart>
+        </ResponsiveContainer>
+         </div>
+        {/* Общее время */}
+        <div className="total-time">
+          <p>Total hour: 6h 32 min</p>
+        </div>
+        {/* Статусы курсов */}
+        <div className="course-status">
+          <div className="status-item">
+            <p className="progress-numbers">60/60</p>
+            <div className="progress-bar">
+              <div 
+                className="progress-fill" 
+                style={{ 
+                  width: '100%', 
+                  backgroundColor: '#3e80f9' 
+                }}
+              ></div>
+            </div>
+            <p className="progress-label">Completed</p>
+          </div>
+          <div className="status-item">
+            <p className="progress-numbers">60/60</p>
+            <div className="progress-bar">
+              <div 
+                className="progress-fill" 
+                style={{ 
+                  width: '100%', 
+                  backgroundColor: '#27cea7' 
+                }}
+              ></div>
+            </div>
+            <p className="progress-label">Completed</p>
+          </div>
+          <div className="status-item">
+            <p className="progress-numbers">60/60</p>
+            <div className="progress-bar">
+              <div 
+                className="progress-fill" 
+                style={{ 
+                  width: '100%', 
+                  backgroundColor: '#ff9f43' 
+                }}
+              ></div>
+            </div>
+            <p className="progress-label">Completed</p>
+          </div>
+        </div>
+     
+    </div>
+  </div>
+</div>
 
 
 
