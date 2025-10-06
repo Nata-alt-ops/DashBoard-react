@@ -11441,6 +11441,7 @@ __metadata:
     react-hook-form: "npm:^7.61.1"
     react-modal: "npm:^3.16.3"
     react-router-dom: "npm:^7.7.1"
+    react-script: "npm:^2.0.5"
     react-scripts: "npm:^5.0.1"
     recharts: "npm:^3.2.0"
     sass: "npm:^1.91.0"
@@ -11811,6 +11812,13 @@ __metadata:
     react-dom:
       optional: true
   checksum: 10c0/e55fe74a2947939526c79e496ab1fc501fd8e89a191a20157d94cfe712d4d9d84f68627811cf1d477a36b98250fcad958bf1237fc41ff0a8b2de00ddc8c53e3b
+  languageName: node
+  linkType: hard
+
+"react-script@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "react-script@npm:2.0.5"
+  checksum: 10c0/1c4e575aa4584df44a2fec62b832a10992ae9b982c9ec021ed336ff706c57050e06fc1c31fdc1eb54839ff1c7b9f791efb1ba33c54ce5af854bab3f518647dbb
   languageName: node
   linkType: hard
 
