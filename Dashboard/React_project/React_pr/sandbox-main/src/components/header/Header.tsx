@@ -586,7 +586,6 @@ export const Header = () => {
     {/*ПРОБЛЕМА: Не устанавливается нужная высота, окно меньше чем заданно*/}
     <ul className="dropdown-menu" style={{height:'auto', width:'330px',padding:"20px 20px"}} onClick={handleDropdownClick}>
         <div className="card" style={{borderRadius:'12px', border:'none'}}>
-            <div className="card-body" style={{width:'auto', height:'auto', padding:'0'}}>
                 <div className="profile_header">
                     <div className="d-flex justify-content-start align-items-start flex-row  ">
                         <img src="/user-img.png" alt=""></img>
@@ -596,6 +595,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
+            <div className="card-body" style={{width:'auto', height:'auto', padding:'0'}}>
 
                 <div className="sroll-button max-h-270 overflow-y-auto scroll-sm ">
                     <button className="d-flex justify-content-start align-items-center flex-row">
