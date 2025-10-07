@@ -569,7 +569,7 @@ export const Header = () => {
     {/* Аккаунт */}
 <div className="dropdown" data-bs-auto-close="outside" >
     <button className="dropdown-btn button_account d-flex justify-content-between align-items-center" 
-    style={{background:'#ffffff'}}
+    style={{background:'#ffffff'}} 
         type="button" 
         data-bs-toggle="dropdown" 
         aria-expanded="false">
@@ -584,9 +584,9 @@ export const Header = () => {
         
     {/*всплывающее окно*/}
     {/*ПРОБЛЕМА: Не устанавливается нужная высота, окно меньше чем заданно*/}
-    <ul className="dropdown-menu " style={{height:'407px', width:'auto'}} onClick={handleDropdownClick}>
-        <div className="card" style={{width:'330px', height:'auto',padding:"20px 20px", borderRadius:'12px', border:'none'}}>
-            <div className="card-header" style={{backgroundColor:"#ffffff", height:'auto', width:"100%", border:"none", padding:'0'}}>
+    <ul className="dropdown-menu" style={{height:'auto', width:'330px',padding:"20px 20px"}} onClick={handleDropdownClick}>
+        <div className="card" style={{borderRadius:'12px', border:'none'}}>
+            <div className="card-body" style={{width:'auto', height:'auto', padding:'0'}}>
                 <div className="profile_header">
                     <div className="d-flex justify-content-start align-items-start flex-row  ">
                         <img src="/user-img.png" alt=""></img>
@@ -596,8 +596,80 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <div className="sroll-button max-h-270 overflow-y-auto scroll-sm ">
+                    <button className="d-flex justify-content-start align-items-center flex-row">
+                        <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#487fff" viewBox="0 0 256 256">
+                            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path>
+                            </svg>
+                        <p>Account Settings</p>
+                        </div>
+                    </button>
+
+             <button className="d-flex justify-content-start align-items-center flex-row">
+                <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#487fff" viewBox="0 0 256 256">
+                   <path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path>
+                   </svg>
+                <p>Upgrade Plan</p>
+                </div>
+            </button>
+
+            <button className="d-flex justify-content-start align-items-center flex-row">
+                <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#487fff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"></path></svg>
+                <p>Daily Activity</p>
+                </div>
+            </button>
+
+            <button className="d-flex justify-content-start align-items-center flex-row">
+                <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#487fff" viewBox="0 0 256 256">
+                   <path d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"></path>
+                   </svg>
+                <p>Inbox</p>
+                </div>
+            </button>
+
+            <button className="d-flex justify-content-start align-items-center flex-row">
+                <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#487fff" viewBox="0 0 256 256">
+                  <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path>
+                  </svg>
+                <p>Email</p>
+                </div>
+            </button>
+
+            <div className="line_scroll"></div>
+
+            <button className="d-flex justify-content-start align-items-center  flex-row log-out-button">
+                <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="#ea5455" viewBox="0 0 256 256">
+                  <path d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z"></path>
+                  </svg>
+                <p>log Out</p>
+                </div>
+            </button>
+        </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+          
+            
+     
+
+
+
+
+
+        {/*
              <div className="sroll-button max-h-270 overflow-y-auto scroll-sm ">
             <button className="d-flex justify-content-start align-items-center flex-row">
                 <div className="scroll_button_logo d-flex justify-content-center align-items-center ">
@@ -653,14 +725,13 @@ export const Header = () => {
                 </div>
             </button>
         </div>
+            </div>
+        </div>*/}
 
-
-
-
-        </div>
     </ul>
     
 </div>
+
 
 
 
