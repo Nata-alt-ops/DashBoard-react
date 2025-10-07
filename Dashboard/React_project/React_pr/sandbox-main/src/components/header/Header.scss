@@ -600,10 +600,53 @@ header {
                       width: 16px;
                       height: 16px;
                       margin-top: 10px;
-        
-                      svg{
-                        fill:#667797;
+                     
+                      .dropdown-dots {
+                          transition: all 0.2s ease;
+                          border-radius: 4px !important;
+                          width: 16px !important; // Увеличиваем ширину
+                          height: 24px !important; // Увеличиваем высоту
+                          display: flex !important;
+                          align-items: center !important;
+                          justify-content: center !important;
+                          padding: 0 !important;
+                          background: none !important;
+                          
+                          &[aria-expanded="true"] {
+                            background-color: #c5d9fd !important;
+                          }
+                          
+                        
+                          svg {
+                            width: 16px !important;
+                            height: 16px !important;
+                            fill: #667797;
+                            
+                            
+                          }
+                          
+              
+                        }
+
+                      .dropdown-menu{
+                        padding: 12px 12px;
+                      
+                        .dropdown-item{
+                          color: #667797;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 15px;
+                          font-weight: 400;
+                          padding: 6px 8px;
+                          cursor: pointer;
+
+                          &:hover{
+                             background-color: #ecf2fe;
+                          border-radius: 8px;
+                          }
+                        }
                       }
+
+
                       
                     }
                     .info_app{

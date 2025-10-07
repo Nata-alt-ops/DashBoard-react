@@ -9,6 +9,13 @@ import '@fontsource/roboto/700.css';
 import './Header.scss';
 
 export const Header = () => {
+
+    const handleDropdownClick = (e: any) => {
+        if (e.target.closest('.close-dropdown')){
+            return
+        }
+  e.stopPropagation();
+};
     
    
     const [isDashboardOpen, setIsDashboardOpen] = useState(false);
@@ -354,9 +361,9 @@ export const Header = () => {
                 </span>
             </button>
             {/*всплывающее окно*/}
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1"  >
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" onClick={handleDropdownClick} style={{border:'none'}}  >
                 <div className="card" style={{borderRadius:'12px', width:'330px', height:'369px'}}>
-                    <div className="card-header">
+                    <div className="card-header" >
                 <div className="element d-flex bd-highlight mb-3">
                 <h5 className="p-2 flex-grow-1 bd-highlight text-xl fw-semibold text-white mb-0">Notifications</h5>
                 <button className="bg-white v border-0">New</button>
@@ -379,22 +386,31 @@ export const Header = () => {
                         <p className="fw-medium text-15 mb-0 text-gray-300 hover-text-main-600 text-line-2">
                         Ashwin Bose is requesting access to Design File - Final Project.
                         </p>
-                        <div className="dropdown flex-shrink-0">
-                        <button 
-                            className="text-gray-200 rounded-4 border-0 bg-transparent" 
-                            type="button" 
-                            data-bs-toggle="dropdown" 
-                            aria-expanded="false">
-                            <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                            </svg>
-                        </button>
-                        <ul className="dropdown-menu">
-                            <li><div className="dropdown-item">Mark as read</div></li>
-                            <li><div className="dropdown-item">Delete Notification</div></li>
-                            <li><div className="dropdown-item">Report</div></li>
-                        </ul>
-                        </div>
+
+                       <div className="dropdown flex-shrink-0">
+                            <button 
+                                className=" dropdown-dots border-0 " 
+                                type="button" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                            >
+                                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                </svg>
+                            </button>
+                            <ul className="dropdown-menu" 
+                                style={{
+                                width: '196px', 
+                                height: '129.500px', 
+                                boxShadow: '4px 4px 12px #0000001a',
+                                border: '1px solid #d5dbe7'
+                                }}>
+                                <li><div className="dropdown-item">Mark as read</div></li>
+                                <li><div className="dropdown-item">Delete Notification</div></li>
+                                <li><div className="dropdown-item">Report</div></li>
+                            </ul>
+                            </div>
+
                     </div>
                     <div className="d-flex info_app flex-row justify-content-center align-items-center">
                         <div className="d-flex mb-3 justify-content-start a">
@@ -445,7 +461,7 @@ export const Header = () => {
             </div>
 
         {/* Радиокнопки */}
-<div className="dropdown" data-bs-auto-close="outside">
+<div className="dropdown" data-bs-auto-close="outside" >
     <button className="dropdown-btn text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 rounded-circle text-xl flex-center border-0" 
         type="button" 
         data-bs-toggle="dropdown" 
@@ -458,7 +474,7 @@ export const Header = () => {
     </button>
     
     {/*всплывающее окно*/}
-    <ul className="dropdown-menu radio-menu" aria-labelledby="dropdownMenuButton2" style={{width:'194px', height:'224px'}}>
+    <ul className="dropdown-menu radio-menu" aria-labelledby="dropdownMenuButton2" style={{width:'194px', height:'224px'}} onClick={handleDropdownClick}>
         <div className="card-body-radio-button">
             {/* Первый язык */}
             <div className="logo_label_radiobutton d-flex justify-content-between align-items-center  ">
@@ -568,7 +584,7 @@ export const Header = () => {
         
     {/*всплывающее окно*/}
     {/*ПРОБЛЕМА: Не устанавливается нужная высота, окно меньше чем заданно*/}
-    <ul className="dropdown-menu " style={{height:'407px', width:'auto'}}>
+    <ul className="dropdown-menu " style={{height:'407px', width:'auto'}} onClick={handleDropdownClick}>
         <div className="card" style={{width:'330px', height:'auto',padding:"20px 20px", borderRadius:'12px', border:'none'}}>
             <div className="card-header" style={{backgroundColor:"#ffffff", height:'auto', width:"100%", border:"none", padding:'0'}}>
                 <div className="profile_header">
