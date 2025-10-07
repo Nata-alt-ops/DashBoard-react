@@ -361,7 +361,7 @@ export const Header = () => {
                 </span>
             </button>
             {/*всплывающее окно*/}
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" onClick={handleDropdownClick} style={{border:'none'}}  >
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" onClick={handleDropdownClick} style={{border:'none', boxShadow:'0px 12px 15px #0000001a'}}  >
                 <div className="card" style={{borderRadius:'12px', width:'330px', height:'369px'}}>
                     <div className="card-header" >
                 <div className="element d-flex bd-highlight mb-3">
