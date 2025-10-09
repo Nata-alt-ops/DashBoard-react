@@ -13,7 +13,8 @@ import {
   Label,
   RadialBar,
   RadialBarChart,
-  Legend
+  Legend,
+  ReferenceLine
 } from 'recharts';
 
 
@@ -264,142 +265,149 @@ export const Main = () => {
           </div>
         </div>
 
-        {/* ➡️ Большой график */}
-        <div className="card mt-4" style={{border:'none'}}>
-          <div className="card-body" >
-            <div className="d-flex justify-content-between align-items-center mb-3">
-              <h3 className="mb-0 text_graph">Study Statistics</h3>
-              <div className="d-flex align-items-center gap-3">
-               
-                <div className="d-flex align-items-center">
-                  <div
-                    style={{
-                      width: '8px',
-                      height: '8px',
-                      borderRadius: '50%',
-                      backgroundColor: '#3e80f9',
-                      marginRight: '6px',
-                    }}
-                  ></div>
-                  <span style={{ fontSize: '13px', color: '#0c1018', fontFamily:'Roboto, sans-serif' }}>Study</span>
-                </div>
+    
+<div className="card mt-4 graph" style={{ border: 'none' }}>
+  <div className="card-body p-0"> {/* ← Ключевое изменение: p-0 убирает padding */}
+    <div className="d-flex justify-content-between align-items-center mb-3" style={{padding:'20px 20px'}}>
+      <h3 className="mb-0 text_graph">Study Statistics</h3>
+      <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center">
+          <div
+            style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              backgroundColor: '#3e80f9',
+              marginRight: '6px',
+            }}
+          ></div>
+          <span style={{ fontSize: '13px', color: '#0c1018', fontFamily: 'Roboto, sans-serif' }}>
+            Study
+          </span>
+        </div>
+        <div className="d-flex align-items-center">
+          <div
+            style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              backgroundColor: '#27cea7',
+              marginRight: '6px',
+            }}
+          ></div>
+          <span style={{ fontSize: '13px', color: '#0c1018', fontFamily: 'Roboto, sans-serif' }}>
+            Test
+          </span>
+        </div>
+        <div className="dropdown">
+          <select
+            value={timePeriod}
+            onChange={handlePeriodChange}
+            className="form-select form-select-sm select-dropdown"
+            style={{ width: '80px', borderRadius: '8px' }}
+          >
+            <option value="Yearly">Yearly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Today">Today</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div style={{ width: '100%', height: '300px' }}>
+      <ResponsiveContainer width="100%" height="100%">
+       <AreaChart
+  data={data}
+  margin={{ top: 10, right: 0, left: 0, bottom: 10 }}
+  syncId="anyId"
+>
+  <defs>
+    <linearGradient id="studyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="10%" stopColor="#3e80f9" stopOpacity="0.7" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.1" />
+    </linearGradient>
+    <linearGradient id="testGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="10%" stopColor="#27cea7" stopOpacity="0.7" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.1" />
+    </linearGradient>
+  </defs>
 
-                
-                <div className="d-flex align-items-center">
-                  <div
-                    style={{
-                      width: '8px',
-                      height: '8px',
-                      borderRadius: '50%',
-                      backgroundColor: '#27cea7',
-                      marginRight: '6px',
-                    }}
-                  ></div>
-                  <span style={{ fontSize: '13px', color: '#0c1018', fontFamily:'Roboto, sans-serif' }}>Test</span>
-                </div>
+  <CartesianGrid
+    strokeDasharray="3 3"
+    stroke="#e9ecef"
+    horizontal={true}
+    vertical={false}
+  />
 
-              
-                <div className="dropdown">
-                  <select 
-                    value={timePeriod}
-                    onChange={handlePeriodChange}
-                    className="form-select form-select-sm select-dropdown"
-                    style={{ width: '80px', borderRadius:'8px' }}
-                  >
-                    <option value="Yearly">Yearly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Today">Today</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+  <XAxis
+    dataKey="month"
+    tick={{ fill: '#667797', fontSize: 14, fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
+    tickLine={false}
+    axisLine={false}
+    interval={0}
+    padding={{ left: 20, right: 30 }}
+  />
 
-                        <div style={{ width: '100%', height: 300 }}>
-                          <ResponsiveContainer width="100%" height="100%">
-                          
-                            <AreaChart
-                            data={data}
-                            margin={{ top: 20, right: 0, left: 0, bottom: 20 }}
-                            syncId="anyId"
-                          >
-                             
-                              <defs>
-                                <linearGradient id="studyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                  <stop offset="10%" stopColor="#3e80f9" stopOpacity="0.7" />
-                                  <stop offset="100%" stopColor="#ffffffff" stopOpacity="0.1" />
-                                </linearGradient>
-                                <linearGradient id="testGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                  <stop offset="10%" stopColor="#27cea7" stopOpacity="0.7" />
-                                  <stop offset="100%" stopColor="#ffffffff" stopOpacity="0.1" />
-                                </linearGradient>
-                              </defs>
+  <YAxis
+    tickFormatter={formatYAxis}
+    tick={{ fill: '#6c757d', fontSize: 12 }}
+    tickLine={false}
+    axisLine={false}
+    domain={[0, 50]}
+    tickCount={6}
+  />
 
-                             <CartesianGrid
-                              strokeDasharray="3 3"
-                              stroke="#e9ecef"
-                              horizontal={true}
-                              vertical={false}
-                            />
-                             <XAxis
-  dataKey="month"
-  tick={{ fill: '#6c757d', fontSize: 12 }}
-  tickLine={false}      
-  axisLine={false}        
-/>
+  <Tooltip
+    formatter={(value) => `${value}Hr`}
+    labelFormatter={(label) => label}
+    contentStyle={{
+      backgroundColor: '#fff',
+      border: '1px solid #ddd',
+      borderRadius: '4px',
+      padding: '8px',
+      fontSize: '12px',
+    }}
+    cursor={{ stroke: '#ccc', strokeWidth: 1, strokeDasharray: '3 3' }}
+  />
 
-<YAxis
-  tickFormatter={formatYAxis}
-  tick={{ fill: '#6c757d', fontSize: 12 }}
-  tickLine={false}       
-  axisLine={false}        
-  domain={[0, 50]}
-  tickCount={6}         
-/>
-                              <Tooltip
-                                formatter={(value) => `${value}Hr`}
-                                labelFormatter={(label) => label}
-                                contentStyle={{
-                                  backgroundColor: '#fff',
-                                  border: '1px solid #ddd',
-                                  borderRadius: '4px',
-                                  padding: '8px',
-                                  fontSize: '12px'
-                                }}
-                                cursor={{ stroke: '#ccc', strokeWidth: 1, strokeDasharray: '3 3' }}
-                              />
+  <Area
+    type="monotone"
+    dataKey="study"
+    stroke="#3e80f9"
+    strokeWidth={2}
+    fill="url(#studyGradient)"
+    fillOpacity={1}
+    name="Study"
+    dot={false}
+    activeDot={{ r: 6 }}
+  />
 
-                          
-                              <Area
-                                type="monotone"
-                                dataKey="study"
-                                stroke="#3e80f9"
-                                strokeWidth={1}
-                                fill="url(#studyGradient)"
-                                fillOpacity={1}
-                                name="Study"
-                                dot={false}
-                                activeDot={{ r: 6 }}
-                              />
+  <Area
+    type="monotone"
+    dataKey="test"
+    stroke="#27cea7"
+    strokeWidth={2}
+    fill="url(#testGradient)"
+    fillOpacity={1}
+    name="Test"
+    dot={false}
+    activeDot={{ r: 6 }}
+  />
 
-                          
-                              <Area
-                                type="monotone"
-                                dataKey="test"
-                                stroke="#27cea7"
-                                strokeWidth={1}
-                                fill="url(#testGradient)"
-                                fillOpacity={1}
-                                name="Test"
-                                dot={false}
-                                activeDot={{ r: 6 }}
-                              />
-                            </AreaChart>
-                          </ResponsiveContainer>
-                        </div>
-                      </div>
-                    </div>
-                    
+
+  <ReferenceLine
+    y={0}
+    stroke="#e9ecef"
+    strokeWidth={1}
+    // strokeDasharray="3 3" ← УБЕРИТЕ ЭТО, чтобы линия была СПЛОШНОЙ
+    layer="bottom"
+  />
+
+</AreaChart>
+      </ResponsiveContainer>
+    </div>
+  </div>
+</div>           
                   <div className='card mt-4' style={{border:'none'}}>
                     <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center gap-10">
                       <div className='d-flex justify-content-between align-items-center mb-20' style={{width:'100%', }}>
