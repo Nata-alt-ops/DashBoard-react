@@ -4,6 +4,76 @@
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
 
+$color_main1:#ffffff;
+$color_main2:#d5dbe7;
+$color_main3:#f1f1f1;
+$color_main4:#c1c1c1;
+$color_main5:#a8a8a8;
+$color_main6:#667797;
+$color_main7:#ebf1fd;
+$color_main8:#1d72f2;
+$color_main9:#155bc8;
+$color_main10:#7585a5;
+$color_main11:#3e80f9;
+$color_main12:#ecf2fe;
+$color_main13:#0f141f ;
+$color_main14:#0c1018;
+$color_main15:#7b869e;
+$color_main16:#0d6efd;
+$color_main17:#c5d9fd;
+$color_main18:#ff4757;
+
+
+@mixin dasboard_button_menu{
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: $color_main10;
+  background: none;
+  border: none;
+  cursor: pointer;
+} 
+
+@mixin left_header_buttons_text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color:$color_main6;
+}
+@mixin text_h1_under_line{
+  color: $color_main6;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@mixin certificate_text_h1{
+  color:$color_main13 ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+@mixin certificate_text_p{
+  color:$color_main14 ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+@mixin certificate_text_button{
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Roboto' sans-serif;
+}
+
+@mixin input{
+  border: none;
+  background: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: $color_main15;
+}
+
+
 header {
   display: flex;
   
@@ -14,12 +84,10 @@ header {
     z-index: 1000;
     width: 251px;
     display: flex;
-    border-right: 1px solid #d5dbe7;
-    background-color: #ffffff;
+    border-right: 1px solid $color_main2;
+    background-color: $color_main1;
 
-  
-    
-      
+
     .left_header {
       width: 230px;
       height: 100vh;
@@ -27,8 +95,9 @@ header {
       justify-content: center;
       flex-direction: column;
       margin-left: 20px;
-      background-color: #ffffff;
+      background-color: $color_main1;
       
+
       .logo_img {
         width: min-content;
         height: 32px;
@@ -47,147 +116,144 @@ header {
         }
         
         &::-webkit-scrollbar-track {
-          background: #f1f1f1;
+          background: $color_main3;
           border-radius: 10px;
         }
         
         &::-webkit-scrollbar-thumb {
-          background: #c1c1c1;
+          background: $color_main4;
           border-radius: 10px;
         }
         
         &::-webkit-scrollbar-thumb:hover {
-          background: #a8a8a8;
+          background: $color_main5;
         }
     
         .dropdown_con, .button_couses_container, .button_authetication_container {
-  width: auto;
-  height: auto;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  position: relative; 
-  
-  .btn {
-    border-radius: 8px !important;
-    height: 40px;
-    width: 205px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease !important;
-  }
+          width: auto;
+          height: auto;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          position: relative; 
+          
+          .btn {
+            border-radius: 8px !important;
+            height: 40px;
+            width: 205px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease !important;
+          }
     
-  .element_button, .element_button_courses {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+          .element_button, .element_button_courses {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
 
-    .button_svg {
-      width: 24px;
-      height: 25px;
-    }
-    
-    .text_button {
-      font-family: 'Roboto', sans-serif;
-      font-size: 15px;
-      color: #ffffff;
-    }
-    
-    .text_button1 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 15px;
-      color: #667797;
-    }
-    
-    .u {
-      display: flex;
-      margin-left: 23px;
-      
-      .number_button {
-        color: #3e80f9;
-        font-family: 'Roboto', sans-serif;
-        font-size: 13px;
-        font-weight: 400;
-      }
-      
-      .rounded-circle {
-        width: 22px;
-        height: 22px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-}
-.button_couses_container,
-.button_authetication_container {
-  .btn {
-    &.normal_button {
-      background-color: #ffffff !important;
-      color: #667797 !important;
-      border: 1px solid transparent !important;
-
-      .button_svg1 {
-        fill: #667797 !important;
-      }
-
-      .color_down {
-        fill: #667797 !important;
-      }
-
-      .text_button1 {
-        color: #667797 !important;
-      }
-
-      &:hover {
-        background-color: #ebf1fd !important;
-        color: #1d72f2 !important;
-        border: 1px solid transparent !important;
-
-        .text_button1 {
-          color: #1d72f2 !important;
+            .button_svg {
+              width: 24px;
+              height: 25px;
+            }
+            
+            .text_button {
+              font-family: 'Roboto', sans-serif;
+              font-size: 15px;
+              color: $color_main1;
+            }
+            
+            .text_button1 {
+              font-family: 'Roboto', sans-serif;
+              font-size: 15px;
+              color: #667797;
+            }
+            
+            .u {
+              display: flex;
+              margin-left: 23px;
+              
+              .number_button {
+                color: #3e80f9;
+                font-family: 'Roboto', sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+              }
+              
+              .rounded-circle {
+                width: 22px;
+                height: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
         }
 
-        .button_svg1,
-        .color_down {
-          fill: #1d72f2 !important;
+        .button_couses_container,
+        .button_authetication_container {
+          .btn {
+            &.normal_button {
+               background-color: $color_main1 !important;
+              color: $color_main6 !important;
+              border: 1px solid transparent !important;
+
+
+              .button_svg1,
+              .color_down,
+              .text_button1
+               {
+                fill: $color_main6 !important;
+              }
+              &:hover {
+                background-color: $color_main7 !important;
+                color: $color_main8 !important;
+                border: 1px solid transparent !important;
+
+                .text_button1 {
+                  color: $color_main8 !important;
+                }
+
+                .button_svg1,
+                .color_down {
+                  fill: $color_main8 !important;
+                }
+              }
+
+            }
+
+            &.active_button {
+              background-color: $color_main8 !important;
+              color: $color_main1 !important;
+              border: 1px solid $color_main8 !important;
+
+              .button_svg1,
+              .color_down {
+                fill: $color_main1 !important;
+              }
+
+              .text_button1 {
+                color: $color_main1 !important;
+              }
+
+              &:hover {
+                background-color: $color_main9 !important;
+                color: $color_main1 !important;
+                border: 1px solid $color_main9 !important;
+
+                .text_button1 {
+                  color: $color_main1 !important;
+                }
+
+                .button_svg1,
+                .color_down {
+                  fill: $color_main1 !important;
+                }
+              }
+            }
+          }
         }
-      }
-    }
-
-    &.active_button {
-      background-color: #1d72f2 !important;
-      color: #ffffff !important;
-      border: 1px solid #1d72f2 !important;
-
-      .button_svg1,
-      .color_down {
-        fill: #ffffff !important;
-      }
-
-      .text_button1 {
-        color: #ffffff !important;
-      }
-
-      &:hover {
-        background-color: #155bc8 !important;
-        color: #ffffff !important;
-        border: 1px solid #155bc8 !important;
-
-        .text_button1 {
-          color: #ffffff !important;
-        }
-
-        .button_svg1,
-        .color_down {
-          fill: #ffffff !important;
-        }
-      }
-    }
-  }
-}
         
         .dropdown-menu-in-flow {
           position: relative; 
@@ -198,17 +264,11 @@ header {
           margin-top: 5px;
           
           .dropdown-item {
-            cursor: pointer;
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-            font-weight: 400;
+            @include dasboard_button_menu();
             align-items: center;
             margin-left: 15%;
             position: relative;
             padding: 5px 0;
-            color: #7585a5;
-            background: none;
-            border: none;
             text-align: left;
             width: 100%;
             
@@ -220,12 +280,12 @@ header {
               transform: translateY(-50%);
               width: 10px;
               height: 2px;
-              background-color: #d5dbe7;
+              background-color: $color_main2;
               border-radius: 1px;
             }
             
             &:hover {
-              color: #3e80f9;
+              color: $color_main11;
               background-color: transparent;
             }
           }
@@ -248,46 +308,40 @@ header {
             svg{
               margin-top: 7px;
               margin-left: 7px;
-              fill: #667797;
+              fill: $color_main6;
 
             }
 
             p{
+              @include left_header_buttons_text();
               margin-top: 7px;
-              font-family: 'Roboto', sans-serif;
-              font-size: 15px;
-              font-weight: 400;
-              color:#667797;
             }
 
           }
 
           &:hover{
             button{
-              background-color: #ebf1fd;
+              background-color: $color_main7;
               border-radius: 8px;
             }
 
             svg{
-              fill:#1d72f2
+              fill:$color_main8
             }
             p{
-              color: #1d72f2;
+              color: $color_main8;
             }
           }
         }
         .line{
           width: 205px;
           height: 1px;
-          background-color:#d5dbe7;
+          background-color:$color_main2;
           margin-top: 20px;
         }
 
         .text_h1{
-          color: #667797;
-          font-family: 'Roboto', sans-serif;
-          font-size: 14px;
-          font-weight: 600;
+          @include text_h1_under_line();
           margin-top: 20px;
           margin-left: 20px;
 
@@ -303,12 +357,11 @@ header {
               .square {
                 width: 205px;
                 height: 219px;
-                background-color: #4c49ee;
                 position: relative; 
                 z-index: 1;
                 margin-top: 160px;
                 border-radius: 20px;
-                background-color: #ecf2fe;
+                background-color: $color_main12;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -321,31 +374,22 @@ header {
                   flex-direction: column;
 
                   h1{
-                    color:#0f141f ;
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 700;
-                    font-size: 18px;
+                    @include certificate_text_h1();
                     text-align: center;
                   }
                   p{
+                    @include certificate_text_p();
                     text-align: center;
-                    color: #0c1018;
-                    font-size: 15px;
-                    font-weight: 400;
-                    font-family: 'Roboto' sans-serif;
-
                   }
                   .button_card{
                     display: flex;
                     justify-content: center;
 
                     button{
+                      @include certificate_text_button();
                       border-radius: 100px;
-                       font-size: 15px;
-                        font-weight: 500;
-                        font-family: 'Roboto' sans-serif;
-                        width: 118px;
-                        height: 45px;
+                      width: 118px;
+                      height: 45px;
                     }
                   }
                 }
@@ -355,7 +399,7 @@ header {
               .circle {
                 width: 114px;
                 height: 114px;
-                background-color: white;
+                background-color: $color_main1;
                 position: absolute; 
                 top: -80px; 
                 left: 50%;
@@ -366,7 +410,7 @@ header {
                 background-position-y: 20px;
                
                 .circle.custom-border {
-              border: 5px solid #ecf2fe !important;
+              border: 5px solid $color_main12 !important;
             }
                 
                
@@ -383,14 +427,14 @@ header {
   
   
   .top-navbar {
-    background-color: #ffffff;
+    background-color: $color_main1;
     z-index: 999;
     height: 75px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid #d5dbe7;
+    border-bottom: 1px solid $color_main2;
 
    .search {
   width: 350px;
@@ -398,7 +442,7 @@ header {
   margin-left: 276px;
   border-radius: 100px;
   border: none;
-  background-color: #ecf2fe;
+  background-color: $color_main12;
   transition: border 0.2s;
   
 
@@ -411,16 +455,12 @@ header {
     background: none;
 
     svg {
-      fill: #dfdfe7;
+      fill: $color_main2;
     }
   }
 
   input {
-    border: none;
-    background: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    color: #7b869e;
+    @include input();
     padding-left: 10px;
     padding-top: 10px;
 
@@ -431,20 +471,15 @@ header {
   }
 
   &.search-focused {
-    border: 1px solid #0d6efd; 
+    border: 1px solid $color_main16; 
   }
 }
-
-  
 
     .user{
       width: auto;
       height: 42px;
-
       margin-right: 24px;
       gap:10px;
-
-      
 
       .dropdown {
         border-radius: 100px;
@@ -456,40 +491,38 @@ header {
             width: 40px;
             height: 40px;
             border: none;
-            background-color: #ecf2fe;
+            background-color: $color_main12;
             display: flex;
         align-items: center;
         justify-content: center;   
 
         &:focus{
-          background-color: #c5d9fd;
+          background-color: $color_main17;
         }
       }
     }
 }
 
-      
-
       .shaking-animation {
         animation: shake-cycle 5s infinite;
-  &:hover {
-    animation: shake 0.5s ease-in-out;
-  }
+      &:hover {
+        animation: shake 0.5s ease-in-out;
+      }
   
-  @keyframes shake-cycle {
-        0%, 90% { transform: rotate(0deg); }      
-        91% { transform: rotate(-20deg); }        
-        93% { transform: rotate(10deg); }
-        95% { transform: rotate(-5deg); }
-        97% { transform: rotate(20deg); }          
-        100% { transform: rotate(0deg); }         
+      @keyframes shake-cycle {
+            0%, 90% { transform: rotate(0deg); }      
+            91% { transform: rotate(-20deg); }        
+            93% { transform: rotate(10deg); }
+            95% { transform: rotate(-5deg); }
+            97% { transform: rotate(20deg); }          
+            100% { transform: rotate(0deg); }         
+        }
     }
-}
 
 .alarm-notify {
     width: 8px;
     height: 8px;
-    background-color: #ff4757;
+    background-color: $color_main18;
     border-radius: 50%;
     position: absolute;
     top: -2px;    
@@ -511,8 +544,8 @@ header {
         .card{
 
           .card-header{
-            background-color: #3e80f9;
-            color: #ffffff;
+            background-color: $color_main11;
+            color: $color_main1;
             width: 100%;
             height: 46px;
             padding-top: 5px;
@@ -538,7 +571,7 @@ header {
                 margin-top: 5px;
   
                 &:hover{
-                  color: #3e80f9;
+                  color: $color_main11;
                 }
                 
               }
@@ -547,7 +580,7 @@ header {
                 padding: 0px;
   
                 svg{
-                  fill:#ffffff;
+                  fill:$color_main1;
                  
                 }
               }
@@ -572,7 +605,7 @@ header {
                   }
                   
                   &::-webkit-scrollbar-thumb:hover {
-                    background: #ffffff;
+                    background: $color_main1;
                   }
                 }
                 .b{
@@ -585,7 +618,7 @@ header {
                   
         
                     p{
-                      color: #667797;
+                      color: $color_main6;
                       cursor: pointer;
                       font-size: 15px;
                       font-family: 'Roboto', sans-serif;
