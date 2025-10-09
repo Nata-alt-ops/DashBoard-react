@@ -958,7 +958,7 @@ header {
   }
 
   .sroll-button{
-    max-height: 230px; 
+    max-height: 270px; 
       &::-webkit-scrollbar {
         width: 6px;
       }
@@ -986,6 +986,7 @@ header {
 
               .scroll_button_logo{
                 padding: 12px 20px ;
+                overflow: hidden;
                 p{
                   color: #667797;
                   cursor: pointer;
