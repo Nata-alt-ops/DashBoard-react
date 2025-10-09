@@ -3,13 +3,10 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
-
-
-
-@import '@fontsource/urbanist/400.css'; // Regular
-@import '@fontsource/urbanist/500.css'; // Medium
-@import '@fontsource/urbanist/600.css'; // SemiBold
-@import '@fontsource/urbanist/700.css'; // Bold
+@import '@fontsource/urbanist/400.css'; 
+@import '@fontsource/urbanist/500.css'; 
+@import '@fontsource/urbanist/600.css'; 
+@import '@fontsource/urbanist/700.css'; 
 .site_con{
   background-color:#ecf2fe ;
   width: 100%;
@@ -50,7 +47,7 @@
       margin-left: 24px;
       flex-direction: row;
       
-      .card_group1{
+      .card_group{
         width: 100%;
         height: 158.500px;
         margin-top: 24px;
@@ -58,7 +55,7 @@
         gap: 20px;
         
         .card{
-          border-radius: 12px;
+          border-radius: 18px;
           border: none;
           
           
@@ -98,10 +95,31 @@
     }
     
   }
+  .text_graph{
+    font-size: 22px;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    color: #0f141f;
+  }
+
+  .select-dropdown{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #667797;
+    font-size: 13px;
+    border: 1px solid #d5dbe7;
+    padding: 4px 8px ;
+    cursor: pointer;
+    
+    &:focus{
+      border: 1px solid #6290ee;
+      box-shadow: none;
+    }
+  }
   .card_group2{
     width: 1191px;
     height: 406px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(241, 28, 28);
     margin-top: 24px;
     border-radius: 12px;
     
@@ -119,6 +137,7 @@
           margin-top: 5px;
           
         }
+        
             .circle_text{
               display: flex;
               gap:5px;

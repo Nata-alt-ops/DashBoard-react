@@ -33,62 +33,10 @@ interface ThreeLayerProgressProps {
   totalTime: string;
 }
 
-export const Main = ({  bluePercent,
-  greenPercent,
-  blackPercent,
-  totalTime}:any) => {
+export const Main = () => {
     const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
    const [hovered, setHovered] = useState(false);
-    // Данные для трёхслойной круговой диаграммы
-  const progressData = [
-    // Внешний круг (синий)
-    { name: 'blue-completed', value: bluePercent, color: '#45a9e1' },
-    { name: 'blue-remaining', value: 100 - bluePercent, color: '#f0f0f0' },
     
-    // Средний круг (зелёный)
-    { name: 'green-completed', value: greenPercent, color: '#2ecc71' },
-    { name: 'green-remaining', value: 100 - greenPercent, color: '#f0f0f0' },
-    
-    // Внутренний круг (чёрный)
-    { name: 'black-completed', value: blackPercent, color: '#000000' },
-    { name: 'black-remaining', value: 100 - blackPercent, color: '#f0f0f0' }
-  ];
-
-
-
-  const data_1 = [
-  {
-    name: '18-24',
-    uv: 31.47,
-    pv: 2400,
-    fill: '#8884d8',
-  },
-  {
-    name: '25-29',
-    uv: 26.69,
-    pv: 4567,
-    fill: '#83a6ed',
-  },
-  {
-    name: '30-34',
-    uv: 15.69,
-    pv: 1398,
-    fill: '#8dd1e1',
-  }
-];
-
-const style = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px',
-};
-
-   
-
-  
-
-  
    // Исправленные обработчики событий
   const handleMouseEnter = (data: any) => {
     if (data && data.name && data.name.includes('completed')) {
@@ -136,7 +84,7 @@ const style = {
   { name: 'Категория 3', value: 150 },
   { name: 'Категория 4', value: 100 }
 ];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
 
 
 
@@ -158,7 +106,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
        <div className="scrollable-container">
       <div className='o '>
       <div className="conatainer col-lg-9">
-        <div className="card_group1">
+        <div className="card_group">
           {/* Карточка 1 */}
           <div className="card w-25">
             <div className="card-body">
@@ -320,7 +268,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
         <div className="card mt-4" style={{border:'none'}}>
           <div className="card-body" >
             <div className="d-flex justify-content-between align-items-center mb-3">
-              <h3 className="mb-0">Study Statistics</h3>
+              <h3 className="mb-0 text_graph">Study Statistics</h3>
               <div className="d-flex align-items-center gap-3">
                
                 <div className="d-flex align-items-center">
@@ -333,7 +281,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
                       marginRight: '6px',
                     }}
                   ></div>
-                  <span style={{ fontSize: '14px', color: '#6c757d' }}>Study</span>
+                  <span style={{ fontSize: '13px', color: '#0c1018', fontFamily:'Roboto, sans-serif' }}>Study</span>
                 </div>
 
                 
@@ -347,16 +295,16 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
                       marginRight: '6px',
                     }}
                   ></div>
-                  <span style={{ fontSize: '14px', color: '#6c757d' }}>Test</span>
+                  <span style={{ fontSize: '13px', color: '#0c1018', fontFamily:'Roboto, sans-serif' }}>Test</span>
                 </div>
 
               
                 <div className="dropdown">
-                  <select
+                  <select 
                     value={timePeriod}
                     onChange={handlePeriodChange}
-                    className="form-select form-select-sm"
-                    style={{ width: 'auto' }}
+                    className="form-select form-select-sm select-dropdown"
+                    style={{ width: '80px', borderRadius:'8px' }}
                   >
                     <option value="Yearly">Yearly</option>
                     <option value="Monthly">Monthly</option>
