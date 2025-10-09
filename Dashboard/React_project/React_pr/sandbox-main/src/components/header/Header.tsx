@@ -583,8 +583,7 @@ export const Header = () => {
     </button>
         
     {/*всплывающее окно*/}
-    {/*ПРОБЛЕМА: Не устанавливается нужная высота, окно меньше чем заданно*/}
-    <ul className="dropdown-menu" onClick={handleDropdownClick} style={{width:'330px', maxHeight:'407px', height:'auto'}}>
+    <ul className="dropdown-menu" onClick={handleDropdownClick} style={{width:'330px', maxHeight:'407px', height:'auto', boxShadow:'0px 5px 12px rgba(0, 0, 0, 0.1)', border:'1px solid #d5dbe7'}}>
         <div className="card" style={{borderRadius:'12px', border:'none', padding:'20px 20px', width:'328px', height:'405px'}}>
                 <div className="profile_header">
                     <div className="d-flex justify-content-start align-items-start flex-row  ">
