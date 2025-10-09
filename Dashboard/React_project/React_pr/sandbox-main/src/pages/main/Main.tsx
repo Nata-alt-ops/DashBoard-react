@@ -13,8 +13,7 @@ import {
   Label,
   RadialBar,
   RadialBarChart,
-  Legend,
-  ReferenceLine
+  Legend
 } from 'recharts';
 
 
@@ -318,7 +317,7 @@ export const Main = () => {
       <ResponsiveContainer width="100%" height="100%">
        <AreaChart
   data={data}
-  margin={{ top: 10, right: 0, left: 0, bottom: 10 }}
+  margin={{ top: 10, right: 0, left: 0, bottom: 30 }}
   syncId="anyId"
 >
   <defs>
@@ -331,32 +330,32 @@ export const Main = () => {
       <stop offset="100%" stopColor="#ffffff" stopOpacity="0.1" />
     </linearGradient>
   </defs>
-
   <CartesianGrid
     strokeDasharray="3 3"
     stroke="#e9ecef"
     horizontal={true}
     vertical={false}
   />
-
   <XAxis
     dataKey="month"
     tick={{ fill: '#667797', fontSize: 14, fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
     tickLine={false}
-    axisLine={false}
+     axisLine={{
+    stroke: '#667797',  
+    strokeWidth: 1,        
+    
+  }}
     interval={0}
     padding={{ left: 20, right: 30 }}
   />
-
   <YAxis
     tickFormatter={formatYAxis}
-    tick={{ fill: '#6c757d', fontSize: 12 }}
+    tick={{ fill: '#667797', fontSize: 14, fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
     tickLine={false}
     axisLine={false}
     domain={[0, 50]}
     tickCount={6}
   />
-
   <Tooltip
     formatter={(value) => `${value}Hr`}
     labelFormatter={(label) => label}
@@ -369,40 +368,28 @@ export const Main = () => {
     }}
     cursor={{ stroke: '#ccc', strokeWidth: 1, strokeDasharray: '3 3' }}
   />
-
   <Area
     type="monotone"
     dataKey="study"
     stroke="#3e80f9"
-    strokeWidth={2}
+    strokeWidth={1}
     fill="url(#studyGradient)"
     fillOpacity={1}
     name="Study"
     dot={false}
     activeDot={{ r: 6 }}
   />
-
   <Area
     type="monotone"
     dataKey="test"
     stroke="#27cea7"
-    strokeWidth={2}
+    strokeWidth={1}
     fill="url(#testGradient)"
     fillOpacity={1}
     name="Test"
     dot={false}
     activeDot={{ r: 6 }}
   />
-
-
-  <ReferenceLine
-    y={0}
-    stroke="#e9ecef"
-    strokeWidth={1}
-    // strokeDasharray="3 3" ← УБЕРИТЕ ЭТО, чтобы линия была СПЛОШНОЙ
-    layer="bottom"
-  />
-
 </AreaChart>
       </ResponsiveContainer>
     </div>
