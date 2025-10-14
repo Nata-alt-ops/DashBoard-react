@@ -25,7 +25,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/urbanist/700.css'; 
 import './Main.scss';
-import { Main1 } from '../../components/AuthGuard/com_main';
+import { Main1 } from '../../components/com_main';
 
 interface ThreeLayerProgressProps {
   bluePercent: number;   // внешний синий (например, 82)
@@ -104,16 +104,17 @@ export const Main = () => {
   
   return (
     <div className="site_con ">
-       <div className="scrollable-container">
-        <div className='row gy-4 d-flex flex-row bd-highlight' style={{backgroundColor:'purple'}}>
-        <div className='container1 p-0  bd-highlight' style={{backgroundColor:'green', minHeight:'200px'}}>
-          <Main1 />
-        </div>
-        <div className='container2 p-0 flex-shrink-1 bd-highlight' style={{backgroundColor:'black', minHeight:'200px'}}>
-          gfkjrhlrh;lfih
-        </div>
-
-        </div>
+       <div className="scrollable-container d-flex justify-content-center align-items-center ">
+          <div className='d-flex flex-row con_site'>
+            <div className='container1 d-flex flex-colum'>
+              <Main1 />
+            </div>
+            <div className='container1 d-flex flex-colum'>
+              <Main1 />
+            </div>
+            
+          </div>
+        
       {/*<div className='o '>
       <div className="conatainer col-lg-9">
         <div className="card_group">
