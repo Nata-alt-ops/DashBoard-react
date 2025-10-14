@@ -25,6 +25,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/urbanist/700.css'; 
 import './Main.scss';
+import { Main1 } from '../../components/AuthGuard/com_main';
 
 interface ThreeLayerProgressProps {
   bluePercent: number;   // внешний синий (например, 82)
@@ -104,10 +105,19 @@ export const Main = () => {
   return (
     <div className="site_con ">
        <div className="scrollable-container">
-      <div className='o '>
+        <div className='row gy-4 d-flex flex-row bd-highlight' style={{backgroundColor:'purple'}}>
+        <div className='container1 p-0  bd-highlight' style={{backgroundColor:'green', minHeight:'200px'}}>
+          <Main1 />
+        </div>
+        <div className='container2 p-0 flex-shrink-1 bd-highlight' style={{backgroundColor:'black', minHeight:'200px'}}>
+          gfkjrhlrh;lfih
+        </div>
+
+        </div>
+      {/*<div className='o '>
       <div className="conatainer col-lg-9">
         <div className="card_group">
-          {/* Карточка 1 */}
+          {/* Карточка 1 
           <div className="card w-25">
             <div className="card-body">
               <h5 className="card-title">155+</h5>
@@ -146,7 +156,7 @@ export const Main = () => {
             </div>
           </div>
 
-          {/* Карточка 2 */}
+          {/* Карточка 2 
           <div className="card w-25">
             <div className="card-body">
               <h5 className="card-title">39+</h5>
@@ -185,7 +195,7 @@ export const Main = () => {
             </div>
           </div>
 
-          {/* Карточка 3 */}
+          {/* Карточка 3 
           <div className="card w-25">
             <div className="card-body">
               <h5 className="card-title">25+</h5>
@@ -224,7 +234,7 @@ export const Main = () => {
             </div>
           </div>
 
-          {/* Карточка 4 */}
+          {/* Карточка 4 
           <div className="card w-25">
             <div className="card-body">
               <h5 className="card-title">18k+</h5>
@@ -266,7 +276,7 @@ export const Main = () => {
 
     
 <div className="card mt-4 graph" style={{ border: 'none' }}>
-  <div className="card-body p-0"> {/* ← Ключевое изменение: p-0 убирает padding */}
+  <div className="card-body p-0"> 
     <div className="d-flex justify-content-between align-items-center mb-3" style={{padding:'20px 20px'}}>
       <h3 className="mb-0 text_graph">Study Statistics</h3>
       <div className="d-flex align-items-center gap-3">
@@ -402,7 +412,7 @@ export const Main = () => {
                         <p className='p_text'>See All</p>
                       </div>
                       <div className='d-flex flex-row justify-content-center align-items-center  cards_3 mt-2'>
-                        {/*1 карта*/}
+                        {/*1 карта
                         <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
@@ -454,7 +464,7 @@ export const Main = () => {
                           </div>
                         </div>
 
-                        {/*2 карта*/}
+                        {/*2 карта
                         <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
@@ -506,7 +516,7 @@ export const Main = () => {
                           </div>
                         </div>
 
-                          {/*3 карта*/}
+                          {/*3 карта
                         <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
@@ -569,11 +579,11 @@ export const Main = () => {
 
                   
                   </div>
-                  {/*боковая панель*/}
+                  {/*боковая панель
                   <div className='col-lg-3'>
                       <div className='card r' style={{marginTop: '24px', marginLeft: '24px', borderRadius: '18px', border:'none'}}>
                         <div className='card-body'>
-                          {/*Календарь*/}
+                          {/*Календарь*
                             <div className='calendar_header'>
                             <div className='a d-flex justify-content-between align-items-center'>
                               <div className='circle_svg rounded-circle d-flex justify-content-center align-items-center '>
@@ -695,10 +705,10 @@ export const Main = () => {
     </div>
     <div className="card-body">
       <div className="progress-chart-container">
-        {/* Круговой график прогресса */}
+        {/* Круговой график прогресса 
         <ResponsiveContainer width={150} height={150}>
           <PieChart>
-            {/* Внешний круг (синий) */}
+            {/* Внешний круг (синий) 
             <Pie
               data={[
                 { name: 'blue-completed', value: 100 },
@@ -718,7 +728,7 @@ export const Main = () => {
               <Cell fill="#f0f0f0" />
             </Pie>
             
-            {/* Средний круг (зеленый) */}
+            {/* Средний круг (зеленый) 
             <Pie
               data={[
                 { name: 'green-completed', value: 60 },
@@ -738,7 +748,7 @@ export const Main = () => {
               <Cell fill="#f0f0f0" />
             </Pie>
             
-            {/* Внутренний круг (оранжевый) */}
+            {/* Внутренний круг (оранжевый) 
             <Pie
               data={[
                 { name: 'orange-completed', value: 25 },
@@ -758,7 +768,7 @@ export const Main = () => {
               <Cell fill="#f0f0f0" />
             </Pie>
             
-            {/* Центральный текст */}
+            {/* Центральный текст 
             <text 
               x="50%" 
               y="50%" 
@@ -775,13 +785,13 @@ export const Main = () => {
         </ResponsiveContainer>
       </div>
       
-      {/* Общее время */}
+      {/* Общее время 
       <div className="total-time">
         <p style={{color:'#3b465e'}}>Total hour:</p>
         <p style={{color:'#0f141f'}}>6h 32 min</p>
       </div>
       
-      {/* Статусы курсов */}
+      {/* Статусы курсов 
       <div className="course-status">
         <div className="status-item">
           <p className="progress-numbers">60/60</p>
@@ -848,7 +858,7 @@ export const Main = () => {
                         <button>Support</button>
                       </div>
                     </div>
-                 </div>
+                 </div>*/}
 
 
 
