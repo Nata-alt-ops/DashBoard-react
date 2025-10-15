@@ -27,13 +27,9 @@ import '@fontsource/urbanist/700.css';
 import './Main.scss';
 import { Main1 } from '../../components/com_main/4card';
 import { Main2 } from '../../components/com_main2';
+import { Main12 } from '../../components/com_main/big_graph/main12';
 
-interface ThreeLayerProgressProps {
-  bluePercent: number;   // внешний синий (например, 82)
-  greenPercent: number;  // средний зелёный (например, 75)
-  blackPercent: number;  // внутренний чёрный (например, 90)
-  totalTime: string;
-}
+
 
 export const Main = () => {
     const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
@@ -105,11 +101,14 @@ export const Main = () => {
   
   return (
     <div className="site_con ">
-       <div className="scrollable-container d-flex justify-content-center align-items-center ">
+       <div className="scrollable-container">
           <div className='d-flex flex-row con_site bd-highlight justify-content-between'>
-            <div className='container1 d-flex flex-colum  bd-highlight'>
-              <Main1 />
-            </div>
+            <div className='container1 flex-grow-1 me-4'> {/* занимает доступное пространство */}
+            <Main1 />
+            <Main12 />
+          </div>
+            
+              
             <div className='container2 d-flex flex-colum flex-wrap flex-shrink-1 bd-highlight'>
               <Main2 />
              

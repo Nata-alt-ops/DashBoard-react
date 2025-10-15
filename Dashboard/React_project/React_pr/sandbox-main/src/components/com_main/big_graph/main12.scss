@@ -1,0 +1,83 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import '@fontsource/urbanist/400.css'; 
+@import '@fontsource/urbanist/500.css'; 
+@import '@fontsource/urbanist/600.css'; 
+@import '@fontsource/urbanist/700.css'; 
+
+.graph{
+    width: 100%;
+    height: 100%;
+
+    .card-body{
+      .h1_text_buttons{
+        background-color: coral;
+        
+        
+        h1{
+          color: #0f141f;
+          font-size: 22px;
+          font-weight: 700;
+          font-family: 'Urbanist', sans-serif;
+          margin-top: 5px;
+          
+        }
+        
+            .circle_text{
+              display: flex;
+              gap:5px;
+              flex-direction: row;
+              margin-right: 12px;
+              color: #0c1018;
+              font-family: 'Roboto', sans-serif;
+              font-size: 13px;
+              font-family: 400;
+              margin-top: 10px;
+              
+              .circle{
+                width: 8px;
+                height: 8px;
+                border-radius: 100px;
+                margin-top: 5px;
+                margin-left: 5px;
+              }
+            }
+            .e{
+              width: 81px;
+              height: 31px;
+              margin-top: 5px;
+              border: 1px solid #d5dbe7;
+              color: #667797;
+              font-size: 13px;
+              border-radius: 8px;
+              margin-right: 5px;
+            }
+            
+            .dropdown{
+              width: 81px;
+              height: 31px;
+              
+              button{
+                width: 81px;
+                height: 31px;
+                margin-top: 7px;
+                border: 1px solid #667797;
+                
+                
+                p{
+                  font-size: 13px;
+                  font-weight: 400;
+                  font-family: 'Roboto', sans-serif;
+                  margin-right: 30px;
+                }
+              }
+            }
+          }
+          
+}
+        }
+
+    

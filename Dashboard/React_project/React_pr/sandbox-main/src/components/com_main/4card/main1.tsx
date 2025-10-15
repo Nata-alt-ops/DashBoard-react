@@ -32,7 +32,7 @@ export const Main1 = () => {
 
     return (
         <div className='card-four'>
-            <div className="card_group">
+            <div className="card_group flex-grow-1 me-3">
                 {/* Карточка 1 */}
                 <div className="card">
                     <div className="card-body">
