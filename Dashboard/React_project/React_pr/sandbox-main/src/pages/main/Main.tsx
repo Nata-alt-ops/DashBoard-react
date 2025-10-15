@@ -25,7 +25,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/urbanist/700.css'; 
 import './Main.scss';
-import { Main1 } from '../../components/com_main';
+import { Main1 } from '../../components/com_main/4card';
+import { Main2 } from '../../components/com_main2';
 
 interface ThreeLayerProgressProps {
   bluePercent: number;   // внешний синий (например, 82)
@@ -105,13 +106,16 @@ export const Main = () => {
   return (
     <div className="site_con ">
        <div className="scrollable-container d-flex justify-content-center align-items-center ">
-          <div className='d-flex flex-row con_site'>
-            <div className='container1 d-flex flex-colum'>
+          <div className='d-flex flex-row con_site bd-highlight justify-content-between'>
+            <div className='container1 d-flex flex-colum  bd-highlight'>
               <Main1 />
             </div>
-            <div className='container1 d-flex flex-colum'>
-              <Main1 />
+            <div className='container2 d-flex flex-colum flex-wrap flex-shrink-1 bd-highlight'>
+              <Main2 />
+             
             </div>
+           
+           
             
           </div>
         
