@@ -26,16 +26,18 @@ import '@fontsource/roboto/700.css';
 import '@fontsource/urbanist/700.css'; 
 import './Main.scss';
 import { Main1 } from '../../components/com_main/4card';
-import { Main2 } from '../../components/com_main2';
+import { Main2 } from '../../components/com_main2/calendar';
 import { Main12 } from '../../components/com_main/big_graph/main12';
+import { Main21 } from '../../components/com_main2/button_option';
+import { Main22 } from '../../components/com_main2/small_graph/main22';
 
 
 
 export const Main = () => {
-    const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
-   const [hovered, setHovered] = useState(false);
+  const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
+  const [hovered, setHovered] = useState(false);
     
-   // Исправленные обработчики событий
+ 
   const handleMouseEnter = (data: any) => {
     if (data && data.name && data.name.includes('completed')) {
       setHoveredPercent(data.value);
@@ -46,211 +48,39 @@ export const Main = () => {
     setHoveredPercent(null);
   };
 
-  
-
-  const trendData = [
-    { day: 'Mon', courses: 18 },
-    { day: 'Tue', courses: 25 },
-    { day: 'Wed', courses: 22 },
-    { day: 'Thu', courses: 40 },
-    { day: 'Fri', courses: 34 },
-    { day: 'Sat', courses: 55 },
-    { day: 'Sun', courses: 50 },
-    { day: 'Mon', courses: 60 },
-    { day: 'Tue', courses: 55 },
-    { day: 'Wed', courses: 65 },
-  ];
-
-  const data = [
-    { month: 'Jan', study: 8, test: 8 },
-    { month: 'Feb', study: 15, test: 24 },
-    { month: 'Mar', study: 9, test: 18 },
-    { month: 'Apr', study: 20, test: 40 },
-    { month: 'May', study: 10, test: 18 },
-    { month: 'Jun', study: 33, test: 48 },
-    { month: 'Jul', study: 13, test: 22 },
-    { month: 'Aug', study: 22, test: 38 },
-    { month: 'Sep', study: 8, test: 18 },
-    { month: 'Oct', study: 17, test: 30 },
-    { month: 'Nov', study: 10, test: 20 },
-    { month: 'Dec', study: 15, test: 28 },
-  ];
-
-  const data3 = [
-  { name: 'Категория 1', value: 300 },
-  { name: 'Категория 2', value: 200 },
-  { name: 'Категория 3', value: 150 },
-  { name: 'Категория 4', value: 100 }
-];
-
-
-
-
-  
-
-  // Функция для форматирования оси Y
-  const formatYAxis = (value: number) => `${value}Hr`;
-
-  // Состояние для периода
-  const [timePeriod, setTimePeriod] = useState('Yearly');
-
-  const handlePeriodChange = (e: any) => {
-    setTimePeriod(e.target.value);
-  };
-
-  
-  return (
-    <div className="site_con ">
-       <div className="scrollable-container">
-          <div className='d-flex flex-row con_site bd-highlight justify-content-between'>
-            <div className='container1 flex-grow-1 me-4'> {/* занимает доступное пространство */}
-            <Main1 />
-            <Main12 />
-          </div>
-            
-              
-            <div className='container2 d-flex flex-colum flex-wrap flex-shrink-1 bd-highlight'>
-              <Main2 />
+   return (
+    <div className="site_con">
+      <div className="scrollable-container">
+        <div className='container-fluid'>
+          <div className="row g-3">
+          
+            <div className="col-xxl-9 col-xl-9 col-lg-8" >
+              <div className="main-content">
+                <Main1 />
+                <Main12 /> 
              
+              </div>
             </div>
+
            
-           
-            
+            <div className="col-xxl-3 col-xl-3 col-lg-4">
+              <div className="sidebar-content">
+                <Main2 />
+                <Main21 />
+                <Main22 />
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
         
       {/*
 
     
-<div className="card mt-4 graph" style={{ border: 'none' }}>
-  <div className="card-body p-0"> 
-    <div className="d-flex justify-content-between align-items-center mb-3" style={{padding:'20px 20px'}}>
-      <h3 className="mb-0 text_graph">Study Statistics</h3>
-      <div className="d-flex align-items-center gap-3">
-        <div className="d-flex align-items-center">
-          <div
-            style={{
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              backgroundColor: '#3e80f9',
-              marginRight: '6px',
-            }}
-          ></div>
-          <span style={{ fontSize: '13px', color: '#0c1018', fontFamily: 'Roboto, sans-serif' }}>
-            Study
-          </span>
-        </div>
-        <div className="d-flex align-items-center">
-          <div
-            style={{
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              backgroundColor: '#27cea7',
-              marginRight: '6px',
-            }}
-          ></div>
-          <span style={{ fontSize: '13px', color: '#0c1018', fontFamily: 'Roboto, sans-serif' }}>
-            Test
-          </span>
-        </div>
-        <div className="dropdown">
-          <select
-            value={timePeriod}
-            onChange={handlePeriodChange}
-            className="form-select form-select-sm select-dropdown"
-            style={{ width: '80px', borderRadius: '8px' }}
-          >
-            <option value="Yearly">Yearly</option>
-            <option value="Monthly">Monthly</option>
-            <option value="Weekly">Weekly</option>
-            <option value="Today">Today</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div style={{ width: '100%', height: '300px' }}>
-      <ResponsiveContainer width="100%" height="100%">
-       <AreaChart
-  data={data}
-  margin={{ top: 10, right: 0, left: 0, bottom: 30 }}
-  syncId="anyId"
->
-  <defs>
-    <linearGradient id="studyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="10%" stopColor="#3e80f9" stopOpacity="0.7" />
-      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.1" />
-    </linearGradient>
-    <linearGradient id="testGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="10%" stopColor="#27cea7" stopOpacity="0.7" />
-      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.1" />
-    </linearGradient>
-  </defs>
-  <CartesianGrid
-    strokeDasharray="3 3"
-    stroke="#e9ecef"
-    horizontal={true}
-    vertical={false}
-  />
-  <XAxis
-    dataKey="month"
-    tick={{ fill: '#667797', fontSize: 14, fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
-    tickLine={false}
-     axisLine={{
-    stroke: '#667797',  
-    strokeWidth: 1,        
-    
-  }}
-    interval={0}
-    padding={{ left: 20, right: 30 }}
-  />
-  <YAxis
-    tickFormatter={formatYAxis}
-    tick={{ fill: '#667797', fontSize: 14, fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
-    tickLine={false}
-    axisLine={false}
-    domain={[0, 50]}
-    tickCount={6}
-  />
-  <Tooltip
-    formatter={(value) => `${value}Hr`}
-    labelFormatter={(label) => label}
-    contentStyle={{
-      backgroundColor: '#fff',
-      border: '1px solid #ddd',
-      borderRadius: '4px',
-      padding: '8px',
-      fontSize: '12px',
-    }}
-    cursor={{ stroke: '#ccc', strokeWidth: 1, strokeDasharray: '3 3' }}
-  />
-  <Area
-    type="monotone"
-    dataKey="study"
-    stroke="#3e80f9"
-    strokeWidth={1}
-    fill="url(#studyGradient)"
-    fillOpacity={1}
-    name="Study"
-    dot={false}
-    activeDot={{ r: 6 }}
-  />
-  <Area
-    type="monotone"
-    dataKey="test"
-    stroke="#27cea7"
-    strokeWidth={1}
-    fill="url(#testGradient)"
-    fillOpacity={1}
-    name="Test"
-    dot={false}
-    activeDot={{ r: 6 }}
-  />
-</AreaChart>
-      </ResponsiveContainer>
-    </div>
-  </div>
-</div>           
+        
                   <div className='card mt-4' style={{border:'none'}}>
                     <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center gap-10">
                       <div className='d-flex justify-content-between align-items-center mb-20' style={{width:'100%', }}>
@@ -333,7 +163,7 @@ export const Main = () => {
                                 <div className='line_prof' style={{width:'100%', height:'1px', backgroundColor:'#d5dbe7', marginTop:'10px'}}></div>
                                 <div className="d-flex justify-content-start align-items-center  flex-row prof-hour ">
                                   <div className='d-flex justify-content-center align-items-center flex-row'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#3e80f9" viewBox="0 0 256 256">
+                                    <svg xmlns="httpS://www.w3.org/2000/svg" width="14" height="14" fill="#3e80f9" viewBox="0 0 256 256">
                                     <path d="M251.77,73a8,8,0,0,0-8.21.39L208,97.05V72a16,16,0,0,0-16-16H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V159l35.56,23.71A8,8,0,0,0,248,184a8,8,0,0,0,8-8V80A8,8,0,0,0,251.77,73ZM192,184H32V72H192V184Zm48-22.95-32-21.33V116.28L240,95Z"></path>
                                     </svg>
                                     <p>24 Lessons</p>
@@ -732,12 +562,3 @@ export const Main = () => {
 
 
 
-
-                    </div>
-
-
-      
-    
-    </div>
-  );
-};

@@ -1,16 +1,11 @@
  .r{
-    background-color: #db2323;
-    width: auto;
-    height: auto;
+    height: 365.500px;
+    width: 381.250px;
     .card{
-
-    }
       height: 365.500px;
-      min-width: 381.250px;
       border-radius: 12px;
       border: none;
-     
-
+      box-shadow: none !important;
 
       .card-body{
         width: 100%;
@@ -18,7 +13,7 @@
         display: flex;
         flex-direction: column;
         padding: 16px;
-
+  
           .calendar_header{
             width: 100%;
             height: 38px;
@@ -27,11 +22,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
+  
             .a{
               width: calc(100% - 12px);
               height: calc(100% - 12px);
-
+  
               .circle_svg {
                 background-color: #ffffff;
                 width: 26px;
@@ -39,7 +34,7 @@
                 cursor: pointer;
                 border: 1px solid #e1ebfe;
                 transition: all 0.2s ease; 
-
+  
                 &:hover {
                   background-color: #3e80f9;
                   border: none;
@@ -73,7 +68,7 @@
             justify-content: center;
              border: 1px solid #d5dbe7;
              margin-bottom: 20px;
-
+  
             .week{
               width: calc(100% - 40px);
               height: 37px;
@@ -81,7 +76,7 @@
               gap: 30px;
               justify-content: center;
               align-items: center;
-
+  
               p{
                  color: #06080c;
                 font-family: 'Urbanist', sans-serif;
@@ -91,7 +86,7 @@
               }
             }
           }
-
+  
           .days{
             width: 100%;
             height: 100%;
@@ -100,7 +95,7 @@
             margin: auto;
             justify-content: space-between;
             text-align: center;
-
+  
             div{
               width: 42px;
               height: 42px;
@@ -112,8 +107,8 @@
               border-radius: 100px;
               cursor: pointer;
               transition: all 0.2s ease; 
-
-
+  
+  
               &:hover{
                 background-color: #ebf1fd;
                 color:#3e80f9;
@@ -125,13 +120,17 @@
               background-color: #3e80f9;
               color: #ffffff;
             }
-
-
+  
+  
            
           }
-
+  
         
       }
+    }
+     
+
+
 
 
       
