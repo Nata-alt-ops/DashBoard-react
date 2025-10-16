@@ -30,6 +30,7 @@ import { Main2 } from '../../components/com_main2/calendar';
 import { Main12 } from '../../components/com_main/big_graph/main12';
 import { Main21 } from '../../components/com_main2/button_option';
 import { Main22 } from '../../components/com_main2/small_graph/main22';
+import { Main13 } from '../../components/com_main/3_card_/main13';
 
 
 
@@ -58,6 +59,7 @@ export const Main = () => {
               <div className="main-content">
                 <Main1 />
                 <Main12 /> 
+                <Main13 />
              
               </div>
             </div>

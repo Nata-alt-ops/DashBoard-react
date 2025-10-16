@@ -16,12 +16,36 @@ import './main22.scss';
 
 export const Main22 = () => {
     const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
+    const [hoveredSegment, setHoveredSegment] = useState<string | null>(null);
 
     // Обработчики для цветных частей
-    const handleBlueEnter = () => setHoveredPercent(100);
-    const handleGreenEnter = () => setHoveredPercent(60);
-    const handleOrangeEnter = () => setHoveredPercent(25);
-    const handleMouseLeave = () => setHoveredPercent(null);
+    const handleBlueEnter = () => {
+        setHoveredPercent(100);
+        setHoveredSegment('blue');
+    };
+    
+    const handleGreenEnter = () => {
+        setHoveredPercent(60);
+        setHoveredSegment('green');
+    };
+    
+    const handleOrangeEnter = () => {
+        setHoveredPercent(25);
+        setHoveredSegment('orange');
+    };
+    
+    const handleMouseLeave = () => {
+        setHoveredPercent(null);
+        setHoveredSegment(null);
+    };
+
+    // Функция для определения цвета с учетом наведения
+    const getSegmentColor = (segment: string, defaultColor: string) => {
+        return hoveredSegment === segment ? 
+            (segment === 'blue' ? '#74a1e9ff' : 
+             segment === 'green' ? '#91fde4ff' : 
+             '#464646ff') : defaultColor;
+    };
 
     return(
          <div className='card_grah'>
@@ -51,10 +75,9 @@ export const Main22 = () => {
               cornerRadius={8}
             >
               <Cell 
-                fill="#3e80f9" 
+                fill={'#3e80f9'} 
                 onMouseEnter={handleBlueEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ cursor: 'pointer' }}
               />
               <Cell fill="#f0f0f0" />
             </Pie>
@@ -76,10 +99,9 @@ export const Main22 = () => {
               cornerRadius={8}   
             >
               <Cell 
-                fill="#27cea7" 
+                fill={'#27cea7'} 
                 onMouseEnter={handleGreenEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ cursor: 'pointer' }}
               />
               <Cell fill="#f0f0f0" />
             </Pie>
@@ -101,10 +123,9 @@ export const Main22 = () => {
               cornerRadius={8}
             >
               <Cell 
-                fill="#000000ff" 
+                fill={'#000000ff'} 
                 onMouseEnter={handleOrangeEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ cursor: 'pointer' }}
               />
               <Cell fill="#f0f0f0" />
             </Pie>
@@ -115,14 +136,9 @@ export const Main22 = () => {
               y="50%" 
               textAnchor="middle" 
               dominantBaseline="central" 
-              fontSize={hoveredPercent ? "18" : "15"}
-              fontWeight={hoveredPercent ? "700" : "400"}
-              fill={hoveredPercent ? 
-                (hoveredPercent === 82 ? "#3e80f9" : 
-                 hoveredPercent === 60 ? "#27cea7" : 
-                 "#000000ff") 
-                : "#0f141f"
-              }
+              fontSize={15}
+              fontWeight={400}
+              fill={"#0f141f"}
               fontFamily="Roboto, sans-serif"
             >
               {hoveredPercent !== null ? `${hoveredPercent}%` : '82%'}
@@ -141,9 +157,6 @@ export const Main22 = () => {
       <div className="course-status">
         <div 
           className="status-item"
-          onMouseEnter={handleBlueEnter}
-          onMouseLeave={handleMouseLeave}
-          style={{ cursor: 'pointer' }}
         >
           <p className="progress-numbers">60/60</p>
           <div className="progress-bar">
@@ -151,7 +164,7 @@ export const Main22 = () => {
               className="progress-fill" 
               style={{ 
                 width: '30px', 
-                backgroundColor: '#3e80f9' 
+                backgroundColor:'#3e80f9'
               }}
             ></div>
           </div>
@@ -160,9 +173,6 @@ export const Main22 = () => {
         
         <div 
           className="status-item"
-          onMouseEnter={handleGreenEnter}
-          onMouseLeave={handleMouseLeave}
-          style={{ cursor: 'pointer' }}
         >
           <p className="progress-numbers">60/60</p>
           <div className="progress-bar">
@@ -170,7 +180,7 @@ export const Main22 = () => {
               className="progress-fill" 
               style={{ 
                 width: '100%', 
-                backgroundColor: '#27cea7' 
+                backgroundColor: '#27cea7'
               }}
             ></div>
           </div>
@@ -179,9 +189,6 @@ export const Main22 = () => {
         
         <div 
           className="status-item"
-          onMouseEnter={handleOrangeEnter}
-          onMouseLeave={handleMouseLeave}
-          style={{ cursor: 'pointer' }}
         >
           <p className="progress-numbers">60/60</p>
           <div className="progress-bar">
@@ -189,7 +196,7 @@ export const Main22 = () => {
               className="progress-fill" 
               style={{ 
                 width: '100%', 
-                backgroundColor: '#000000ff' 
+                backgroundColor: '#000000ff'
               }}
             ></div>
           </div>

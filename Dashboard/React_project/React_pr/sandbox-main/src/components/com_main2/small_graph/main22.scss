@@ -11,11 +11,13 @@
 .card_grah{
   margin-top: 24px;
   width: 381.250px;
+
   
   .card{
     border-radius: 20px;
     border: none;
     width: 100%;
+    box-shadow: none !important;
 
     .card-header{
       background-color: #ffffff;
@@ -58,13 +60,16 @@
       
       // Подсветка только для цветных частей при наведении
       &[fill="#3e80f9"]:hover,
-      &[fill="#27cea7"]:hover,
-      &[fill="#000000ff"]:hover {
-        filter: brightness(1.1);
-        stroke: rgba(0,0,0,0.1);
-        stroke-width: 1;
-      }
-    }
+  &[fill="#27cea7"]:hover,
+  &[fill="#000000ff"]:hover,
+  &[fill="#2d6fd8"]:hover,
+  &[fill="#1fa887"]:hover,
+  &[fill="#333333"]:hover {
+    filter: brightness(1.1);
+    stroke: rgba(0,0,0,0.1);
+    stroke-width: 1;
+  }
+    }    
   }
 
   .total-time {
@@ -94,9 +99,7 @@
       flex: 1;
       transition: all 0.3s ease;
       
-      &:hover {
-        transform: translateY(-2px);
-      }
+      
       
       .progress-bar {
         height: 3px;
