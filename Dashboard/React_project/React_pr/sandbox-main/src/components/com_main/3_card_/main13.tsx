@@ -16,15 +16,15 @@ export const Main13 = () =>{
                     <h4 className='h1_text_card2'>Top Courses Pick for You</h4>
                     <p className='p_text'>See All</p>
                       </div>
-                      <div className='d-flex flex-row justify-content-center align-items-center  cards_3 mt-2'>
+                      <div className='d-flex flex-row   cards_3 mt-2 row g-20'>
                         {/*1 карта*/}
-                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
+                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '0px', paddingRight:'10px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
                             <div className='card_img d-flex justify-content-center align-items-center' >
                              <img src="/course-img1.png" className="card-img" alt="..."/>
                             </div>
-                              <div className="card-body" style={{width:'100%'}}>
+                              <div className="card-body p-8" style={{width:'100%'}}>
                                 <div className='vacantion rounded-pill d-flex justify-content-center align-items-center '>
                                   <p style={{color:'#16a34a'}}>Development</p>
                                 </div>
@@ -70,7 +70,7 @@ export const Main13 = () =>{
                         </div>
 
                         {/*2 карта*/}
-                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
+                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '10px', paddingRight:'10px'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
                             <div className='card_img d-flex justify-content-center align-items-center' >
@@ -122,7 +122,7 @@ export const Main13 = () =>{
                         </div>
 
                           {/*3 карта*/}
-                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '5px', paddingRight:'5px'}}>
+                        <div className='col-lg-4 col-sm-6' style={{paddingLeft: '10px', paddingRight:'0'}}>
 
                           <div className='card d-flex justify-content-center align-items-center' style={{padding:'8px 8px'}}>
                             <div className='card_img d-flex justify-content-center align-items-center' >
