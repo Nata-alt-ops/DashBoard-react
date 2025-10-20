@@ -42,6 +42,7 @@
 
         .container-fluid {
           padding: 24px;
+          padding-bottom: 0;
             
             .row {
                 width: 100%;
@@ -63,6 +64,11 @@
                         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                     }
                 }
+            }
+            .footer{
+                width: 100%;
+                height: auto;
+                margin-top: 24px;
             }
             
         }

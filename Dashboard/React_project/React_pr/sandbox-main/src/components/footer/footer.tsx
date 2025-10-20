@@ -11,19 +11,16 @@ import './footer.scss';
 
 export const Footer = () =>{
     return(
-      <div className='down-board'>
-          <div className='card'>
-                    <div className='card-body d-flex justify-content-between align-items-center'>
-                      <p>© Copyright Edmate 2024, All Right Reserverd</p>
-                      <div className='link'>
-                        <button>License</button>
-                        <button>More Themes</button>
-                        <button>Documentation</button>
-                        <button>Support</button>
-                      </div>
-                    </div>
-                 </div>
-
+      <div className='down-board card'>
+        <div className='card-body d-flex justify-content-between align-items-center'>
+          <p>© Copyright Edmate 2024, All Right Reserverd</p>
+          <div className='link'>
+            <button>License</button>
+            <button>More Themes</button>
+            <button>Documentation</button>
+            <button>Support</button>
+          </div>
+        </div>
       </div>
     )
 }

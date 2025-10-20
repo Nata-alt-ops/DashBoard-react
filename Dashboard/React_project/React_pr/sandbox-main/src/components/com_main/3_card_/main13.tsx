@@ -9,14 +9,14 @@ import '@fontsource/urbanist/700.css';
 import './main13.scss';
 
 export const Main13 = () =>{
-    return(
-        <div className='card mt-4' style={{border:'none'}}>
-            <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center gap-10">
-                <div className='d-flex justify-content-between align-items-center mb-20' style={{width:'100%', }}>
-                    <h4 className='h1_text_card2'>Top Courses Pick for You</h4>
-                    <p className='p_text'>See All</p>
-                      </div>
-                      <div className='d-flex flex-row   cards_3 mt-2 row g-20'>
+  return(
+    <div className='card mt-4' style={{border:'none'}}>
+      <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center gap-10">
+          <div className='d-flex justify-content-between align-items-center mb-20' style={{width:'100%', }}>
+            <h4 className='h1_text_card2'>Top Courses Pick for You</h4>
+            <p className='p_text'>See All</p>
+          </div>
+          <div className='d-flex flex-row   cards_3 mt-2 row g-20'>
                         {/*1 карта*/}
                         <div className='col-lg-4 col-sm-6' style={{paddingLeft: '0px', paddingRight:'10px'}}>
 
@@ -174,8 +174,8 @@ export const Main13 = () =>{
                         </div>
 
 
-                      </div>
-                      </div>   
-                      </div>   
-    )   
+          </div>
+        </div>   
+      </div>   
+  )   
 }
