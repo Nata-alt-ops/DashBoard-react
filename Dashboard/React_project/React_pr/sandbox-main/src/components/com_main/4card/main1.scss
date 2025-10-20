@@ -20,7 +20,7 @@ $color_main2: #0c1018;
 }
 
 @mixin card-text{
-    color: #0c1018;
+    color: $color_main2;
     font-size: 15px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -39,7 +39,7 @@ $color_main2: #0c1018;
         .card{
             border-radius: 16px;
             border: none;
-            flex: 1; // Равномерное распределение ширины
+            flex: 1; 
             box-sizing: border-box;
 
             .card-body{

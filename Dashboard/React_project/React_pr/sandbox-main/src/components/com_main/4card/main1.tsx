@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import '@fontsource/urbanist/700.css'; 
 import './main1.scss';
 import {
   AreaChart,
@@ -42,9 +37,7 @@ export const Main1 = () => {
                             <div className="icon_img" style={{ backgroundColor: '#3e80f9' }}>
                                 <img
                                     src="/book-open-fill.svg"
-                                    alt=""
-                                    
-                                />
+                                    alt="" />
                             </div>
                             <div style={{ width: '90px', height: '62px' }} className='graph_card'>
                                 <ResponsiveContainer width="100%" height="100%">
