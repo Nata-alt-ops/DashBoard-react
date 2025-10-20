@@ -17,35 +17,50 @@ import './main22.scss';
 export const Main22 = () => {
     const [hoveredPercent, setHoveredPercent] = useState<number | null>(null);
     const [hoveredSegment, setHoveredSegment] = useState<string | null>(null);
+    const [activeSegment, setActiveSegment] = useState<string | null>(null);
 
-    // Обработчики для цветных частей
-    const handleBlueEnter = () => {
-        setHoveredPercent(100);
-        setHoveredSegment('blue');
-    };
-    
-    const handleGreenEnter = () => {
-        setHoveredPercent(60);
-        setHoveredSegment('green');
-    };
-    
-    const handleOrangeEnter = () => {
-        setHoveredPercent(25);
-        setHoveredSegment('orange');
-    };
-    
-    const handleMouseLeave = () => {
-        setHoveredPercent(null);
-        setHoveredSegment(null);
-    };
+   const handleBlueEnter = () => {
+    setHoveredPercent(100);
+    setHoveredSegment('blue');
+    setActiveSegment('blue');
+};
 
-    // Функция для определения цвета с учетом наведения
-    const getSegmentColor = (segment: string, defaultColor: string) => {
-        return hoveredSegment === segment ? 
-            (segment === 'blue' ? '#74a1e9ff' : 
-             segment === 'green' ? '#91fde4ff' : 
-             '#464646ff') : defaultColor;
-    };
+const handleGreenEnter = () => {
+    setHoveredPercent(60);
+    setHoveredSegment('green');
+    setActiveSegment('green');
+};
+
+const handleOrangeEnter = () => {
+    setHoveredPercent(25);
+    setHoveredSegment('grey');
+    setActiveSegment('grey');
+};
+
+const handleMouseLeave = () => {
+    setHoveredPercent(null);
+    setHoveredSegment(null);
+    setActiveSegment(null);
+};
+
+    const getSegmentColor = (segment: string) => {
+    if (activeSegment === segment) {
+        switch(segment) {
+            case 'blue': return '#7ba2e0ff'; 
+            case 'green': return '#00ffc3ff'; 
+            case 'grey': return '#504e4eff'; 
+            default: return '';
+        }
+    } else {
+        // Обычные цвета
+        switch(segment) {
+            case 'blue': return '#3e80f9';
+            case 'green': return '#27cea7';
+            case 'grey': return '#000000ff';
+            default: return '';
+        }
+    }
+};
 
     return(
          <div className='card_grah'>
@@ -75,7 +90,7 @@ export const Main22 = () => {
               cornerRadius={8}
             >
               <Cell 
-                fill={'#3e80f9'} 
+                 fill={getSegmentColor('blue')} 
                 onMouseEnter={handleBlueEnter}
                 onMouseLeave={handleMouseLeave}
               />
@@ -99,7 +114,7 @@ export const Main22 = () => {
               cornerRadius={8}   
             >
               <Cell 
-                fill={'#27cea7'} 
+                fill={getSegmentColor('green')}
                 onMouseEnter={handleGreenEnter}
                 onMouseLeave={handleMouseLeave}
               />
@@ -123,7 +138,7 @@ export const Main22 = () => {
               cornerRadius={8}
             >
               <Cell 
-                fill={'#000000ff'} 
+                fill={getSegmentColor('grey')}
                 onMouseEnter={handleOrangeEnter}
                 onMouseLeave={handleMouseLeave}
               />
