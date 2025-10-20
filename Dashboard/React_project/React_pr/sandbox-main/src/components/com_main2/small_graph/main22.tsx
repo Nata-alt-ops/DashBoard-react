@@ -71,7 +71,7 @@ const handleMouseLeave = () => {
     <div className="card-body">
       <div className="progress-chart-container">
         {/* Круговой график прогресса */}
-        <ResponsiveContainer width={150} height={150}>
+        <ResponsiveContainer width={130} height={130}>
           <PieChart>
             
             <Pie
