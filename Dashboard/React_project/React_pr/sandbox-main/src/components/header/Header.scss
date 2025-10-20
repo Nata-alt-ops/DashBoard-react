@@ -3,6 +3,7 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
+@import '@fontsource/roboto/400.css';
 
 $color_main1:#ffffff;
 $color_main2:#d5dbe7;
@@ -38,6 +39,7 @@ $color_main24:#ea5455;
   background: none;
   border: none;
   cursor: pointer;
+  margin-top: 9px;
 } 
 
 @mixin left_header_buttons_text{
@@ -197,12 +199,12 @@ header {
     }
     
     &::-webkit-scrollbar-track {
-      background: $color_main3;
+      background: none;
       border-radius: 10px;
     }
     
     &::-webkit-scrollbar-thumb {
-      background: $color_main4;
+      background: none;
       border-radius: 10px;
     }
     

@@ -18,7 +18,7 @@ export const Header = () => {
 };
     
    
-    const [isDashboardOpen, setIsDashboardOpen] = useState(false);
+    const [isDashboardOpen, setIsDashboardOpen] = useState(true);
     const [isCoursesOpen, setIsCoursesOpen] = useState(false);
     const [isAutheticationOpen, setIsAutheticationOpen] = useState(false);
 
@@ -102,9 +102,9 @@ export const Header = () => {
                                 </button>
                                 {isDashboardOpen && (
                                     <div className="dropdown-menu-in-flow mt-1">
-                                        <button className="dropdown-item" type="button">Dashboard One</button>
-                                        <button className="dropdown-item" type="button">Dashboard Two</button>
-                                        <button className="dropdown-item" type="button">Dashboard Three</button>
+                                        <button className="dropdown-item" type="button" style={{color:'#3e80f9', fontWeight:'600'}}>Dashboard One</button>
+                                        <button className="dropdown-item" type="button" >Dashboard Two</button>
+                                        <button className="dropdown-item" type="button" >Dashboard Three</button>
                                     </div>
                                 )}
                             </div>
